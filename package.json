@@ -10,9 +10,9 @@
     "@types/jquery": "^3.3.31",
     "chai": "^3.5.0",
     "css-loader": "^3.2.0",
-    "eslint": "^3.2.2",
+    "eslint": ">=4.18.2",
     "eslint-plugin-es5": "^1.4.1",
-    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-import": ">=2.19.1",
     "istanbul": "^0.4.4",
     "mocha": "^5.2.0",
     "node-sass": "^4.9.0",
@@ -22,7 +22,7 @@
     "sgmf-scripts": "^2.0.0",
     "sinon": "^1.17.4",
     "stylelint": "^12.0.1",
-    "stylelint-config-standard": "^12.0.0",
+    "stylelint-config-standard": "^19.0.0",
     "stylelint-scss": "^3.11.1",
     "tslint-lines-between-class-members": "^1.3.6",
     "typescript": "^3.7.4",
@@ -34,7 +34,7 @@
   "packageName": "int_wallee",
   "repository": {
     "type": "git",
-    "url": "http://github.com/wallee-payment/wallee-salesforce-commerce-cloud.git"
+    "url": "http://github.com/wallee-payment/salesforce-commerce-cloud.git"
   },
   "scripts": {
     "build": "npm run build:tsc && npm run build:eslint && npm run build:upload",
@@ -48,5 +48,5 @@
     "uploadCartridge": "sgmf-scripts --uploadCartridge int_wallee",
     "watch": "watch 'npm run build' ./buildSrc/src/main/resources/cartridges/"
   },
-  "version": "0.0.1"
+  "version": "1.0.0"
 }
