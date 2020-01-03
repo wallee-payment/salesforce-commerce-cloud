@@ -1,0 +1,12 @@
+{
+  "hooks": [
+    {
+      "name": "app.payment.processor.wallee",
+      "script": "./hooks/payment/processor/wallee"
+    },
+    {
+      "name": "app.payment.form.processor.wallee",
+      "script": "./hooks/payment/processor/wallee"
+    }
+  ]
+}
