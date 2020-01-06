@@ -5,6 +5,20 @@ Wallee provides a LINK cartridge to integrate with Salesforce Commerce Cloud (SF
 ## Integration
 The cartridge integrates the checkout process with Wallee.
 
+### Upload cartridge
+
+_To import the cartridge please use Commerce Cloud UX-studio._
+
+1. Upload this cartridge to your site 
+
+2. Administration >  Sites >  Manage Sites > *YourSite* - Settings
+
+3. Add `int_wallee:` to the beginning of the __Cartridges:__ string and apply
+
+### Apply credentials
+
+Merchant Tools > Site Preferences > Custom Preferences > wallee
+
 ## Requirements
 
 It is required to have an Wallee account to use the cartridge. Please signup [here](hhttps://app-wallee.com/user/signup).

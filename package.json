@@ -46,7 +46,7 @@
     "lint": "./node_modules/.bin/sgmf-scripts --lint js && ./node_modules/.bin/sgmf-scripts --lint css",
     "upload": "./node_modules/.bin/sgmf-scripts --upload -- ",
     "uploadCartridge": "./node_modules/.bin/sgmf-scripts --uploadCartridge int_wallee",
-    "watch": "watch 'npm run build' ./buildSrc/src/main/resources/cartridges/"
+    "watch": "watch 'npm run build' ./cartridges/"
   },
   "version": "1.0.0"
 }
