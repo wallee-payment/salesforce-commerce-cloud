@@ -21,7 +21,7 @@ Merchant Tools > Site Preferences > Custom Preferences > wallee
 
 ## Requirements
 
-It is required to have an Wallee account to use the cartridge. Please signup [here](hhttps://app-wallee.com/user/signup).
+It is required to have an Wallee account to use the cartridge. Please signup [here](https://app-wallee.com/user/signup).
 
 ## Installation, Usage and Configuration
 
