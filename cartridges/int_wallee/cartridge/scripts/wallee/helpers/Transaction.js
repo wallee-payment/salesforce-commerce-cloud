@@ -231,6 +231,7 @@ var Transaction = /** @class */ (function () {
         transaction.metaData = data;
         transaction.successUrl = dw.web.URLUtils.abs("Order-Confirm", "ID", data.orderID, "token", data.orderToken).toString();
         transaction.failedUrl = transaction.successUrl;
+        transaction.merchantReference = data.orderID;
         this.TransactionService.update(this.spaceId, transaction);
     };
     /**

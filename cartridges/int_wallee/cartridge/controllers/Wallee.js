@@ -57,13 +57,6 @@ server.post("WebHookTransaction", server.middleware.https, function (req, res, n
                                     order_1.setExternalOrderStatus(transaction_1.state);
                                     order_1.setPaymentStatus(dw.order.Order.PAYMENT_STATUS_PAID);
                                 });
-                                if (order_1.getInvoices().size() && order_1.getPaymentInstruments().size() === 1) {
-                                    var invoice = order_1.getInvoice(order_1.getInvoiceNo());
-                                    var orderPaymentInstruments = order_1.getPaymentInstruments().toArray();
-                                    if (orderPaymentInstruments[0].getPaymentMethod() === 'WALLEE') {
-                                        invoice.addCaptureTransaction(orderPaymentInstruments[0], new dw.value.Money(transaction_1.authorizationAmount, transaction_1.currency));
-                                    }
-                                }
                                 break;
                             case Wallee.model.TransactionState.DECLINE:
                             case Wallee.model.TransactionState.VOIDED:
@@ -73,6 +66,7 @@ server.post("WebHookTransaction", server.middleware.https, function (req, res, n
                                     order_1.setPaymentStatus(dw.order.Order.PAYMENT_STATUS_NOTPAID);
                                     order_1.setStatus(dw.order.Order.ORDER_STATUS_CANCELLED);
                                 });
+                                dw.order.OrderMgr.failOrder(order_1, true);
                                 break;
                         }
                     }
@@ -132,16 +126,6 @@ server.post("WebHookRefund", server.middleware.https, function (req, res, next) 
     viewData.callBack = callBack;
     res.json(viewData);
     res.setStatusCode(statusCode);
-    // @ts-ignore
-    this.emit("route:Complete", req, res);
-});
-server.get("WebHookTest", server.middleware.https, function (req, res, next) {
-    var orderId = "00003401";
-    var order = dw.order.OrderMgr.getOrder(orderId);
-    var viewData = res.getViewData();
-    viewData.invoiceNo = order.getInvoiceNo();
-    viewData.invoice = order.getInvoice(order.getInvoiceNo());
-    res.json(viewData);
     // @ts-ignore
     this.emit("route:Complete", req, res);
 });
