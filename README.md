@@ -21,17 +21,18 @@ _To import the cartridges please use Commerce Cloud UX-studio._
 
 4. Administration >  Organization >  Roles > Administrator - Business Manager Modules : Enable `Wallee` for each of the users you would like to be able to configure `Wallee`.
 
-### 2. Add wallee payment method
-* Merchant Tools >  Ordering >  Payment Methods : Verify that `WALLEE` is the only payment method enabled. Optionally you can leave `CREDIT_CARD` enabled also.
-
-### 3. Add wallee payment processor
-
-* Merchant Tools >  Ordering >  Payment Processors > Verify that a processor with ID: `WALLEE` exists.
-
-### 4. Upload metadata
+### 2. Upload metadata
 Please rename the folder `yourSiteId` to the name of your site, and please replicate the folder for each of your sites before zipiping.
 1. `zip metadata`
 2. Administration >  Site Development >  Site Import & Export > Import > metadata.zip
+
+### 3. Add wallee payment method
+* Merchant Tools >  Ordering >  Payment Methods : Verify that `WALLEE` is the only payment method enabled. Optionally you can leave `CREDIT_CARD` enabled also.
+
+### 4. Add wallee payment processor
+
+* Merchant Tools >  Ordering >  Payment Processors > Verify that a processor with ID: `WALLEE` exists.
+
 
 ### 5. Apply credentials
 Have your Wallee credentials handy.
