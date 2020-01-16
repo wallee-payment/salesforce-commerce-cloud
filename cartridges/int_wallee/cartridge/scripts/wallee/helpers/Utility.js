@@ -14,7 +14,7 @@ var Utility = /** @class */ (function () {
         /**
          * Service name
          */
-        this.serviceName = "int_wallee.http.nvp.payment.wallee.SiteGenesis";
+        this.serviceName = "int_wallee.http.rest.payment.wallee";
     }
     /**
      * Get service name

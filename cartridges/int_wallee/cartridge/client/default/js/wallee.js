@@ -40,8 +40,8 @@ window.onload = function () {
         if (activeTabId !== '') {
             var activeTabValid = $('.tab-pane.active').attr('validation');
             if (activeTabValid === 'true') {
-                var handlerName = $('[name="WALLEE_handler"]').val();
-                if ((handlerName) && (window[handlerName] !== undefined)) {
+                var handlerName_1 = $('[name="WALLEE_handler"]').val();
+                if ((handlerName_1) && (window[handlerName_1] !== undefined)) {
                     // disable the placeOrder button here
                     $('body').trigger('checkout:disableButton', '.next-step-button button');
                     $.ajax({
@@ -57,16 +57,16 @@ window.onload = function () {
                             }
                             else {
                                 var continueUrl = data.continueUrl;
-                                var urlParams = {
+                                var urlParams_1 = {
                                     ID: data.orderID,
                                     token: data.orderToken
                                 };
                                 continueUrl += (continueUrl.indexOf('?') !== -1 ? '&' : '?') +
-                                    Object.keys(urlParams).map(function (key) {
+                                    Object.keys(urlParams_1).map(function (key) {
                                         // @ts-ignore
-                                        return key + '=' + encodeURIComponent(urlParams[key]);
+                                        return key + '=' + encodeURIComponent(urlParams_1[key]);
                                     }).join('&');
-                                window[handlerName].submit();
+                                window[handlerName_1].submit();
                                 //window.location.href = continueUrl;
                             }
                         },

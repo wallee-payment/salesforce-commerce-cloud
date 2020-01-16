@@ -1,40 +1,48 @@
 # Salesforce Commerce Cloud Wallee Cartridge
 
-Wallee provides a LINK cartridge to integrate with Salesforce Commerce Cloud (SFCC). This cartridge enables a SFRA storefront to use the Wallee payment service. This cartridge supports SFRA version 4.x.x.
+Wallee provides LINK cartridges to integrate with Salesforce Commerce Cloud (SFCC). These cartridges enable a SFRA storefront to use the Wallee payment service. These cartridges support SFRA version 4.x.x.
+
+## Requirements
+
+It is required to have an Wallee account to use these cartridges. Please signup [here](https://app-wallee.com/user/signup).
 
 ## Integration
-The cartridge integrates the checkout process with Wallee.
+Our cartridges integrate the checkout process with Wallee. Each of the steps below are required to get your Wallee integration working. You need admin rights to the instance you are uploading these cartridges to.
 
 ### 1. Upload cartridge
 
-_To import the cartridge please use Commerce Cloud UX-studio._
+_To import the cartridges please use Commerce Cloud UX-studio._
 
-1. Upload this cartridge to your site 
+1. Upload these cartridges to your site 
 
-2. Administration >  Sites >  Manage Sites > *YourSite* > Settings
+2. Administration >  Sites >  Manage Sites > *YourSite* > Settings : Add `int_wallee:` to the beginning of the __Cartridges:__ string and apply
 
-3. Add `int_wallee:` to the beginning of the __Cartridges:__ string and apply
+3. Administration >  Sites >  Manage Sites > Business Manager  > Settings : Add `bm_wallee:int_wallee:` to the beginning of the __Cartridges:__ string and apply. Please do this for each of the sites.
+
+4. Administration >  Organization >  Roles > Administrator - Business Manager Modules : Enable `Wallee` for each of the users you would like to be able to configure `Wallee`.
 
 ### 2. Add wallee payment method
-1. Merchant Tools >  Ordering >  Import & Export : Click upload
-2. Merchant Tools >  Ordering >  Import & Export > Manage Import Files : upload the file `wallee-payment-methods.xml`
-3. Merchant Tools >  Ordering >  Payment Methods : Check that `WALLEE` is the only payment method enabled. Optionally you can leave `CREDIT_CARD` enabled also.
+* Merchant Tools >  Ordering >  Payment Methods : Verify that `WALLEE` is the only payment method enabled. Optionally you can leave `CREDIT_CARD` enabled also.
 
 ### 3. Add wallee payment processor
-1. Merchant Tools >  Ordering >  Payment Processors : Click new
-2. Merchant Tools >  Ordering >  Payment Processors > Create Payment Processor : ID: `WALLEE` Description: `WALLEE`
+
+* Merchant Tools >  Ordering >  Payment Processors > Verify that a processor with ID: `WALLEE` exists.
 
 ### 4. Upload metadata
+Please rename the folder `yourSiteId` to the name of your site, and please replicate the folder for each of your sites before zipiping.
 1. `zip metadata`
 2. Administration >  Site Development >  Site Import & Export > Import > metadata.zip
 
 ### 5. Apply credentials
+Have your Wallee credentials handy.
 
-Merchant Tools > Site Preferences > Custom Preferences > wallee
+* Merchant Tools > Site Preferences > Wallee
 
-## Requirements
+If the path `Merchant Tools > Site Preferences > Wallee`. 
 
-It is required to have an Wallee account to use the cartridge. Please signup [here](https://app-wallee.com/user/signup).
+
+### 6. Profit
+Congratulations! You are now integrated with Wallee.
 
 ## Installation, Usage and Configuration
 

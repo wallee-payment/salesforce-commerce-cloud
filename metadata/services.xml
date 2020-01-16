@@ -17,7 +17,7 @@
         <cb-millis>0</cb-millis>
     </service-profile>
 
-    <service service-id="int_wallee.http.nvp.payment.wallee.SiteGenesis">
+    <service service-id="int_wallee.http.rest.payment.wallee">
         <service-type>HTTP</service-type>
         <enabled>true</enabled>
         <log-prefix>WalleeHttp</log-prefix>

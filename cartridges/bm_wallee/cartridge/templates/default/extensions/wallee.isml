@@ -1,0 +1,117 @@
+<isdecorate template="application/MenuFrame">
+    <iscontent type="text/html" charset="UTF-8"/>
+    <isinclude template="inc/Modules"/>
+    <isset name="TOP_URL"
+           value="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', pdict.CurrentMenuItemId)}"
+           scope="PAGE">
+        <isbreadcrumb name1="${pdict.MainmenuName}" url1="${TOP_URL}"
+                      name2="${Resource.msg('common.viewparts.breadcrumb.title', 'bm_wallee', null)}"/>
+
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tbody>
+            <tr>
+                <td>
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <tbody>
+                        <tr>
+                            <td class="table_title w e s n">${Resource.msg('common.viewparts.breadcrumb.title',
+                                'bm_wallee', null)}</td>
+                        </tr>
+                        <tr>
+                            <td class="table_title_description w e">
+                                <p>${Resource.msg('common.viewparts.breadcrumb.notice', 'bm_wallee', null)}</p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <form action="${URLUtils.https('WalleeAdmin-SaveConfiguration')}" method="post">
+            <fieldset>
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th class="table_header w" colspan="2">Settings</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="fielditem2 w" nowrap="nowrap">${Resource.msg('common.form.spaceId',
+                            'bm_wallee', null)}: <span class="star">*</span></td>
+                        <td class="table_detail e" width="100%">
+                            <input type="text" name="spaceId"
+                            <isif condition="${pdict.customPreferences.spaceId}">
+                                value="${pdict.customPreferences.spaceId}"
+                            </isif>
+                            required class="inputfield_en perm_localized w100">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fielditem2 w" nowrap="nowrap">${Resource.msg('common.form.userId',
+                            'bm_wallee', null)}: <span class="star">*</span></td>
+                        <td class="table_detail e" width="100%">
+                            <input type="text" name="userId"
+                            <isif condition="${pdict.customPreferences.userId}">
+                                value="${pdict.customPreferences.userId}"
+                            </isif>
+                            required class="inputfield_en perm_localized w100">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fielditem2 w" nowrap="nowrap">${Resource.msg('common.form.apiSecret',
+                            'bm_wallee', null)}: <span class="star">*</span></td>
+                        <td class="table_detail e" width="100%">
+                            <input type="text" name="apiSecret"
+                            <isif condition="${pdict.customPreferences.apiSecret}">
+                                value="${pdict.customPreferences.apiSecret}"
+                            </isif>
+                            required class="inputfield_en perm_localized w100">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fielditem w" nowrap="nowrap">${Resource.msg('common.form.webHookIsEnabled',
+                            'bm_wallee', null)}
+                        </td>
+                        <td class="table_detail e" width="100%">
+                            <input type="checkbox"
+                            <isif condition="${pdict.customPreferences.webHookIsEnabled}">checked="checked"</isif>
+                            disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="fielditem w" nowrap="nowrap">${Resource.msg('common.form.webHookContent',
+                            'bm_wallee', null)}
+                        </td>
+                        <td class="table_detail e" width="100%">
+                            <isif condition="${pdict.customPreferences.webHookContent}">
+                                <code>
+                                    <isprint value="${JSON.stringify(pdict.customPreferences.webHookContent, null, 4)}"
+                                             encoding="off"/>
+                                </code>
+                            </isif>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" class="aldi" colspan="2">
+                            <table border="0" cellspacing="4" cellpadding="0">
+                                <tbody>
+                                <tr>
+                                    <td class="button">
+                                        <button type="submit" class="button">
+                                            ${Resource.msg('common.viewparts.button.update',
+                                            'bm_wallee', null)}
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </form>
+</isdecorate>

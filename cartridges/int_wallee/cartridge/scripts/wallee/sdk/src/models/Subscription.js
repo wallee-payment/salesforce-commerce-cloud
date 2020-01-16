@@ -74,6 +74,11 @@ var Subscription = /** @class */ (function () {
             "type": "Subscriber"
         },
         {
+            "name": "terminatedBy",
+            "baseName": "terminatedBy",
+            "type": "number"
+        },
+        {
             "name": "terminatedOn",
             "baseName": "terminatedOn",
             "type": "Date"
