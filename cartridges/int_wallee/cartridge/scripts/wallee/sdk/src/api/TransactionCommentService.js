@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 /* global dw empty */
 var ObjectSerializer = require("../serializers/ObjectSerializer");
 // @ts-ignore

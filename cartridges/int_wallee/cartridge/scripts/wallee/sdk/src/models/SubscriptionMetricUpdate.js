@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var SubscriptionMetricUpdate = /** @class */ (function () {
     function SubscriptionMetricUpdate() {
     }

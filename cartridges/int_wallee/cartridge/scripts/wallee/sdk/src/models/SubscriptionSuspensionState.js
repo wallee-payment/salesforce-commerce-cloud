@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var SubscriptionSuspensionState;
 (function (SubscriptionSuspensionState) {
     SubscriptionSuspensionState["RUNNING"] = "RUNNING";

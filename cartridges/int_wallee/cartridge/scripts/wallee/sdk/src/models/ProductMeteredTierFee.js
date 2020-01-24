@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var ProductMeteredTierFee = /** @class */ (function () {
     function ProductMeteredTierFee() {
     }

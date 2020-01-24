@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var WalleeModule = {
     model: {
         AbstractAccountUpdate: require("./src/models/AbstractAccountUpdate"),
@@ -317,7 +317,7 @@ var WalleeModule = {
         WebhookUrlCreate: require("./src/models/WebhookUrlCreate"),
         WebhookUrlUpdate: require("./src/models/WebhookUrlUpdate"),
         ApplicationUserCreateWithMacKey: require("./src/models/ApplicationUserCreateWithMacKey"),
-        SubscriptionAffiliateDeleting: require("./src/models/SubscriptionAffiliateDeleting")
+        SubscriptionAffiliateDeleting: require("./src/models/SubscriptionAffiliateDeleting"),
     },
     api: {
         AccountService: require("./src/api/AccountService"),
@@ -400,7 +400,7 @@ var WalleeModule = {
         UserAccountRoleService: require("./src/api/UserAccountRoleService"),
         UserSpaceRoleService: require("./src/api/UserSpaceRoleService"),
         WebhookListenerService: require("./src/api/WebhookListenerService"),
-        WebhookUrlService: require("./src/api/WebhookUrlService")
+        WebhookUrlService: require("./src/api/WebhookUrlService"),
     }
 };
 module.exports = WalleeModule;

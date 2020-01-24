@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var PaymentConnector = /** @class */ (function () {
     function PaymentConnector() {
     }

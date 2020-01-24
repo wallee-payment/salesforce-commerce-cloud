@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var TransactionGroupState;
 (function (TransactionGroupState) {
     TransactionGroupState["PENDING"] = "PENDING";

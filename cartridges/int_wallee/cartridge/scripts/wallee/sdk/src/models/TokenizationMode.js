@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var TokenizationMode;
 (function (TokenizationMode) {
     TokenizationMode["FORCE_UPDATE"] = "FORCE_UPDATE";

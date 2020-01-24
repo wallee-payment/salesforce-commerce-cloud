@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var PaymentTerminalConfigurationVersionState;
 (function (PaymentTerminalConfigurationVersionState) {
     PaymentTerminalConfigurationVersionState["PENDING"] = "PENDING";

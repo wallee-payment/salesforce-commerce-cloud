@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var AddressCreate = /** @class */ (function () {
     function AddressCreate() {
     }

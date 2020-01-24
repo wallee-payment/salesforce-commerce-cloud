@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var RestAddressFormatField;
 (function (RestAddressFormatField) {
     RestAddressFormatField["GIVEN_NAME"] = "GIVEN_NAME";

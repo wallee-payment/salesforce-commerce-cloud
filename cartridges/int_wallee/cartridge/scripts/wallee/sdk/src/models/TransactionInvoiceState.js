@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var TransactionInvoiceState;
 (function (TransactionInvoiceState) {
     TransactionInvoiceState["CREATE"] = "CREATE";

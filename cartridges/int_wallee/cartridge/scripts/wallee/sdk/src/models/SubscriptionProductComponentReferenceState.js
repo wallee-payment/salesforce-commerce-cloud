@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var SubscriptionProductComponentReferenceState;
 (function (SubscriptionProductComponentReferenceState) {
     SubscriptionProductComponentReferenceState["CREATE"] = "CREATE";

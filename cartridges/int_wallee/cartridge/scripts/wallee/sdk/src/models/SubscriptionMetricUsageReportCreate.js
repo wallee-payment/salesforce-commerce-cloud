@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var SubscriptionMetricUsageReportCreate = /** @class */ (function () {
     function SubscriptionMetricUsageReportCreate() {
     }

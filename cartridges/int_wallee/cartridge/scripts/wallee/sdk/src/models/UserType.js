@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var UserType;
 (function (UserType) {
     UserType["HUMAN_USER"] = "HUMAN_USER";

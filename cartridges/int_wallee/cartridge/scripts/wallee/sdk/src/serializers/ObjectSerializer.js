@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var AbstractAccountUpdate = require("../models/AbstractAccountUpdate");
 var AbstractApplicationUserUpdate = require("../models/AbstractApplicationUserUpdate");
 var AbstractCustomerActive = require("../models/AbstractCustomerActive");

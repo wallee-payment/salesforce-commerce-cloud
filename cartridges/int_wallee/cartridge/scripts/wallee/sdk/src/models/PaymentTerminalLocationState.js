@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var PaymentTerminalLocationState;
 (function (PaymentTerminalLocationState) {
     PaymentTerminalLocationState["CREATE"] = "CREATE";

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var ProductMeteredTierPricing;
 (function (ProductMeteredTierPricing) {
     ProductMeteredTierPricing["CHEAPEST_TIER_PRICING"] = "CHEAPEST_TIER_PRICING";

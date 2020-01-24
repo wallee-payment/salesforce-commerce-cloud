@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var TransactionCompletionState;
 (function (TransactionCompletionState) {
     TransactionCompletionState["CREATE"] = "CREATE";

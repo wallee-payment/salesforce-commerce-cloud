@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var ConnectorInvocationStage;
 (function (ConnectorInvocationStage) {
     ConnectorInvocationStage["PAYMENT_METHOD_LIST"] = "PAYMENT_METHOD_LIST";

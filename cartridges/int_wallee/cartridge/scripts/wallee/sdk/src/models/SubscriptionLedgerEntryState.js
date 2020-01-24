@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var SubscriptionLedgerEntryState;
 (function (SubscriptionLedgerEntryState) {
     SubscriptionLedgerEntryState["OPEN"] = "OPEN";

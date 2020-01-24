@@ -15,11 +15,13 @@
                         <tbody>
                         <tr>
                             <td class="table_title w e s n">${Resource.msg('common.viewparts.breadcrumb.title',
-                                'bm_wallee', null)}</td>
+                                'bm_wallee', null)}
+                            </td>
                         </tr>
                         <tr>
                             <td class="table_title_description w e">
-                                <p>${Resource.msg('common.viewparts.breadcrumb.notice', 'bm_wallee', null)}</p>
+                                <p>${Resource.msg('common.viewparts.breadcrumb.notice', 'bm_wallee',
+                                    null)}</p>
                             </td>
                         </tr>
                         </tbody>
@@ -69,29 +71,6 @@
                                 value="${pdict.customPreferences.apiSecret}"
                             </isif>
                             required class="inputfield_en perm_localized w100">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fielditem w" nowrap="nowrap">${Resource.msg('common.form.webHookIsEnabled',
-                            'bm_wallee', null)}
-                        </td>
-                        <td class="table_detail e" width="100%">
-                            <input type="checkbox"
-                            <isif condition="${pdict.customPreferences.webHookIsEnabled}">checked="checked"</isif>
-                            disabled>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="fielditem w" nowrap="nowrap">${Resource.msg('common.form.webHookContent',
-                            'bm_wallee', null)}
-                        </td>
-                        <td class="table_detail e" width="100%">
-                            <isif condition="${pdict.customPreferences.webHookContent}">
-                                <code>
-                                    <isprint value="${JSON.stringify(pdict.customPreferences.webHookContent, null, 4)}"
-                                             encoding="off"/>
-                                </code>
-                            </isif>
                         </td>
                     </tr>
                     <tr>

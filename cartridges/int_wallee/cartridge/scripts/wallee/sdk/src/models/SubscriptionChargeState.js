@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var SubscriptionChargeState;
 (function (SubscriptionChargeState) {
     SubscriptionChargeState["SCHEDULED"] = "SCHEDULED";

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var Subscriber = /** @class */ (function () {
     function Subscriber() {
     }

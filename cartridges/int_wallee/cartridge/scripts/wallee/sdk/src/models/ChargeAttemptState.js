@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var ChargeAttemptState;
 (function (ChargeAttemptState) {
     ChargeAttemptState["PROCESSING"] = "PROCESSING";

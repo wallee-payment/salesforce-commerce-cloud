@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var SubscriptionVersionState;
 (function (SubscriptionVersionState) {
     SubscriptionVersionState["PENDING"] = "PENDING";

@@ -12,7 +12,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
+
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var ChargeFlowLevel = /** @class */ (function (_super) {
     __extends(ChargeFlowLevel, _super);

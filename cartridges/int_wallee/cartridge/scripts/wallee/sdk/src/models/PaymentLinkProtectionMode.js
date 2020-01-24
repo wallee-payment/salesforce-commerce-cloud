@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var PaymentLinkProtectionMode;
 (function (PaymentLinkProtectionMode) {
     PaymentLinkProtectionMode["NO_PROTECTION"] = "NO_PROTECTION";

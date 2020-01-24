@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var InstallmentPaymentState;
 (function (InstallmentPaymentState) {
     InstallmentPaymentState["CREATE"] = "CREATE";

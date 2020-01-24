@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var DebtCollectorConditionType = /** @class */ (function () {
     function DebtCollectorConditionType() {
     }

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var PaymentPrimaryRiskTaker;
 (function (PaymentPrimaryRiskTaker) {
     PaymentPrimaryRiskTaker["CUSTOMER"] = "CUSTOMER";

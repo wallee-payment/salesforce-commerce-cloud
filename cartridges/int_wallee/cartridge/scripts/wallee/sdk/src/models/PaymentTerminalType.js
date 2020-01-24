@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var PaymentTerminalType = /** @class */ (function () {
     function PaymentTerminalType() {
     }
@@ -8,6 +8,11 @@ var PaymentTerminalType = /** @class */ (function () {
     };
     PaymentTerminalType.discriminator = undefined;
     PaymentTerminalType.attributeTypeMap = [
+        {
+            "name": "activeAccountRequired",
+            "baseName": "activeAccountRequired",
+            "type": "boolean"
+        },
         {
             "name": "description",
             "baseName": "description",

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var RefundType;
 (function (RefundType) {
     RefundType["CUSTOMER_INITIATED_AUTOMATIC"] = "CUSTOMER_INITIATED_AUTOMATIC";

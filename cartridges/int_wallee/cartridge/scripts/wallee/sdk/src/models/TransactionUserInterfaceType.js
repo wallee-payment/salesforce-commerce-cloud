@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var TransactionUserInterfaceType;
 (function (TransactionUserInterfaceType) {
     TransactionUserInterfaceType["IFRAME"] = "IFRAME";

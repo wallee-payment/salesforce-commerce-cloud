@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var CustomersPresence;
 (function (CustomersPresence) {
     CustomersPresence["NOT_PRESENT"] = "NOT_PRESENT";

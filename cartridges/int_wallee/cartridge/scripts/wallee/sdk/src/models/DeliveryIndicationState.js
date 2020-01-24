@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var DeliveryIndicationState;
 (function (DeliveryIndicationState) {
     DeliveryIndicationState["PENDING"] = "PENDING";

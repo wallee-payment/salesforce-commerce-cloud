@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var SubscriptionSuspensionReason;
 (function (SubscriptionSuspensionReason) {
     SubscriptionSuspensionReason["FAILED_CHARGE"] = "FAILED_CHARGE";

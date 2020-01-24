@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var ChargeFlowLevelState;
 (function (ChargeFlowLevelState) {
     ChargeFlowLevelState["PENDING"] = "PENDING";

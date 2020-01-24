@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var ProductFeeType;
 (function (ProductFeeType) {
     ProductFeeType["METERED_FEE"] = "METERED_FEE";

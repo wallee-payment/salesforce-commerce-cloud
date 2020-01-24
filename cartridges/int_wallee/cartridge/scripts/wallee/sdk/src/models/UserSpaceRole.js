@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var UserSpaceRole = /** @class */ (function () {
     function UserSpaceRole() {
     }

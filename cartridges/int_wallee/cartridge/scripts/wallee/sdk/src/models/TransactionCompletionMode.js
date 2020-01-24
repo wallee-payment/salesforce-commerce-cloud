@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var TransactionCompletionMode;
 (function (TransactionCompletionMode) {
     TransactionCompletionMode["DIRECT"] = "DIRECT";

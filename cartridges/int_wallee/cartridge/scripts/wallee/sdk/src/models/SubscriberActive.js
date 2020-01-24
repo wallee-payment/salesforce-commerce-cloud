@@ -12,7 +12,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
+
 var SubscriberUpdate = require("./SubscriberUpdate");
 var SubscriberActive = /** @class */ (function (_super) {
     __extends(SubscriberActive, _super);

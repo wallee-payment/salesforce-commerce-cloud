@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var ResourcePath = /** @class */ (function () {
     function ResourcePath() {
     }

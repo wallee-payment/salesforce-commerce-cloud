@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var AccountState;
 (function (AccountState) {
     AccountState["CREATE"] = "CREATE";

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var InstallmentPlanSliceConfiguration = /** @class */ (function () {
     function InstallmentPlanSliceConfiguration() {
     }

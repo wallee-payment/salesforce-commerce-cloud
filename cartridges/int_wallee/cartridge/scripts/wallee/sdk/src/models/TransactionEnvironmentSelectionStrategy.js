@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var TransactionEnvironmentSelectionStrategy;
 (function (TransactionEnvironmentSelectionStrategy) {
     TransactionEnvironmentSelectionStrategy["FORCE_TEST_ENVIRONMENT"] = "FORCE_TEST_ENVIRONMENT";

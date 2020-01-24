@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+
 var AbstractHumanUserUpdate = /** @class */ (function () {
     function AbstractHumanUserUpdate() {
     }
