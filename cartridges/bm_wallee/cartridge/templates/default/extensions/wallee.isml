@@ -4,8 +4,11 @@
     <isset name="TOP_URL"
            value="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', pdict.CurrentMenuItemId)}"
            scope="PAGE">
-        <isbreadcrumb name1="${pdict.MainmenuName}" url1="${TOP_URL}"
-                      name2="${Resource.msg('common.viewparts.breadcrumb.title', 'bm_wallee', null)}"/>
+        <isbreadcrumb
+                name1="Merchant Tools" url1="${URLUtils.url('SiteNavigationBar-ShowSiteOverview')}"
+                name2="Site Preferences" url2="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', 'site-prefs')}"
+                name3="${Resource.msg('common.viewparts.breadcrumb.title', 'bm_wallee', null)}" url3=""
+        />
 
         <table cellpadding="0" cellspacing="0" border="0" width="100%">
             <tbody>
