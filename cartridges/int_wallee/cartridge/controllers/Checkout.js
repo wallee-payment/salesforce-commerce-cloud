@@ -1,9 +1,8 @@
 "use strict";
 
-// @ts-ignore
-var page = module.superModule;
 var server = require("server");
-server.extend(page);
+// @ts-ignore
+server.extend(module.superModule);
 var TransactionHelperImport = require("~/cartridge/scripts/wallee/helpers/Transaction");
 server.append("Begin", function (req, res, next) {
     var currentBasket = dw.order.BasketMgr.getCurrentBasket();

@@ -39,7 +39,7 @@ Have your Wallee credentials handy.
 
 * Merchant Tools > Site Preferences > Wallee
 
-If the path `Merchant Tools > Site Preferences > Wallee`. 
+If the path `Merchant Tools > Site Preferences > Wallee` does not exits, please repeat steps 1.3 and 1.4. 
 
 
 ### 6. Profit

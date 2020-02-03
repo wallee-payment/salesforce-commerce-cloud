@@ -1,30 +1,26 @@
 <isdecorate template="application/MenuFrame">
     <iscontent type="text/html" charset="UTF-8"/>
     <isinclude template="inc/Modules"/>
-    <isset name="TOP_URL"
-           value="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', pdict.CurrentMenuItemId)}"
-           scope="PAGE">
+    <isset name="TOP_URL" value="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', pdict.CurrentMenuItemId)}" scope="PAGE">
         <isbreadcrumb
                 name1="Merchant Tools" url1="${URLUtils.url('SiteNavigationBar-ShowSiteOverview')}"
                 name2="Site Preferences" url2="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', 'site-prefs')}"
                 name3="${Resource.msg('common.viewparts.breadcrumb.title', 'bm_wallee', null)}" url3=""
         />
 
-        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <table cellpadding="0" cellspacing="0" style="width: 100%; border: 0;">
             <tbody>
             <tr>
                 <td>
-                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <table cellpadding="0" cellspacing="0" style="width: 100%; border: 0;">
                         <tbody>
                         <tr>
-                            <td class="table_title w e s n">${Resource.msg('common.viewparts.breadcrumb.title',
-                                'bm_wallee', null)}
+                            <td class="table_title w e s n">${Resource.msg('common.viewparts.breadcrumb.title', 'bm_wallee', null)}
                             </td>
                         </tr>
                         <tr>
                             <td class="table_title_description w e">
-                                <p>${Resource.msg('common.viewparts.breadcrumb.notice', 'bm_wallee',
-                                    null)}</p>
+                                <p>${Resource.msg('common.viewparts.breadcrumb.notice', 'bm_wallee', null)}</p>
                             </td>
                         </tr>
                         </tbody>
@@ -36,7 +32,7 @@
 
         <form action="${URLUtils.https('WalleeAdmin-SaveConfiguration')}" method="post">
             <fieldset>
-                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <table cellpadding="0" cellspacing="0" style="width: 100%; border: 0;">
                     <thead>
                     <tr>
                         <th class="table_header w" colspan="2">Settings</th>
@@ -44,8 +40,7 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td class="fielditem2 w" nowrap="nowrap">${Resource.msg('common.form.spaceId',
-                            'bm_wallee', null)}: <span class="star">*</span></td>
+                        <td class="fielditem2 w" nowrap="nowrap">${Resource.msg('common.form.spaceId', 'bm_wallee', null)}: <span class="star">*</span></td>
                         <td class="table_detail e" width="100%">
                             <input type="text" name="spaceId"
                             <isif condition="${pdict.customPreferences.spaceId}">
@@ -55,8 +50,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="fielditem2 w" nowrap="nowrap">${Resource.msg('common.form.userId',
-                            'bm_wallee', null)}: <span class="star">*</span></td>
+                        <td class="fielditem2 w" nowrap="nowrap">${Resource.msg('common.form.userId', 'bm_wallee', null)}: <span class="star">*</span></td>
                         <td class="table_detail e" width="100%">
                             <input type="text" name="userId"
                             <isif condition="${pdict.customPreferences.userId}">
@@ -66,8 +60,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="fielditem2 w" nowrap="nowrap">${Resource.msg('common.form.apiSecret',
-                            'bm_wallee', null)}: <span class="star">*</span></td>
+                        <td class="fielditem2 w" nowrap="nowrap">${Resource.msg('common.form.apiSecret', 'bm_wallee', null)}: <span class="star">*</span></td>
                         <td class="table_detail e" width="100%">
                             <input type="text" name="apiSecret"
                             <isif condition="${pdict.customPreferences.apiSecret}">
@@ -83,8 +76,7 @@
                                 <tr>
                                     <td class="button">
                                         <button type="submit" class="button">
-                                            ${Resource.msg('common.viewparts.button.update',
-                                            'bm_wallee', null)}
+                                            ${Resource.msg('common.viewparts.button.update', 'bm_wallee', null)}
                                         </button>
                                     </td>
                                 </tr>
