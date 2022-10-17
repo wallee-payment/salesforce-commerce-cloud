@@ -34,6 +34,11 @@ var TokenVersion = /** @class */ (function () {
             "type": "Date"
         },
         {
+            "name": "iconUrl",
+            "baseName": "iconUrl",
+            "type": "string"
+        },
+        {
             "name": "id",
             "baseName": "id",
             "type": "number"
@@ -67,6 +72,11 @@ var TokenVersion = /** @class */ (function () {
             "name": "paymentConnectorConfiguration",
             "baseName": "paymentConnectorConfiguration",
             "type": "PaymentConnectorConfiguration"
+        },
+        {
+            "name": "paymentInformationHashes",
+            "baseName": "paymentInformationHashes",
+            "type": "Array<PaymentInformationHash>"
         },
         {
             "name": "paymentMethod",

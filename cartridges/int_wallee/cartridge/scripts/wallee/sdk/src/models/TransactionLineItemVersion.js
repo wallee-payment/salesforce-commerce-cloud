@@ -40,6 +40,26 @@ var TransactionLineItemVersion = /** @class */ (function (_super) {
             "type": "Date"
         },
         {
+            "name": "externalId",
+            "baseName": "externalId",
+            "type": "string"
+        },
+        {
+            "name": "failedOn",
+            "baseName": "failedOn",
+            "type": "Date"
+        },
+        {
+            "name": "failureReason",
+            "baseName": "failureReason",
+            "type": "FailureReason"
+        },
+        {
+            "name": "labels",
+            "baseName": "labels",
+            "type": "Array<Label>"
+        },
+        {
             "name": "language",
             "baseName": "language",
             "type": "string"
@@ -50,8 +70,18 @@ var TransactionLineItemVersion = /** @class */ (function (_super) {
             "type": "Array<LineItem>"
         },
         {
+            "name": "nextUpdateOn",
+            "baseName": "nextUpdateOn",
+            "type": "Date"
+        },
+        {
             "name": "plannedPurgeDate",
             "baseName": "plannedPurgeDate",
+            "type": "Date"
+        },
+        {
+            "name": "processingOn",
+            "baseName": "processingOn",
             "type": "Date"
         },
         {
@@ -60,9 +90,24 @@ var TransactionLineItemVersion = /** @class */ (function (_super) {
             "type": "number"
         },
         {
+            "name": "state",
+            "baseName": "state",
+            "type": "TransactionLineItemVersionState"
+        },
+        {
+            "name": "succeededOn",
+            "baseName": "succeededOn",
+            "type": "Date"
+        },
+        {
             "name": "taxAmount",
             "baseName": "taxAmount",
             "type": "number"
+        },
+        {
+            "name": "timeoutOn",
+            "baseName": "timeoutOn",
+            "type": "Date"
         },
         {
             "name": "transaction",

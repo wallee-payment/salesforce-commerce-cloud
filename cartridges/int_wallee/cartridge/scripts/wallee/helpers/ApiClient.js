@@ -7,12 +7,30 @@
 var ApiClient = /** @class */ (function () {
     function ApiClient() {
     }
+    ApiClient.prototype.getHTTPClientFromService = function () {
+        var httpService = function (serviceName) {
+            return dw.svc.LocalServiceRegistry.createService(serviceName, {
+                createRequest: function (httpService, localVarRequestOptions) {
+                    return httpService;
+                },
+                parseResponse: function (svc, response) {
+                    return response;
+                },
+                getRequestLogMessage: function (requestObj) {
+                    return requestObj;
+                }
+            });
+        };
+        var service = httpService('int_wallee.http.rest.payment.wallee');
+        service.call();
+        return service.client;
+    };
     /**
      * Make API web calls
      * @param localVarRequestOptions
      */
     ApiClient.prototype.callApi = function (localVarRequestOptions) {
-        var httpClient = new dw.net.HTTPClient();
+        var httpClient = this.getHTTPClientFromService();
         var contentType = localVarRequestOptions.contentType;
         var url = localVarRequestOptions.url + localVarRequestOptions.path;
         var methodType = localVarRequestOptions.method.toUpperCase();

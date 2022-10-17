@@ -9,6 +9,11 @@ var AbstractAccountUpdate = /** @class */ (function () {
     AbstractAccountUpdate.discriminator = undefined;
     AbstractAccountUpdate.attributeTypeMap = [
         {
+            "name": "lastModifiedDate",
+            "baseName": "lastModifiedDate",
+            "type": "Date"
+        },
+        {
             "name": "name",
             "baseName": "name",
             "type": "string"

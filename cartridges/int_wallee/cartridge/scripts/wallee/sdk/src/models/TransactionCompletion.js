@@ -60,6 +60,11 @@ var TransactionCompletion = /** @class */ (function (_super) {
             "type": "FailureReason"
         },
         {
+            "name": "invoiceMerchantReference",
+            "baseName": "invoiceMerchantReference",
+            "type": "string"
+        },
+        {
             "name": "labels",
             "baseName": "labels",
             "type": "Array<Label>"
@@ -128,6 +133,11 @@ var TransactionCompletion = /** @class */ (function (_super) {
             "name": "state",
             "baseName": "state",
             "type": "TransactionCompletionState"
+        },
+        {
+            "name": "statementDescriptor",
+            "baseName": "statementDescriptor",
+            "type": "string"
         },
         {
             "name": "succeededOn",

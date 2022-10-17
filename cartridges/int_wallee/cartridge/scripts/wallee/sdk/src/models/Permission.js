@@ -57,6 +57,11 @@ var Permission = /** @class */ (function () {
             "name": "twoFactorRequired",
             "baseName": "twoFactorRequired",
             "type": "boolean"
+        },
+        {
+            "name": "webAppEnabled",
+            "baseName": "webAppEnabled",
+            "type": "boolean"
         }
     ];
     return Permission;

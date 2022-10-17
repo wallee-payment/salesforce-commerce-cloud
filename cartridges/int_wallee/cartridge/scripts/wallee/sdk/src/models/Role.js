@@ -36,7 +36,7 @@ var Role = /** @class */ (function () {
         {
             "name": "state",
             "baseName": "state",
-            "type": "CreationEntityState"
+            "type": "RoleState"
         },
         {
             "name": "twoFactorRequired",

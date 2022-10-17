@@ -9,11 +9,6 @@ var PaymentTerminalType = /** @class */ (function () {
     PaymentTerminalType.discriminator = undefined;
     PaymentTerminalType.attributeTypeMap = [
         {
-            "name": "activeAccountRequired",
-            "baseName": "activeAccountRequired",
-            "type": "boolean"
-        },
-        {
             "name": "description",
             "baseName": "description",
             "type": "{ [key: string]: string; }"

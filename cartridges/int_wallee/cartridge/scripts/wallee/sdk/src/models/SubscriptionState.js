@@ -7,6 +7,7 @@ var SubscriptionState;
     SubscriptionState["FAILED"] = "FAILED";
     SubscriptionState["ACTIVE"] = "ACTIVE";
     SubscriptionState["SUSPENDED"] = "SUSPENDED";
+    SubscriptionState["TERMINATION_SCHEDULED"] = "TERMINATION_SCHEDULED";
     SubscriptionState["TERMINATING"] = "TERMINATING";
     SubscriptionState["TERMINATED"] = "TERMINATED";
 })(SubscriptionState = exports.SubscriptionState || (exports.SubscriptionState = {}));

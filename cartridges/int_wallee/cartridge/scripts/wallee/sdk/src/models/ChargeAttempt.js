@@ -30,6 +30,11 @@ var ChargeAttempt = /** @class */ (function (_super) {
             "type": "Charge"
         },
         {
+            "name": "completionBehavior",
+            "baseName": "completionBehavior",
+            "type": "TransactionCompletionBehavior"
+        },
+        {
             "name": "connectorConfiguration",
             "baseName": "connectorConfiguration",
             "type": "PaymentConnectorConfiguration"
@@ -38,6 +43,11 @@ var ChargeAttempt = /** @class */ (function (_super) {
             "name": "createdOn",
             "baseName": "createdOn",
             "type": "Date"
+        },
+        {
+            "name": "customersPresence",
+            "baseName": "customersPresence",
+            "type": "CustomersPresence"
         },
         {
             "name": "environment",
@@ -88,6 +98,11 @@ var ChargeAttempt = /** @class */ (function (_super) {
             "name": "redirectionUrl",
             "baseName": "redirectionUrl",
             "type": "string"
+        },
+        {
+            "name": "salesChannel",
+            "baseName": "salesChannel",
+            "type": "number"
         },
         {
             "name": "spaceViewId",

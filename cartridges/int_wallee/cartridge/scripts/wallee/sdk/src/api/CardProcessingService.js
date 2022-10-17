@@ -3,13 +3,15 @@
 /* global dw empty */
 var ObjectSerializer = require("../serializers/ObjectSerializer");
 // @ts-ignore
+var AuthenticatedCardDataCreate = require("../models/AuthenticatedCardDataCreate");
+// @ts-ignore
 var ClientError = require("../models/ClientError");
 // @ts-ignore
 var ServerError = require("../models/ServerError");
 // @ts-ignore
-var Transaction = require("../models/Transaction");
+var TokenizedCardDataCreate = require("../models/TokenizedCardDataCreate");
 // @ts-ignore
-var UnencryptedCardDataCreate = require("../models/UnencryptedCardDataCreate");
+var Transaction = require("../models/Transaction");
 var CardProcessingService = /** @class */ (function () {
     function CardProcessingService(httpService) {
         this.basePath = "https://app-wallee.com:443/api";
@@ -24,7 +26,7 @@ var CardProcessingService = /** @class */ (function () {
     * @param { number } spaceId spaceId
     * @param { number } transactionId transactionId The ID of the transaction which should be processed.
     * @param { number } paymentMethodConfigurationId paymentMethodConfigurationId The payment method configuration ID which is applied to the transaction.
-    * @param { UnencryptedCardDataCreate } cardData cardData The card details as JSON in plain which should be used to authorize the payment.
+    * @param { AuthenticatedCardDataCreate } cardData cardData The card details as JSON in plain which should be used to authorize the payment.
     * @param {*} [options] Override http request options.
     * @return {  Transaction  }
     */
@@ -72,7 +74,7 @@ var CardProcessingService = /** @class */ (function () {
             url: this.basePath,
             path: "/card-processing/process",
             contentType: "application/json",
-            body: JSON.stringify(ObjectSerializer.serialize(cardData, "UnencryptedCardDataCreate")),
+            body: JSON.stringify(ObjectSerializer.serialize(cardData, "AuthenticatedCardDataCreate")),
             form: {},
             formData: {}
         };
@@ -123,7 +125,7 @@ var CardProcessingService = /** @class */ (function () {
     * @param { number } spaceId spaceId
     * @param { number } transactionId transactionId The ID of the transaction which should be processed.
     * @param { number } paymentMethodConfigurationId paymentMethodConfigurationId The payment method configuration ID which is applied to the transaction.
-    * @param { UnencryptedCardDataCreate } cardData cardData The card details as JSON in plain which should be used to authorize the payment.
+    * @param { TokenizedCardDataCreate } cardData cardData The card details as JSON in plain which should be used to authorize the payment.
     * @param {*} [options] Override http request options.
     * @return {  string  }
     */
@@ -171,7 +173,7 @@ var CardProcessingService = /** @class */ (function () {
             url: this.basePath,
             path: "/card-processing/processWith3DSecure",
             contentType: "application/json",
-            body: JSON.stringify(ObjectSerializer.serialize(cardData, "UnencryptedCardDataCreate")),
+            body: JSON.stringify(ObjectSerializer.serialize(cardData, "TokenizedCardDataCreate")),
             form: {},
             formData: {}
         };

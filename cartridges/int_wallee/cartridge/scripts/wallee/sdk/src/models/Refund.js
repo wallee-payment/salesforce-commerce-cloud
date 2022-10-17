@@ -139,6 +139,16 @@ var Refund = /** @class */ (function () {
             "type": "Date"
         },
         {
+            "name": "totalAppliedFees",
+            "baseName": "totalAppliedFees",
+            "type": "number"
+        },
+        {
+            "name": "totalSettledAmount",
+            "baseName": "totalSettledAmount",
+            "type": "number"
+        },
+        {
             "name": "transaction",
             "baseName": "transaction",
             "type": "Transaction"

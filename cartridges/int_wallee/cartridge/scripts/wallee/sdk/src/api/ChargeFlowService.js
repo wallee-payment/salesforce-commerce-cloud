@@ -108,6 +108,91 @@ var ChargeFlowService = /** @class */ (function () {
         }
     };
     /**
+    * This operation cancels the charge flow that is linked with the transaction indicated by the given ID.
+    * @summary Cancel Charge Flow
+    * @param { number } spaceId spaceId
+    * @param { number } id id The ID of the transaction for which the charge flow should be canceled.
+    * @param {*} [options] Override http request options.
+    * @return {  Transaction  }
+    */
+    ChargeFlowService.prototype.cancelChargeFlow = function (spaceId, id, options) {
+        if (options === void 0) { options = {}; }
+        var localVarQueryParameters = {};
+        var localVarHeaderParams = {};
+        var localVarFormParams = {};
+        // verify required parameter 'spaceId' is not null or undefined
+        if (spaceId === null || spaceId === undefined) {
+            throw new Error("Required parameter spaceId was null or undefined when calling cancelChargeFlow.");
+        }
+        // verify required parameter 'id' is not null or undefined
+        if (id === null || id === undefined) {
+            throw new Error("Required parameter id was null or undefined when calling cancelChargeFlow.");
+        }
+        if (spaceId !== undefined) {
+            localVarQueryParameters["spaceId"] = ObjectSerializer.serialize(spaceId, "number");
+        }
+        if (id !== undefined) {
+            localVarQueryParameters["id"] = ObjectSerializer.serialize(id, "number");
+        }
+        for (var optionsHeadersKey in options.headers) {
+            if (options.headers.hasOwnProperty(optionsHeadersKey)) {
+                localVarHeaderParams[optionsHeadersKey] = options.headers[optionsHeadersKey];
+            }
+        }
+        var localVarUseFormData = false;
+        var localVarRequestOptions = {
+            method: "POST",
+            queryString: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            useQuerystring: this._useQuerystring,
+            url: this.basePath,
+            path: "/charge-flow/cancel-charge-flow",
+            contentType: "application/json",
+            form: {},
+            formData: {}
+        };
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                localVarRequestOptions.formData = localVarFormParams;
+            }
+            else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+        // dw.net.HTTPClient
+        var response = this.httpService.callApi(localVarRequestOptions);
+        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+            var body = response.text;
+            if (ObjectSerializer.primitives.indexOf("Transaction".toLowerCase()) !== -1) {
+                return body;
+            }
+            try {
+                body = JSON.parse(body);
+                body = ObjectSerializer.deserialize(body, "Transaction");
+            }
+            catch (e) {
+                dw.system.Logger.error("wallee > ChargeFlowService > cancelChargeFlow > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
+            }
+            return body;
+        }
+        else {
+            var error = {
+                type: "Unknown",
+                date: (new Date()).toUTCString(),
+                statusCode: response.statusCode,
+                statusMessage: response.statusMessage,
+                errorText: response.errorText
+            };
+            if (response.statusCode && response.statusCode >= 400 && response.statusCode <= 499) {
+                error.type = "ClientError";
+            }
+            else if (response.statusCode && response.statusCode >= 500 && response.statusCode <= 599) {
+                error.type = "ServerError";
+            }
+            throw new Error("wallee > ChargeFlowService > cancelChargeFlow > " + error.type + " > " + JSON.stringify(error));
+        }
+    };
+    /**
     * Counts the number of items in the database as restricted by the given filter.
     * @summary Count
     * @param { number } spaceId spaceId
@@ -184,6 +269,91 @@ var ChargeFlowService = /** @class */ (function () {
                 error.type = "ServerError";
             }
             throw new Error("wallee > ChargeFlowService > count > " + error.type + " > " + JSON.stringify(error));
+        }
+    };
+    /**
+    * This operation allows to fetch the payment page URL that is been applied on the charge flow linked with the provided transaction. The operation might return an empty result when no payment page is needed or can be invoked.
+    * @summary Fetch Charge Flow Payment Page URL
+    * @param { number } spaceId spaceId
+    * @param { number } id id The transaction id of the transaction for which the URL of the charge flow should be fetched.
+    * @param {*} [options] Override http request options.
+    * @return {  string  }
+    */
+    ChargeFlowService.prototype.fetchChargeFlowPaymentPageUrl = function (spaceId, id, options) {
+        if (options === void 0) { options = {}; }
+        var localVarQueryParameters = {};
+        var localVarHeaderParams = {};
+        var localVarFormParams = {};
+        // verify required parameter 'spaceId' is not null or undefined
+        if (spaceId === null || spaceId === undefined) {
+            throw new Error("Required parameter spaceId was null or undefined when calling fetchChargeFlowPaymentPageUrl.");
+        }
+        // verify required parameter 'id' is not null or undefined
+        if (id === null || id === undefined) {
+            throw new Error("Required parameter id was null or undefined when calling fetchChargeFlowPaymentPageUrl.");
+        }
+        if (spaceId !== undefined) {
+            localVarQueryParameters["spaceId"] = ObjectSerializer.serialize(spaceId, "number");
+        }
+        if (id !== undefined) {
+            localVarQueryParameters["id"] = ObjectSerializer.serialize(id, "number");
+        }
+        for (var optionsHeadersKey in options.headers) {
+            if (options.headers.hasOwnProperty(optionsHeadersKey)) {
+                localVarHeaderParams[optionsHeadersKey] = options.headers[optionsHeadersKey];
+            }
+        }
+        var localVarUseFormData = false;
+        var localVarRequestOptions = {
+            method: "GET",
+            queryString: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            useQuerystring: this._useQuerystring,
+            url: this.basePath,
+            path: "/charge-flow/fetch-charge-flow-payment-page-url",
+            contentType: "application/json",
+            form: {},
+            formData: {}
+        };
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                localVarRequestOptions.formData = localVarFormParams;
+            }
+            else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+        // dw.net.HTTPClient
+        var response = this.httpService.callApi(localVarRequestOptions);
+        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+            var body = response.text;
+            if (ObjectSerializer.primitives.indexOf("string".toLowerCase()) !== -1) {
+                return body;
+            }
+            try {
+                body = JSON.parse(body);
+                body = ObjectSerializer.deserialize(body, "string");
+            }
+            catch (e) {
+                dw.system.Logger.error("wallee > ChargeFlowService > fetchChargeFlowPaymentPageUrl > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
+            }
+            return body;
+        }
+        else {
+            var error = {
+                type: "Unknown",
+                date: (new Date()).toUTCString(),
+                statusCode: response.statusCode,
+                statusMessage: response.statusMessage,
+                errorText: response.errorText
+            };
+            if (response.statusCode && response.statusCode >= 400 && response.statusCode <= 499) {
+                error.type = "ClientError";
+            }
+            else if (response.statusCode && response.statusCode >= 500 && response.statusCode <= 599) {
+                error.type = "ServerError";
+            }
+            throw new Error("wallee > ChargeFlowService > fetchChargeFlowPaymentPageUrl > " + error.type + " > " + JSON.stringify(error));
         }
     };
     /**

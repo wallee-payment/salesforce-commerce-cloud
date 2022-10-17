@@ -14,6 +14,11 @@ var TransactionCompletionRequest = /** @class */ (function () {
             "type": "string"
         },
         {
+            "name": "invoiceMerchantReference",
+            "baseName": "invoiceMerchantReference",
+            "type": "string"
+        },
+        {
             "name": "lastCompletion",
             "baseName": "lastCompletion",
             "type": "boolean"
@@ -22,6 +27,11 @@ var TransactionCompletionRequest = /** @class */ (function () {
             "name": "lineItems",
             "baseName": "lineItems",
             "type": "Array<CompletionLineItemCreate>"
+        },
+        {
+            "name": "statementDescriptor",
+            "baseName": "statementDescriptor",
+            "type": "string"
         },
         {
             "name": "transactionId",

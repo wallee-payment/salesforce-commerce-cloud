@@ -6,5 +6,6 @@ var LineItemType;
     LineItemType["DISCOUNT"] = "DISCOUNT";
     LineItemType["FEE"] = "FEE";
     LineItemType["PRODUCT"] = "PRODUCT";
+    LineItemType["TIP"] = "TIP";
 })(LineItemType = exports.LineItemType || (exports.LineItemType = {}));
 module.exports = LineItemType;

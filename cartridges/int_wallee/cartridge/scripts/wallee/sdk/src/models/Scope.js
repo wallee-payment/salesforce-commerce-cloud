@@ -24,6 +24,11 @@ var Scope = /** @class */ (function () {
             "type": "number"
         },
         {
+            "name": "machineName",
+            "baseName": "machineName",
+            "type": "string"
+        },
+        {
             "name": "name",
             "baseName": "name",
             "type": "string"

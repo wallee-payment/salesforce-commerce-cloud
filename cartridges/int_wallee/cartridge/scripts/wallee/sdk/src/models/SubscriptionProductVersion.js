@@ -104,6 +104,11 @@ var SubscriptionProductVersion = /** @class */ (function () {
             "type": "SubscriptionProductVersionState"
         },
         {
+            "name": "taxCalculation",
+            "baseName": "taxCalculation",
+            "type": "TaxCalculation"
+        },
+        {
             "name": "version",
             "baseName": "version",
             "type": "number"

@@ -62,6 +62,11 @@ var SubscriptionProductVersionPending = /** @class */ (function () {
             "name": "state",
             "baseName": "state",
             "type": "SubscriptionProductVersionState"
+        },
+        {
+            "name": "taxCalculation",
+            "baseName": "taxCalculation",
+            "type": "TaxCalculation"
         }
     ];
     return SubscriptionProductVersionPending;

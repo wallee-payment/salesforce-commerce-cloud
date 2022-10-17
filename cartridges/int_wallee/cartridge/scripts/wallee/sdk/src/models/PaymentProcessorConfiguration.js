@@ -9,6 +9,11 @@ var PaymentProcessorConfiguration = /** @class */ (function () {
     PaymentProcessorConfiguration.discriminator = undefined;
     PaymentProcessorConfiguration.attributeTypeMap = [
         {
+            "name": "applicationManaged",
+            "baseName": "applicationManaged",
+            "type": "boolean"
+        },
+        {
             "name": "contractId",
             "baseName": "contractId",
             "type": "number"

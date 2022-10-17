@@ -23,8 +23,6 @@ var Transaction = require("../models/Transaction");
 // @ts-ignore
 var TransactionCreate = require("../models/TransactionCreate");
 // @ts-ignore
-var TransactionLineItemUpdateRequest = require("../models/TransactionLineItemUpdateRequest");
-// @ts-ignore
 var TransactionLineItemVersion = require("../models/TransactionLineItemVersion");
 // @ts-ignore
 var TransactionPending = require("../models/TransactionPending");
@@ -612,21 +610,26 @@ var TransactionService = /** @class */ (function () {
     * @summary Fetch Possible Payment Methods
     * @param { number } spaceId spaceId
     * @param { number } id id The id of the transaction which should be returned.
+    * @param { string } integrationMode integrationMode The integration mode defines the type of integration that is applied on the transaction.
     * @param {*} [options] Override http request options.
     * @return {  Array<PaymentMethodConfiguration>  }
     */
-    TransactionService.prototype.fetchPossiblePaymentMethods = function (spaceId, id, options) {
+    TransactionService.prototype.fetchPaymentMethods = function (spaceId, id, integrationMode, options) {
         if (options === void 0) { options = {}; }
         var localVarQueryParameters = {};
         var localVarHeaderParams = {};
         var localVarFormParams = {};
         // verify required parameter 'spaceId' is not null or undefined
         if (spaceId === null || spaceId === undefined) {
-            throw new Error("Required parameter spaceId was null or undefined when calling fetchPossiblePaymentMethods.");
+            throw new Error("Required parameter spaceId was null or undefined when calling fetchPaymentMethods.");
         }
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
-            throw new Error("Required parameter id was null or undefined when calling fetchPossiblePaymentMethods.");
+            throw new Error("Required parameter id was null or undefined when calling fetchPaymentMethods.");
+        }
+        // verify required parameter 'integrationMode' is not null or undefined
+        if (integrationMode === null || integrationMode === undefined) {
+            throw new Error("Required parameter integrationMode was null or undefined when calling fetchPaymentMethods.");
         }
         if (spaceId !== undefined) {
             localVarQueryParameters["spaceId"] = ObjectSerializer.serialize(spaceId, "number");
@@ -634,6 +637,9 @@ var TransactionService = /** @class */ (function () {
         if (id !== undefined) {
             localVarQueryParameters["id"] = ObjectSerializer.serialize(id, "number");
         }
+        if (integrationMode !== undefined) {
+            localVarQueryParameters["integrationMode"] = ObjectSerializer.serialize(integrationMode, "string");
+        }
         for (var optionsHeadersKey in options.headers) {
             if (options.headers.hasOwnProperty(optionsHeadersKey)) {
                 localVarHeaderParams[optionsHeadersKey] = options.headers[optionsHeadersKey];
@@ -646,7 +652,7 @@ var TransactionService = /** @class */ (function () {
             headers: localVarHeaderParams,
             useQuerystring: this._useQuerystring,
             url: this.basePath,
-            path: "/transaction/fetchPossiblePaymentMethods",
+            path: "/transaction/fetch-payment-methods",
             contentType: "application/json",
             form: {},
             formData: {}
@@ -671,7 +677,7 @@ var TransactionService = /** @class */ (function () {
                 body = ObjectSerializer.deserialize(body, "Array<PaymentMethodConfiguration>");
             }
             catch (e) {
-                dw.system.Logger.error("wallee > TransactionService > fetchPossiblePaymentMethods > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
+                dw.system.Logger.error("wallee > TransactionService > fetchPaymentMethods > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
             }
             return body;
         }
@@ -689,27 +695,35 @@ var TransactionService = /** @class */ (function () {
             else if (response.statusCode && response.statusCode >= 500 && response.statusCode <= 599) {
                 error.type = "ServerError";
             }
-            throw new Error("wallee > TransactionService > fetchPossiblePaymentMethods > " + error.type + " > " + JSON.stringify(error));
+            throw new Error("wallee > TransactionService > fetchPaymentMethods > " + error.type + " > " + JSON.stringify(error));
         }
     };
     /**
     * This operation allows to get the payment method configurations which can be used with the provided transaction.
     * @summary Fetch Possible Payment Methods with Credentials
     * @param { string } credentials credentials The credentials identifies the transaction and contains the security details which grants the access this operation.
+    * @param { string } integrationMode integrationMode The integration mode defines the type of integration that is applied on the transaction.
     * @param {*} [options] Override http request options.
     * @return {  Array<PaymentMethodConfiguration>  }
     */
-    TransactionService.prototype.fetchPossiblePaymentMethodsWithCredentials = function (credentials, options) {
+    TransactionService.prototype.fetchPaymentMethodsWithCredentials = function (credentials, integrationMode, options) {
         if (options === void 0) { options = {}; }
         var localVarQueryParameters = {};
         var localVarHeaderParams = {};
         var localVarFormParams = {};
         // verify required parameter 'credentials' is not null or undefined
         if (credentials === null || credentials === undefined) {
-            throw new Error("Required parameter credentials was null or undefined when calling fetchPossiblePaymentMethodsWithCredentials.");
+            throw new Error("Required parameter credentials was null or undefined when calling fetchPaymentMethodsWithCredentials.");
+        }
+        // verify required parameter 'integrationMode' is not null or undefined
+        if (integrationMode === null || integrationMode === undefined) {
+            throw new Error("Required parameter integrationMode was null or undefined when calling fetchPaymentMethodsWithCredentials.");
         }
         if (credentials !== undefined) {
             localVarQueryParameters["credentials"] = ObjectSerializer.serialize(credentials, "string");
+        }
+        if (integrationMode !== undefined) {
+            localVarQueryParameters["integrationMode"] = ObjectSerializer.serialize(integrationMode, "string");
         }
         for (var optionsHeadersKey in options.headers) {
             if (options.headers.hasOwnProperty(optionsHeadersKey)) {
@@ -723,7 +737,7 @@ var TransactionService = /** @class */ (function () {
             headers: localVarHeaderParams,
             useQuerystring: this._useQuerystring,
             url: this.basePath,
-            path: "/transaction/fetchPossiblePaymentMethodsWithCredentials",
+            path: "/transaction/fetch-payment-methods-with-credentials",
             contentType: "application/json",
             form: {},
             formData: {}
@@ -748,7 +762,7 @@ var TransactionService = /** @class */ (function () {
                 body = ObjectSerializer.deserialize(body, "Array<PaymentMethodConfiguration>");
             }
             catch (e) {
-                dw.system.Logger.error("wallee > TransactionService > fetchPossiblePaymentMethodsWithCredentials > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
+                dw.system.Logger.error("wallee > TransactionService > fetchPaymentMethodsWithCredentials > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
             }
             return body;
         }
@@ -766,7 +780,7 @@ var TransactionService = /** @class */ (function () {
             else if (response.statusCode && response.statusCode >= 500 && response.statusCode <= 599) {
                 error.type = "ServerError";
             }
-            throw new Error("wallee > TransactionService > fetchPossiblePaymentMethodsWithCredentials > " + error.type + " > " + JSON.stringify(error));
+            throw new Error("wallee > TransactionService > fetchPaymentMethodsWithCredentials > " + error.type + " > " + JSON.stringify(error));
         }
     };
     /**
@@ -856,7 +870,7 @@ var TransactionService = /** @class */ (function () {
     };
     /**
     *
-    * @summary getLatestTransactionLineItemVersion
+    * @summary getLatestSuccessfulTransactionLineItemVersion
     * @param { number } spaceId spaceId
     * @param { number } id id The id of the transaction to get the latest line item version for.
     * @param {*} [options] Override http request options.
@@ -1520,89 +1534,6 @@ var TransactionService = /** @class */ (function () {
                 error.type = "ServerError";
             }
             throw new Error("wallee > TransactionService > update > " + error.type + " > " + JSON.stringify(error));
-        }
-    };
-    /**
-    *
-    * @summary updateTransactionLineItems
-    * @param { number } spaceId spaceId
-    * @param { TransactionLineItemUpdateRequest } updateRequest updateRequest
-    * @param {*} [options] Override http request options.
-    * @return {  TransactionLineItemVersion  }
-    */
-    TransactionService.prototype.updateTransactionLineItems = function (spaceId, updateRequest, options) {
-        if (options === void 0) { options = {}; }
-        var localVarQueryParameters = {};
-        var localVarHeaderParams = {};
-        var localVarFormParams = {};
-        // verify required parameter 'spaceId' is not null or undefined
-        if (spaceId === null || spaceId === undefined) {
-            throw new Error("Required parameter spaceId was null or undefined when calling updateTransactionLineItems.");
-        }
-        // verify required parameter 'updateRequest' is not null or undefined
-        if (updateRequest === null || updateRequest === undefined) {
-            throw new Error("Required parameter updateRequest was null or undefined when calling updateTransactionLineItems.");
-        }
-        if (spaceId !== undefined) {
-            localVarQueryParameters["spaceId"] = ObjectSerializer.serialize(spaceId, "number");
-        }
-        for (var optionsHeadersKey in options.headers) {
-            if (options.headers.hasOwnProperty(optionsHeadersKey)) {
-                localVarHeaderParams[optionsHeadersKey] = options.headers[optionsHeadersKey];
-            }
-        }
-        var localVarUseFormData = false;
-        var localVarRequestOptions = {
-            method: "POST",
-            queryString: localVarQueryParameters,
-            headers: localVarHeaderParams,
-            useQuerystring: this._useQuerystring,
-            url: this.basePath,
-            path: "/transaction/updateTransactionLineItems",
-            contentType: "application/json",
-            body: JSON.stringify(ObjectSerializer.serialize(updateRequest, "TransactionLineItemUpdateRequest")),
-            form: {},
-            formData: {}
-        };
-        if (Object.keys(localVarFormParams).length) {
-            if (localVarUseFormData) {
-                localVarRequestOptions.formData = localVarFormParams;
-            }
-            else {
-                localVarRequestOptions.form = localVarFormParams;
-            }
-        }
-        // dw.net.HTTPClient
-        var response = this.httpService.callApi(localVarRequestOptions);
-        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-            var body = response.text;
-            if (ObjectSerializer.primitives.indexOf("TransactionLineItemVersion".toLowerCase()) !== -1) {
-                return body;
-            }
-            try {
-                body = JSON.parse(body);
-                body = ObjectSerializer.deserialize(body, "TransactionLineItemVersion");
-            }
-            catch (e) {
-                dw.system.Logger.error("wallee > TransactionService > updateTransactionLineItems > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
-            }
-            return body;
-        }
-        else {
-            var error = {
-                type: "Unknown",
-                date: (new Date()).toUTCString(),
-                statusCode: response.statusCode,
-                statusMessage: response.statusMessage,
-                errorText: response.errorText
-            };
-            if (response.statusCode && response.statusCode >= 400 && response.statusCode <= 499) {
-                error.type = "ClientError";
-            }
-            else if (response.statusCode && response.statusCode >= 500 && response.statusCode <= 599) {
-                error.type = "ServerError";
-            }
-            throw new Error("wallee > TransactionService > updateTransactionLineItems > " + error.type + " > " + JSON.stringify(error));
         }
     };
     return TransactionService;

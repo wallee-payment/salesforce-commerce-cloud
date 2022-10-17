@@ -24,6 +24,11 @@ var AbstractSubscriptionProductActive = /** @class */ (function () {
             "type": "string"
         },
         {
+            "name": "productLocked",
+            "baseName": "productLocked",
+            "type": "boolean"
+        },
+        {
             "name": "sortOrder",
             "baseName": "sortOrder",
             "type": "number"

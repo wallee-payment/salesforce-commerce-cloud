@@ -21,7 +21,7 @@ var Transaction = /** @class */ (function () {
         {
             "name": "allowedPaymentMethodBrands",
             "baseName": "allowedPaymentMethodBrands",
-            "type": "Array<PaymentMethodBrand>"
+            "type": "Array<number>"
         },
         {
             "name": "allowedPaymentMethodConfigurations",
@@ -37,6 +37,11 @@ var Transaction = /** @class */ (function () {
             "name": "authorizationEnvironment",
             "baseName": "authorizationEnvironment",
             "type": "ChargeAttemptEnvironment"
+        },
+        {
+            "name": "authorizationSalesChannel",
+            "baseName": "authorizationSalesChannel",
+            "type": "number"
         },
         {
             "name": "authorizationTimeoutOn",
@@ -72,6 +77,11 @@ var Transaction = /** @class */ (function () {
             "name": "completedOn",
             "baseName": "completedOn",
             "type": "Date"
+        },
+        {
+            "name": "completionBehavior",
+            "baseName": "completionBehavior",
+            "type": "TransactionCompletionBehavior"
         },
         {
             "name": "completionTimeoutOn",
@@ -129,6 +139,11 @@ var Transaction = /** @class */ (function () {
             "type": "string"
         },
         {
+            "name": "emailsDisabled",
+            "baseName": "emailsDisabled",
+            "type": "boolean"
+        },
+        {
             "name": "endOfLife",
             "baseName": "endOfLife",
             "type": "Date"
@@ -184,6 +199,11 @@ var Transaction = /** @class */ (function () {
             "type": "string"
         },
         {
+            "name": "javaEnabled",
+            "baseName": "javaEnabled",
+            "type": "boolean"
+        },
+        {
             "name": "language",
             "baseName": "language",
             "type": "string"
@@ -234,6 +254,21 @@ var Transaction = /** @class */ (function () {
             "type": "number"
         },
         {
+            "name": "screenColorDepth",
+            "baseName": "screenColorDepth",
+            "type": "string"
+        },
+        {
+            "name": "screenHeight",
+            "baseName": "screenHeight",
+            "type": "string"
+        },
+        {
+            "name": "screenWidth",
+            "baseName": "screenWidth",
+            "type": "string"
+        },
+        {
             "name": "shippingAddress",
             "baseName": "shippingAddress",
             "type": "Address"
@@ -259,6 +294,11 @@ var Transaction = /** @class */ (function () {
             "type": "string"
         },
         {
+            "name": "terminal",
+            "baseName": "terminal",
+            "type": "PaymentTerminal"
+        },
+        {
             "name": "timeZone",
             "baseName": "timeZone",
             "type": "string"
@@ -272,6 +312,16 @@ var Transaction = /** @class */ (function () {
             "name": "tokenizationMode",
             "baseName": "tokenizationMode",
             "type": "TokenizationMode"
+        },
+        {
+            "name": "totalAppliedFees",
+            "baseName": "totalAppliedFees",
+            "type": "number"
+        },
+        {
+            "name": "totalSettledAmount",
+            "baseName": "totalSettledAmount",
+            "type": "number"
         },
         {
             "name": "userAgentHeader",
@@ -291,6 +341,21 @@ var Transaction = /** @class */ (function () {
         {
             "name": "version",
             "baseName": "version",
+            "type": "number"
+        },
+        {
+            "name": "windowHeight",
+            "baseName": "windowHeight",
+            "type": "string"
+        },
+        {
+            "name": "windowWidth",
+            "baseName": "windowWidth",
+            "type": "string"
+        },
+        {
+            "name": "yearsToKeep",
+            "baseName": "yearsToKeep",
             "type": "number"
         }
     ];

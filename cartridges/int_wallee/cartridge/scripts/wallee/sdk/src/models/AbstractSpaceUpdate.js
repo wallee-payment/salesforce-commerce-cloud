@@ -9,6 +9,11 @@ var AbstractSpaceUpdate = /** @class */ (function () {
     AbstractSpaceUpdate.discriminator = undefined;
     AbstractSpaceUpdate.attributeTypeMap = [
         {
+            "name": "lastModifiedDate",
+            "baseName": "lastModifiedDate",
+            "type": "Date"
+        },
+        {
             "name": "name",
             "baseName": "name",
             "type": "string"

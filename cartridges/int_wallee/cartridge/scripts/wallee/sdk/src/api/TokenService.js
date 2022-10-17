@@ -3,6 +3,8 @@
 /* global dw empty */
 var ObjectSerializer = require("../serializers/ObjectSerializer");
 // @ts-ignore
+var Charge = require("../models/Charge");
+// @ts-ignore
 var ClientError = require("../models/ClientError");
 // @ts-ignore
 var EntityQuery = require("../models/EntityQuery");
@@ -16,6 +18,8 @@ var Token = require("../models/Token");
 var TokenCreate = require("../models/TokenCreate");
 // @ts-ignore
 var TokenUpdate = require("../models/TokenUpdate");
+// @ts-ignore
+var TokenVersion = require("../models/TokenVersion");
 // @ts-ignore
 var Transaction = require("../models/Transaction");
 var TokenService = /** @class */ (function () {
@@ -103,6 +107,91 @@ var TokenService = /** @class */ (function () {
                 error.type = "ServerError";
             }
             throw new Error("wallee > TokenService > _delete > " + error.type + " > " + JSON.stringify(error));
+        }
+    };
+    /**
+    * This operation checks if the given transaction can be used to create a token out of it.
+    * @summary Check If Token Creation Is Possible
+    * @param { number } spaceId spaceId
+    * @param { number } transactionId transactionId The id of the transaction for which we want to check if the token can be created or not.
+    * @param {*} [options] Override http request options.
+    * @return {  boolean  }
+    */
+    TokenService.prototype.checkTokenCreationPossible = function (spaceId, transactionId, options) {
+        if (options === void 0) { options = {}; }
+        var localVarQueryParameters = {};
+        var localVarHeaderParams = {};
+        var localVarFormParams = {};
+        // verify required parameter 'spaceId' is not null or undefined
+        if (spaceId === null || spaceId === undefined) {
+            throw new Error("Required parameter spaceId was null or undefined when calling checkTokenCreationPossible.");
+        }
+        // verify required parameter 'transactionId' is not null or undefined
+        if (transactionId === null || transactionId === undefined) {
+            throw new Error("Required parameter transactionId was null or undefined when calling checkTokenCreationPossible.");
+        }
+        if (spaceId !== undefined) {
+            localVarQueryParameters["spaceId"] = ObjectSerializer.serialize(spaceId, "number");
+        }
+        if (transactionId !== undefined) {
+            localVarQueryParameters["transactionId"] = ObjectSerializer.serialize(transactionId, "number");
+        }
+        for (var optionsHeadersKey in options.headers) {
+            if (options.headers.hasOwnProperty(optionsHeadersKey)) {
+                localVarHeaderParams[optionsHeadersKey] = options.headers[optionsHeadersKey];
+            }
+        }
+        var localVarUseFormData = false;
+        var localVarRequestOptions = {
+            method: "POST",
+            queryString: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            useQuerystring: this._useQuerystring,
+            url: this.basePath,
+            path: "/token/check-token-creation-possible",
+            contentType: "application/json",
+            form: {},
+            formData: {}
+        };
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                localVarRequestOptions.formData = localVarFormParams;
+            }
+            else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+        // dw.net.HTTPClient
+        var response = this.httpService.callApi(localVarRequestOptions);
+        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+            var body = response.text;
+            if (ObjectSerializer.primitives.indexOf("boolean".toLowerCase()) !== -1) {
+                return body;
+            }
+            try {
+                body = JSON.parse(body);
+                body = ObjectSerializer.deserialize(body, "boolean");
+            }
+            catch (e) {
+                dw.system.Logger.error("wallee > TokenService > checkTokenCreationPossible > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
+            }
+            return body;
+        }
+        else {
+            var error = {
+                type: "Unknown",
+                date: (new Date()).toUTCString(),
+                statusCode: response.statusCode,
+                statusMessage: response.statusMessage,
+                errorText: response.errorText
+            };
+            if (response.statusCode && response.statusCode >= 400 && response.statusCode <= 499) {
+                error.type = "ClientError";
+            }
+            else if (response.statusCode && response.statusCode >= 500 && response.statusCode <= 599) {
+                error.type = "ServerError";
+            }
+            throw new Error("wallee > TokenService > checkTokenCreationPossible > " + error.type + " > " + JSON.stringify(error));
         }
     };
     /**
@@ -268,6 +357,91 @@ var TokenService = /** @class */ (function () {
         }
     };
     /**
+    * This operation creates a token for the given transaction and fills it with the stored payment information of the transaction.
+    * @summary Create Token Based On Transaction
+    * @param { number } spaceId spaceId
+    * @param { number } transactionId transactionId The id of the transaction for which we want to create the token.
+    * @param {*} [options] Override http request options.
+    * @return {  TokenVersion  }
+    */
+    TokenService.prototype.createTokenBasedOnTransaction = function (spaceId, transactionId, options) {
+        if (options === void 0) { options = {}; }
+        var localVarQueryParameters = {};
+        var localVarHeaderParams = {};
+        var localVarFormParams = {};
+        // verify required parameter 'spaceId' is not null or undefined
+        if (spaceId === null || spaceId === undefined) {
+            throw new Error("Required parameter spaceId was null or undefined when calling createTokenBasedOnTransaction.");
+        }
+        // verify required parameter 'transactionId' is not null or undefined
+        if (transactionId === null || transactionId === undefined) {
+            throw new Error("Required parameter transactionId was null or undefined when calling createTokenBasedOnTransaction.");
+        }
+        if (spaceId !== undefined) {
+            localVarQueryParameters["spaceId"] = ObjectSerializer.serialize(spaceId, "number");
+        }
+        if (transactionId !== undefined) {
+            localVarQueryParameters["transactionId"] = ObjectSerializer.serialize(transactionId, "number");
+        }
+        for (var optionsHeadersKey in options.headers) {
+            if (options.headers.hasOwnProperty(optionsHeadersKey)) {
+                localVarHeaderParams[optionsHeadersKey] = options.headers[optionsHeadersKey];
+            }
+        }
+        var localVarUseFormData = false;
+        var localVarRequestOptions = {
+            method: "POST",
+            queryString: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            useQuerystring: this._useQuerystring,
+            url: this.basePath,
+            path: "/token/create-token-based-on-transaction",
+            contentType: "application/json",
+            form: {},
+            formData: {}
+        };
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                localVarRequestOptions.formData = localVarFormParams;
+            }
+            else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+        // dw.net.HTTPClient
+        var response = this.httpService.callApi(localVarRequestOptions);
+        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+            var body = response.text;
+            if (ObjectSerializer.primitives.indexOf("TokenVersion".toLowerCase()) !== -1) {
+                return body;
+            }
+            try {
+                body = JSON.parse(body);
+                body = ObjectSerializer.deserialize(body, "TokenVersion");
+            }
+            catch (e) {
+                dw.system.Logger.error("wallee > TokenService > createTokenBasedOnTransaction > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
+            }
+            return body;
+        }
+        else {
+            var error = {
+                type: "Unknown",
+                date: (new Date()).toUTCString(),
+                statusCode: response.statusCode,
+                statusMessage: response.statusMessage,
+                errorText: response.errorText
+            };
+            if (response.statusCode && response.statusCode >= 400 && response.statusCode <= 499) {
+                error.type = "ClientError";
+            }
+            else if (response.statusCode && response.statusCode >= 500 && response.statusCode <= 599) {
+                error.type = "ServerError";
+            }
+            throw new Error("wallee > TokenService > createTokenBasedOnTransaction > " + error.type + " > " + JSON.stringify(error));
+        }
+    };
+    /**
     * This operation creates a transaction which allows the updating of the provided token.
     * @summary Create Transaction for Token Update
     * @param { number } spaceId spaceId
@@ -350,6 +524,91 @@ var TokenService = /** @class */ (function () {
                 error.type = "ServerError";
             }
             throw new Error("wallee > TokenService > createTransactionForTokenUpdate > " + error.type + " > " + JSON.stringify(error));
+        }
+    };
+    /**
+    * This operation processes the given transaction by using the token associated with the transaction.
+    * @summary Process Transaction
+    * @param { number } spaceId spaceId
+    * @param { number } transactionId transactionId The id of the transaction for which we want to check if the token can be created or not.
+    * @param {*} [options] Override http request options.
+    * @return {  Charge  }
+    */
+    TokenService.prototype.processTransaction = function (spaceId, transactionId, options) {
+        if (options === void 0) { options = {}; }
+        var localVarQueryParameters = {};
+        var localVarHeaderParams = {};
+        var localVarFormParams = {};
+        // verify required parameter 'spaceId' is not null or undefined
+        if (spaceId === null || spaceId === undefined) {
+            throw new Error("Required parameter spaceId was null or undefined when calling processTransaction.");
+        }
+        // verify required parameter 'transactionId' is not null or undefined
+        if (transactionId === null || transactionId === undefined) {
+            throw new Error("Required parameter transactionId was null or undefined when calling processTransaction.");
+        }
+        if (spaceId !== undefined) {
+            localVarQueryParameters["spaceId"] = ObjectSerializer.serialize(spaceId, "number");
+        }
+        if (transactionId !== undefined) {
+            localVarQueryParameters["transactionId"] = ObjectSerializer.serialize(transactionId, "number");
+        }
+        for (var optionsHeadersKey in options.headers) {
+            if (options.headers.hasOwnProperty(optionsHeadersKey)) {
+                localVarHeaderParams[optionsHeadersKey] = options.headers[optionsHeadersKey];
+            }
+        }
+        var localVarUseFormData = false;
+        var localVarRequestOptions = {
+            method: "POST",
+            queryString: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            useQuerystring: this._useQuerystring,
+            url: this.basePath,
+            path: "/token/process-transaction",
+            contentType: "application/json",
+            form: {},
+            formData: {}
+        };
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                localVarRequestOptions.formData = localVarFormParams;
+            }
+            else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+        // dw.net.HTTPClient
+        var response = this.httpService.callApi(localVarRequestOptions);
+        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+            var body = response.text;
+            if (ObjectSerializer.primitives.indexOf("Charge".toLowerCase()) !== -1) {
+                return body;
+            }
+            try {
+                body = JSON.parse(body);
+                body = ObjectSerializer.deserialize(body, "Charge");
+            }
+            catch (e) {
+                dw.system.Logger.error("wallee > TokenService > processTransaction > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
+            }
+            return body;
+        }
+        else {
+            var error = {
+                type: "Unknown",
+                date: (new Date()).toUTCString(),
+                statusCode: response.statusCode,
+                statusMessage: response.statusMessage,
+                errorText: response.errorText
+            };
+            if (response.statusCode && response.statusCode >= 400 && response.statusCode <= 499) {
+                error.type = "ClientError";
+            }
+            else if (response.statusCode && response.statusCode >= 500 && response.statusCode <= 599) {
+                error.type = "ServerError";
+            }
+            throw new Error("wallee > TokenService > processTransaction > " + error.type + " > " + JSON.stringify(error));
         }
     };
     /**

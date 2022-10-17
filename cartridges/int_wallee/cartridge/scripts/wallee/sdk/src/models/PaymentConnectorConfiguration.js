@@ -24,6 +24,11 @@ var PaymentConnectorConfiguration = /** @class */ (function () {
             "type": "number"
         },
         {
+            "name": "enabledSalesChannels",
+            "baseName": "enabledSalesChannels",
+            "type": "Array<SalesChannel>"
+        },
+        {
             "name": "enabledSpaceViews",
             "baseName": "enabledSpaceViews",
             "type": "Array<number>"

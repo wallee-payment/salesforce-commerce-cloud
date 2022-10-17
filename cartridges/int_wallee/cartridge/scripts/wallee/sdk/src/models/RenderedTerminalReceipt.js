@@ -17,6 +17,16 @@ var RenderedTerminalReceipt = /** @class */ (function () {
             "name": "mimeType",
             "baseName": "mimeType",
             "type": "string"
+        },
+        {
+            "name": "printed",
+            "baseName": "printed",
+            "type": "boolean"
+        },
+        {
+            "name": "receiptType",
+            "baseName": "receiptType",
+            "type": "PaymentTerminalReceiptType"
         }
     ];
     return RenderedTerminalReceipt;

@@ -39,18 +39,28 @@ var SpaceAddress = /** @class */ (function () {
             "type": "string"
         },
         {
+            "name": "mobilePhoneNumber",
+            "baseName": "mobilePhoneNumber",
+            "type": "string"
+        },
+        {
             "name": "organizationName",
             "baseName": "organizationName",
             "type": "string"
         },
         {
-            "name": "postCode",
-            "baseName": "postCode",
+            "name": "phoneNumber",
+            "baseName": "phoneNumber",
             "type": "string"
         },
         {
             "name": "postalState",
             "baseName": "postalState",
+            "type": "string"
+        },
+        {
+            "name": "postcode",
+            "baseName": "postcode",
             "type": "string"
         },
         {

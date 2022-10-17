@@ -9,14 +9,9 @@ var PaymentTerminalLocation = /** @class */ (function () {
     PaymentTerminalLocation.discriminator = undefined;
     PaymentTerminalLocation.attributeTypeMap = [
         {
-            "name": "defaultConfiguration",
-            "baseName": "defaultConfiguration",
-            "type": "PaymentTerminalConfiguration"
-        },
-        {
-            "name": "deliveryAddress",
-            "baseName": "deliveryAddress",
-            "type": "PaymentTerminalAddress"
+            "name": "externalId",
+            "baseName": "externalId",
+            "type": "string"
         },
         {
             "name": "id",

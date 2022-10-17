@@ -4,48 +4,31 @@
 var server = require("server");
 // @ts-ignore
 server.extend(module.superModule);
-var csrfProtection = require("*/cartridge/scripts/middleware/csrf");
 var TransactionHelperImport = require("~/cartridge/scripts/wallee/helpers/Transaction");
-server.prepend("SubmitPayment", server.middleware.https, csrfProtection.validateAjaxRequest, function (req, res, next) {
+var paymentMethodID = "WALLEE";
+server.prepend("SubmitPayment", function (req, res, next) {
     var data = res.getViewData();
-    if (data && data.csrfError) {
-        res.json();
-        // @ts-ignore
-        this.emit("route:Complete", req, res);
-        return;
-    }
+    var currentBasket = dw.order.BasketMgr.getCurrentBasket();
     var billingForm = server.forms.getForm("billing");
-    var paymentMethodID = "WALLEE";
-    var paymenrMethodRegex = /_handler(\d+)/gi;
+    if ((data && data.csrfError) ||
+        !currentBasket ||
+        (billingForm.paymentMethod.value !== paymentMethodID)) {
+        return next();
+    }
+    var paymentMethodRegex = /_handler(\d+)/gi;
     var AccountModel = require("*/cartridge/models/account");
     var OrderModel = require("*/cartridge/models/order");
     var COHelpers = require("*/cartridge/scripts/checkout/checkoutHelpers");
-    var currentBasket = dw.order.BasketMgr.getCurrentBasket();
-    if (billingForm.paymentMethod.value !== paymentMethodID) {
-        return next();
-    }
-    if (empty(req.form.WALLEE_handler) || (req.form.WALLEE_handler.match(paymenrMethodRegex) === null)) {
+    if (empty(req.form.WALLEE_handler) || (req.form.WALLEE_handler.match(paymentMethodRegex) === null)) {
         res.json({
             handler: {
                 handler: req.form.WALLEE_handler,
-                regex: req.form.WALLEE_handler.match(paymenrMethodRegex),
+                regex: req.form.WALLEE_handler.match(paymentMethodRegex)
             },
             form: billingForm,
             fieldErrors: [],
             serverErrors: [],
-            error: true,
-        });
-        // @ts-ignore
-        this.emit("route:Complete", req, res);
-        return;
-    }
-    if (!currentBasket) {
-        res.json({
-            error: true,
-            cartError: true,
-            fieldErrors: [],
-            serverErrors: [],
-            redirectUrl: dw.web.URLUtils.url("Cart-Show").toString(),
+            error: true
         });
         // @ts-ignore
         this.emit("route:Complete", req, res);
@@ -55,7 +38,7 @@ server.prepend("SubmitPayment", server.middleware.https, csrfProtection.validate
     // @ts-ignore
     viewData.paymentMethod = {
         value: paymentMethodID,
-        htmlName: billingForm.paymentMethod.htmlName,
+        htmlName: billingForm.paymentMethod.htmlName
     };
     var billingFormErrors = COHelpers.validateBillingForm(billingForm.addressFields);
     var contactInfoFormErrors = COHelpers.validateFields(billingForm.contactInfoFields);
@@ -65,7 +48,7 @@ server.prepend("SubmitPayment", server.middleware.https, csrfProtection.validate
             fieldErrors: [billingFormErrors, contactInfoFormErrors],
             serverErrors: [],
             error: true,
-            paymentMethod: viewData.paymentMethod,
+            paymentMethod: viewData.paymentMethod
         });
         // @ts-ignore
         this.emit("route:Complete", req, res);
@@ -74,37 +57,37 @@ server.prepend("SubmitPayment", server.middleware.https, csrfProtection.validate
     // @ts-ignore
     viewData.address = {
         firstName: {
-            value: billingForm.addressFields.firstName.value,
+            value: billingForm.addressFields.firstName.value
         },
         lastName: {
-            value: billingForm.addressFields.lastName.value,
+            value: billingForm.addressFields.lastName.value
         },
         address1: {
-            value: billingForm.addressFields.address1.value,
+            value: billingForm.addressFields.address1.value
         },
         address2: {
-            value: billingForm.addressFields.address2.value,
+            value: billingForm.addressFields.address2.value
         },
         city: {
-            value: billingForm.addressFields.city.value,
+            value: billingForm.addressFields.city.value
         },
         postalCode: {
-            value: billingForm.addressFields.postalCode.value,
+            value: billingForm.addressFields.postalCode.value
         },
         countryCode: {
-            value: billingForm.addressFields.country.value,
-        },
+            value: billingForm.addressFields.country.value
+        }
     };
     if (Object.prototype.hasOwnProperty.call(billingForm.addressFields, "states")) {
         // @ts-ignore
         viewData.address.stateCode = {
-            value: billingForm.addressFields.states.stateCode.value,
+            value: billingForm.addressFields.states.stateCode.value
         };
     }
-    var email = billingForm.contactInfoFields.email.value;
+    var email = currentBasket.getCustomerEmail();
     // @ts-ignore
     viewData.email = {
-        value: email,
+        value: email
     };
     res.setViewData(viewData);
     var billingAddress = currentBasket.billingAddress;
@@ -145,7 +128,7 @@ server.prepend("SubmitPayment", server.middleware.https, csrfProtection.validate
             form: billingForm,
             fieldErrors: [],
             serverErrors: [],
-            error: true,
+            error: true
         });
         // @ts-ignore
         this.emit("route:Complete", req, res);
@@ -157,7 +140,7 @@ server.prepend("SubmitPayment", server.middleware.https, csrfProtection.validate
     var basketModel = new OrderModel(currentBasket, {
         usingMultiShipping: usingMultiShipping,
         countryCode: currentLocale.country,
-        containerView: "basket",
+        containerView: "basket"
     });
     var accountModel = new AccountModel(req.currentCustomer);
     // The hack for MFRA renders right data in function updatePaymentInformation(order). TODO need to find better solution
@@ -175,7 +158,7 @@ server.prepend("SubmitPayment", server.middleware.https, csrfProtection.validate
         session: session.custom,
         processorResult: processorResult,
         form: billingForm,
-        error: false,
+        error: false
     });
     // @ts-ignore
     this.emit("route:Complete", req, res);
@@ -186,11 +169,10 @@ server.append("PlaceOrder", function (req, res, next) {
         var order_1 = dw.order.OrderMgr.getOrder(viewData.orderID);
         if (order_1 && order_1.getInvoiceNo()) {
             var orderPaymentInstrument = order_1.getPaymentInstruments().toArray();
-            var paymentProcessorID = "WALLEE";
             if (orderPaymentInstrument &&
                 (orderPaymentInstrument.length === 1) &&
                 orderPaymentInstrument[0].getPaymentTransaction().getPaymentProcessor().ID &&
-                (orderPaymentInstrument[0].getPaymentTransaction().getPaymentProcessor().ID === paymentProcessorID)) {
+                (orderPaymentInstrument[0].getPaymentTransaction().getPaymentProcessor().ID === paymentMethodID)) {
                 var TransactionHelper_1 = new TransactionHelperImport();
                 dw.system.Transaction.wrap(function () {
                     order_1.setExternalOrderNo(TransactionHelper_1.getId());

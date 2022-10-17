@@ -31,22 +31,66 @@ var Transaction = /** @class */ (function () {
         shippingLineItem.uniqueId = Wallee.model.LineItemType.SHIPPING + "-" + dw.util.UUIDUtils.createUUID();
         shippingLineItem.sku = Wallee.model.LineItemType.SHIPPING;
         shippingLineItem.quantity = 1;
-        shippingLineItem.amountIncludingTax = (this.currentBasket.shippingTotalPrice.getValue() + this.currentBasket.shippingTotalTax.getValue()).toFixed(2);
+        shippingLineItem.taxes = this.getShippingTax();
+        shippingLineItem.amountIncludingTax = (this.currentBasket.shippingTotalPrice.getValue()).toFixed(2);
         shippingLineItem.type = Wallee.model.LineItemType.SHIPPING;
         data.push(shippingLineItem);
+        var allItemsList = this.currentBasket.getAllLineItems().iterator();
+        while (allItemsList.hasNext()) {
+            // @ts-ignore
+            var couponLineItem = allItemsList.next();
+            // @ts-ignore
+            if (!couponLineItem instanceof dw.order.PriceAdjustment) {
+                continue;
+            }
+            if (couponLineItem.getPriceValue() < 0) {
+                var lineItem = new Wallee.model.LineItemCreate();
+                lineItem.name = couponLineItem.getLineItemText();
+                lineItem.uniqueId = "COUPON-" + couponLineItem.getLineItemText() + dw.util.UUIDUtils.createUUID();
+                lineItem.quantity = 1;
+                lineItem.taxes = 0;
+                lineItem.amountIncludingTax = couponLineItem.getPriceValue();
+                lineItem.type = Wallee.model.LineItemType.DISCOUNT;
+                data.push(lineItem);
+            }
+        }
         var productLineItems = this.currentBasket.getAllProductLineItems().iterator();
         while (productLineItems.hasNext()) {
-            var lineItem = new Wallee.model.LineItemCreate();
+            var lineItem_1 = new Wallee.model.LineItemCreate();
             var productLineItem = productLineItems.next();
-            lineItem.name = productLineItem.productName;
-            lineItem.uniqueId = productLineItem.productID + "-" + dw.util.UUIDUtils.createUUID();
-            lineItem.sku = productLineItem.manufacturerSKU;
-            lineItem.quantity = productLineItem.quantityValue;
-            lineItem.amountIncludingTax = (productLineItem.getPriceValue() + productLineItem.adjustedTax.getValue()).toFixed(2);
-            lineItem.type = Wallee.model.LineItemType.PRODUCT;
-            data.push(lineItem);
+            var productPrice = productLineItem.getPriceValue();
+            lineItem_1.name = productLineItem.productName;
+            lineItem_1.uniqueId = productLineItem.productID + "-" + dw.util.UUIDUtils.createUUID();
+            lineItem_1.sku = productLineItem.manufacturerSKU;
+            lineItem_1.quantity = productLineItem.quantityValue;
+            lineItem_1.taxes = this.getLineItemTax(productLineItem);
+            lineItem_1.amountIncludingTax = productPrice.toFixed(2);
+            lineItem_1.type = Wallee.model.LineItemType.PRODUCT;
+            data.push(lineItem_1);
         }
         return data;
+    };
+    Transaction.prototype.getShippingTax = function () {
+        var taxArray = [];
+        var totalPrice = this.currentBasket.shippingTotalPrice.getValue();
+        var taxRate = (this.currentBasket.shippingTotalTax.getValue() / totalPrice).toFixed(2);
+        var tax = new Wallee.model.TaxCreate();
+        tax.rate = parseFloat(taxRate) * 100;
+        tax.title = 'ShippingTax';
+        taxArray.push(tax);
+        return taxArray;
+    };
+    /**
+     * Get tax
+     * @param productLineItem
+     */
+    Transaction.prototype.getLineItemTax = function (productLineItem) {
+        var taxArray = [];
+        var tax = new Wallee.model.TaxCreate();
+        tax.rate = productLineItem.getTaxRate() * 100;
+        tax.title = productLineItem.getTaxClassID() ? productLineItem.getTaxClassID() : 'LineItemTax';
+        taxArray.push(tax);
+        return taxArray;
     };
     /**
      * Get billing address
@@ -61,7 +105,7 @@ var Transaction = /** @class */ (function () {
             address.country = this.currentBasket.billingAddress.getCountryCode().getValue();
             address.familyName = this.currentBasket.billingAddress.getLastName();
             address.givenName = this.currentBasket.billingAddress.getFirstName();
-            address.postCode = this.currentBasket.billingAddress.getPostalCode();
+            address.postcode = this.currentBasket.billingAddress.getPostalCode();
             address.postalState = this.currentBasket.billingAddress.getStateCode();
             address.phoneNumber = this.currentBasket.billingAddress.getPhone();
             address.street = this.currentBasket.billingAddress.getAddress1();
@@ -82,7 +126,7 @@ var Transaction = /** @class */ (function () {
             address.country = this.currentBasket.defaultShipment.shippingAddress.getCountryCode().getValue();
             address.familyName = this.currentBasket.defaultShipment.shippingAddress.getLastName();
             address.givenName = this.currentBasket.defaultShipment.shippingAddress.getFirstName();
-            address.postCode = this.currentBasket.defaultShipment.shippingAddress.getPostalCode();
+            address.postcode = this.currentBasket.defaultShipment.shippingAddress.getPostalCode();
             address.postalState = this.currentBasket.defaultShipment.shippingAddress.getStateCode();
             address.phoneNumber = this.currentBasket.defaultShipment.shippingAddress.getPhone();
             address.street = this.currentBasket.defaultShipment.shippingAddress.getAddress1();
@@ -112,6 +156,7 @@ var Transaction = /** @class */ (function () {
             var transaction = new Wallee.model.TransactionCreate();
             transaction.lineItems = transactionLineItems;
             transaction.currency = this.currentBasket.getCurrencyCode();
+            transaction.language = session.custom.language;
             transaction.billingAddress = empty(billingAddress) ? shippingAddress : billingAddress;
             transaction.shippingAddress = shippingAddress;
             transaction.autoConfirmationEnabled = true;
@@ -160,7 +205,7 @@ var Transaction = /** @class */ (function () {
         address.country = billingAddress.addressFields.country.value;
         address.familyName = billingAddress.addressFields.lastName.value;
         address.givenName = billingAddress.addressFields.firstName.value;
-        address.postCode = billingAddress.addressFields.postalCode.value;
+        address.postcode = billingAddress.addressFields.postalCode.value;
         address.street = billingAddress.addressFields.address1.value;
         if (Object.prototype.hasOwnProperty.call(billingAddress.addressFields, "states")) {
             address.postalState = billingAddress.addressFields.states.stateCode.value;
@@ -173,7 +218,7 @@ var Transaction = /** @class */ (function () {
         }
         return {
             error: true,
-            errorMessage: "Could not find existing transaction to edit",
+            errorMessage: "Could not find existing transaction to edit"
         };
     };
     /**
@@ -189,7 +234,7 @@ var Transaction = /** @class */ (function () {
         address.country = shippingAddress.addressFields.country.value;
         address.familyName = shippingAddress.addressFields.lastName.value;
         address.givenName = shippingAddress.addressFields.firstName.value;
-        address.postCode = shippingAddress.addressFields.postalCode.value;
+        address.postcode = shippingAddress.addressFields.postalCode.value;
         address.street = shippingAddress.addressFields.address1.value;
         if (Object.prototype.hasOwnProperty.call(shippingAddress.addressFields, "states")) {
             address.postalState = shippingAddress.addressFields.states.stateCode.value;
@@ -204,7 +249,7 @@ var Transaction = /** @class */ (function () {
         }
         return {
             error: true,
-            errorMessage: "Could not find existing transaction to edit",
+            errorMessage: "Could not find existing transaction to edit"
         };
     };
     /**
@@ -229,8 +274,8 @@ var Transaction = /** @class */ (function () {
     Transaction.prototype.setMetaData = function (data) {
         var transaction = this.getTransactionById(this.spaceId, session.custom.WalleeTransactionId);
         transaction.metaData = data;
-        transaction.successUrl = dw.web.URLUtils.abs("Order-Confirm", "ID", data.orderID, "token", data.orderToken).toString();
-        transaction.failedUrl = transaction.successUrl;
+        transaction.successUrl = dw.web.URLUtils.abs("Order-WalleeConfirm", "ID", data.orderID, "token", data.orderToken).toString();
+        transaction.failedUrl = dw.web.URLUtils.abs("Order-WalleeFail").toString();
         transaction.merchantReference = data.orderID;
         this.TransactionService.update(this.spaceId, transaction);
     };
@@ -255,7 +300,7 @@ var Transaction = /** @class */ (function () {
      * @returns { {possiblePaymentMethodsArray: Array<number>; javascriptUrl: string; transactionPossiblePaymentMethods: Array<Wallee.model.PaymentMethodConfiguration>} }
      */
     Transaction.prototype.getPaymentVariableData = function (transaction) {
-        var transactionPossiblePaymentMethods = this.TransactionService.fetchPossiblePaymentMethods(this.spaceId, transaction.id);
+        var transactionPossiblePaymentMethods = this.TransactionService.fetchPaymentMethods(this.spaceId, transaction.id, 'iframe');
         var possiblePaymentMethodsArray = Array();
         transactionPossiblePaymentMethods.forEach(function (transactionPossiblePaymentMethod) {
             possiblePaymentMethodsArray.push(transactionPossiblePaymentMethod.id);
@@ -263,7 +308,7 @@ var Transaction = /** @class */ (function () {
         return {
             javascriptUrl: "",
             possiblePaymentMethodsArray: possiblePaymentMethodsArray,
-            transactionPossiblePaymentMethods: Array(),
+            transactionPossiblePaymentMethods: Array()
         };
     };
     /**

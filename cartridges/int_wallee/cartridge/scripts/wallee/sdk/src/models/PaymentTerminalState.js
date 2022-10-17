@@ -2,6 +2,7 @@
 
 var PaymentTerminalState;
 (function (PaymentTerminalState) {
+    PaymentTerminalState["CREATE"] = "CREATE";
     PaymentTerminalState["PREPARING"] = "PREPARING";
     PaymentTerminalState["ACTIVE"] = "ACTIVE";
     PaymentTerminalState["INACTIVE"] = "INACTIVE";

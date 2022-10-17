@@ -21,7 +21,9 @@ var WebHook = /** @class */ (function () {
             Transaction: {
                 id: 1472041829003,
                 name: "SalesForce::WebHook::Transaction",
-                url: dw.web.URLUtils.abs("Wallee-WebHookTransaction").toString()
+                url: dw.web.URLUtils.https("Wallee-WebHookTransaction").toString().
+                    replace("Sites-Site", "Sites-" + dw.system.Site.getCurrent().getName() + "-Site").
+                    replace("default", dw.system.Site.getCurrent().getDefaultLocale())
             },
             /**
              * Transaction WebHook Entity Id
@@ -30,7 +32,9 @@ var WebHook = /** @class */ (function () {
             Refund: {
                 id: 1472041839405,
                 name: "SalesForce::WebHook::Refund",
-                url: dw.web.URLUtils.abs("Wallee-WebHookRefund").toString()
+                url: dw.web.URLUtils.https("Wallee-WebHookRefund").toString().
+                    replace("Sites-Site", "Sites-" + dw.system.Site.getCurrent().getName() + "-Site").
+                    replace("default", dw.system.Site.getCurrent().getDefaultLocale())
             }
         };
         this.UtilityHelper = new (require("~/cartridge/scripts/wallee/helpers/Utility"));
@@ -47,23 +51,21 @@ var WebHook = /** @class */ (function () {
      */
     WebHook.prototype.getUrl = function (WebHookConfig) {
         var webHookUrl;
-        var entityQueryFilter = new Wallee.model.EntityQueryFilter();
-        entityQueryFilter.fieldName = "name";
-        entityQueryFilter.value = WebHookConfig.name;
-        entityQueryFilter.type = Wallee.model.EntityQueryFilterType.LEAF;
-        entityQueryFilter.operator = Wallee.model.CriteriaOperator.EQUALS;
-        var query = new Wallee.model.EntityQuery();
-        query.filter = entityQueryFilter;
-        var webHookUrls = this.WebHookUrlService.search(this.spaceId, query);
-        if (webHookUrls.length > 0) {
-            webHookUrl = webHookUrls[0];
-        }
-        else {
+        try {
             var entity = new Wallee.model.WebhookUrlCreate();
             entity.name = WebHookConfig.name;
             entity.url = WebHookConfig.url;
             entity.state = Wallee.model.CreationEntityState.CREATE;
             webHookUrl = this.WebHookUrlService.create(this.spaceId, entity);
+        }
+        catch (e) {
+            var errorMessage = "Site \"" + dw.system.Site.getCurrent().getName() + "\" webHook url already exists";
+            dw.system.Logger.warn(errorMessage);
+            throw new Error(errorMessage + " : " + JSON.stringify({
+                message: e.message,
+                fileName: e.fileName,
+                lineNumber: e.lineNumber
+            }));
         }
         return webHookUrl;
     };
@@ -74,18 +76,7 @@ var WebHook = /** @class */ (function () {
      */
     WebHook.prototype.getTransactionListener = function () {
         var webHookListener;
-        var entityQueryFilter = new Wallee.model.EntityQueryFilter();
-        entityQueryFilter.fieldName = "name";
-        entityQueryFilter.value = this.WebHookEntity.Transaction.name;
-        entityQueryFilter.type = Wallee.model.EntityQueryFilterType.LEAF;
-        entityQueryFilter.operator = Wallee.model.CriteriaOperator.EQUALS;
-        var query = new Wallee.model.EntityQuery();
-        query.filter = entityQueryFilter;
-        var webHookListeners = this.WebHookListenerService.search(this.spaceId, query);
-        if (webHookListeners.length > 0) {
-            webHookListener = webHookListeners[0];
-        }
-        else {
+        try {
             var entity = new Wallee.model.WebhookListenerCreate();
             entity.name = this.WebHookEntity.Transaction.name;
             entity.entity = this.WebHookEntity.Transaction.id;
@@ -104,6 +95,15 @@ var WebHook = /** @class */ (function () {
             entity.url = this.getUrl(this.WebHookEntity.Transaction).id;
             webHookListener = this.WebHookListenerService.create(this.spaceId, entity);
         }
+        catch (e) {
+            var errorMessage = "Site \"" + dw.system.Site.getCurrent().getName() + "\" Transaction webhook already exists";
+            dw.system.Logger.warn(errorMessage);
+            throw new Error(errorMessage + " : " + JSON.stringify({
+                message: e.message,
+                fileName: e.fileName,
+                lineNumber: e.lineNumber
+            }));
+        }
         return webHookListener;
     };
     /**
@@ -113,18 +113,7 @@ var WebHook = /** @class */ (function () {
      */
     WebHook.prototype.getRefundListener = function () {
         var webHookListener;
-        var entityQueryFilter = new Wallee.model.EntityQueryFilter();
-        entityQueryFilter.fieldName = "name";
-        entityQueryFilter.value = this.WebHookEntity.Refund.name;
-        entityQueryFilter.type = Wallee.model.EntityQueryFilterType.LEAF;
-        entityQueryFilter.operator = Wallee.model.CriteriaOperator.EQUALS;
-        var query = new Wallee.model.EntityQuery();
-        query.filter = entityQueryFilter;
-        var webHookListeners = this.WebHookListenerService.search(this.spaceId, query);
-        if (webHookListeners.length > 0) {
-            webHookListener = webHookListeners[0];
-        }
-        else {
+        try {
             var entity = new Wallee.model.WebhookListenerCreate();
             entity.name = this.WebHookEntity.Refund.name;
             entity.entity = this.WebHookEntity.Refund.id;
@@ -136,6 +125,15 @@ var WebHook = /** @class */ (function () {
             ];
             entity.url = this.getUrl(this.WebHookEntity.Refund).id;
             webHookListener = this.WebHookListenerService.create(this.spaceId, entity);
+        }
+        catch (e) {
+            var errorMessage = "Site \"" + dw.system.Site.getCurrent().getName() + "\" Refund webhook already exists";
+            dw.system.Logger.warn(errorMessage);
+            throw new Error(errorMessage + " : " + JSON.stringify({
+                message: e.message,
+                fileName: e.fileName,
+                lineNumber: e.lineNumber
+            }));
         }
         return webHookListener;
     };

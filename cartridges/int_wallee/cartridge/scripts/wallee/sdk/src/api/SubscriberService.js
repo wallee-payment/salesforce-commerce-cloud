@@ -188,7 +188,7 @@ var SubscriberService = /** @class */ (function () {
     * @param { number } spaceId spaceId
     * @param { SubscriberCreate } entity entity The customer object with the properties which should be created.
     * @param {*} [options] Override http request options.
-    * @return {  SubscriberCreate  }
+    * @return {  Subscriber  }
     */
     SubscriberService.prototype.create = function (spaceId, entity, options) {
         if (options === void 0) { options = {}; }
@@ -236,12 +236,12 @@ var SubscriberService = /** @class */ (function () {
         var response = this.httpService.callApi(localVarRequestOptions);
         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
             var body = response.text;
-            if (ObjectSerializer.primitives.indexOf("SubscriberCreate".toLowerCase()) !== -1) {
+            if (ObjectSerializer.primitives.indexOf("Subscriber".toLowerCase()) !== -1) {
                 return body;
             }
             try {
                 body = JSON.parse(body);
-                body = ObjectSerializer.deserialize(body, "SubscriberCreate");
+                body = ObjectSerializer.deserialize(body, "Subscriber");
             }
             catch (e) {
                 dw.system.Logger.error("wallee > SubscriberService > create > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));

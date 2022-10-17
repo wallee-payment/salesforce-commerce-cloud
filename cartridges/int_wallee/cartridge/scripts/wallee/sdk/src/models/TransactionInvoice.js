@@ -45,6 +45,11 @@ var TransactionInvoice = /** @class */ (function (_super) {
             "type": "Date"
         },
         {
+            "name": "derecognizedBy",
+            "baseName": "derecognizedBy",
+            "type": "number"
+        },
+        {
             "name": "derecognizedOn",
             "baseName": "derecognizedOn",
             "type": "Date"

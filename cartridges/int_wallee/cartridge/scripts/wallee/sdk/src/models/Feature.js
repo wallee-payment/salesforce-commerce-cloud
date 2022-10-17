@@ -14,6 +14,11 @@ var Feature = /** @class */ (function () {
             "type": "boolean"
         },
         {
+            "name": "category",
+            "baseName": "category",
+            "type": "FeatureCategory"
+        },
+        {
             "name": "description",
             "baseName": "description",
             "type": "{ [key: string]: string; }"

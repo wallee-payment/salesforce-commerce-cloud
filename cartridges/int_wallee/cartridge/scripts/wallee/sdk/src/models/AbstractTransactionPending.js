@@ -11,7 +11,7 @@ var AbstractTransactionPending = /** @class */ (function () {
         {
             "name": "allowedPaymentMethodBrands",
             "baseName": "allowedPaymentMethodBrands",
-            "type": "Array<PaymentMethodBrand>"
+            "type": "Array<number>"
         },
         {
             "name": "allowedPaymentMethodConfigurations",
@@ -22,6 +22,11 @@ var AbstractTransactionPending = /** @class */ (function () {
             "name": "billingAddress",
             "baseName": "billingAddress",
             "type": "AddressCreate"
+        },
+        {
+            "name": "completionBehavior",
+            "baseName": "completionBehavior",
+            "type": "TransactionCompletionBehavior"
         },
         {
             "name": "currency",

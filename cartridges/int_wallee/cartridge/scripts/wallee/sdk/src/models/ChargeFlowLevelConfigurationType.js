@@ -19,6 +19,11 @@ var ChargeFlowLevelConfigurationType = /** @class */ (function () {
             "type": "number"
         },
         {
+            "name": "label",
+            "baseName": "label",
+            "type": "{ [key: string]: string; }"
+        },
+        {
             "name": "name",
             "baseName": "name",
             "type": "{ [key: string]: string; }"

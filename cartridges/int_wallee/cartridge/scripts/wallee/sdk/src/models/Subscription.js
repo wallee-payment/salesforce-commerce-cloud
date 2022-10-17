@@ -24,6 +24,11 @@ var Subscription = /** @class */ (function () {
             "type": "Date"
         },
         {
+            "name": "currentProductVersion",
+            "baseName": "currentProductVersion",
+            "type": "SubscriptionProductVersion"
+        },
+        {
             "name": "description",
             "baseName": "description",
             "type": "string"
@@ -86,6 +91,11 @@ var Subscription = /** @class */ (function () {
         {
             "name": "terminatingOn",
             "baseName": "terminatingOn",
+            "type": "Date"
+        },
+        {
+            "name": "terminationScheduledOn",
+            "baseName": "terminationScheduledOn",
             "type": "Date"
         },
         {

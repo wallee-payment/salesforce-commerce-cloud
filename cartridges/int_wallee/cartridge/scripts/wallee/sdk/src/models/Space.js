@@ -24,14 +24,39 @@ var Space = /** @class */ (function () {
             "type": "boolean"
         },
         {
+            "name": "createdBy",
+            "baseName": "createdBy",
+            "type": "number"
+        },
+        {
+            "name": "createdOn",
+            "baseName": "createdOn",
+            "type": "Date"
+        },
+        {
             "name": "database",
             "baseName": "database",
             "type": "TenantDatabase"
         },
         {
+            "name": "deletedBy",
+            "baseName": "deletedBy",
+            "type": "number"
+        },
+        {
+            "name": "deletedOn",
+            "baseName": "deletedOn",
+            "type": "Date"
+        },
+        {
             "name": "id",
             "baseName": "id",
             "type": "number"
+        },
+        {
+            "name": "lastModifiedDate",
+            "baseName": "lastModifiedDate",
+            "type": "Date"
         },
         {
             "name": "name",

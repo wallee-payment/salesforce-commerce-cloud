@@ -147,7 +147,7 @@ var Utility = /** @class */ (function () {
             },
             getResponseLogMessage: function (response) {
                 return response.text;
-            },
+            }
         };
     };
     return Utility;

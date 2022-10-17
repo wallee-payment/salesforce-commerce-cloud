@@ -31,7 +31,7 @@ var SubscriptionCreateRequest = /** @class */ (function () {
         {
             "name": "subscription",
             "baseName": "subscription",
-            "type": "number"
+            "type": "SubscriptionPending"
         }
     ];
     return SubscriptionCreateRequest;

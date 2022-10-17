@@ -1,16 +1,18 @@
 <isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" status="loopState" var="paymentOption">
-    <isif condition="${paymentOption.ID === 'CREDIT_CARD'}">
-        <isinclude template="checkout/billing/paymentOptions/creditCardTab"/>
-    </isif>
     <isif condition="${paymentOption.ID === 'WALLEE'}">
         <isscript>
             var assets = require('*/cartridge/scripts/assets.js');
             assets.addJs(pdict.wallee.javascriptUrl);
             assets.addJs('/js/wallee.js');
         </isscript>
+        <!-- WALLEE Begin -->
         <input type="hidden" class="form-control" name="WALLEE_url" value="${dw.web.URLUtils.url('Wallee-TransactionUpdate').toString()}">
         <isloop items="${pdict.wallee.transactionPossiblePaymentMethods}" status="loopState" var="transactionPossiblePaymentMethod">
             <isinclude template="wallee/checkout/billing/paymentOptions/walleeTab"/>
         </isloop>
+        <!-- WALLEE End -->
+    </isif>
+    <isif condition="${paymentOption.ID === 'CREDIT_CARD'}">
+        <isinclude template="checkout/billing/paymentOptions/creditCardTab"/>
     </isif>
 </isloop>

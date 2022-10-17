@@ -29,9 +29,9 @@ var PaymentLink = /** @class */ (function () {
             "type": "Date"
         },
         {
-            "name": "billingAddressRequired",
-            "baseName": "billingAddressRequired",
-            "type": "boolean"
+            "name": "billingAddressHandlingMode",
+            "baseName": "billingAddressHandlingMode",
+            "type": "PaymentLinkAddressHandlingMode"
         },
         {
             "name": "currency",
@@ -84,9 +84,9 @@ var PaymentLink = /** @class */ (function () {
             "type": "PaymentLinkProtectionMode"
         },
         {
-            "name": "shippingAddressRequired",
-            "baseName": "shippingAddressRequired",
-            "type": "boolean"
+            "name": "shippingAddressHandlingMode",
+            "baseName": "shippingAddressHandlingMode",
+            "type": "PaymentLinkAddressHandlingMode"
         },
         {
             "name": "state",

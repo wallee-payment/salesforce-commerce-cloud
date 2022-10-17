@@ -14,6 +14,11 @@ var PaymentTerminalLocationVersion = /** @class */ (function () {
             "type": "PaymentTerminalAddress"
         },
         {
+            "name": "contactAddress",
+            "baseName": "contactAddress",
+            "type": "PaymentTerminalAddress"
+        },
+        {
             "name": "createdBy",
             "baseName": "createdBy",
             "type": "number"

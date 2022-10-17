@@ -45,6 +45,11 @@ var TransactionCreate = /** @class */ (function (_super) {
             "type": "string"
         },
         {
+            "name": "emailsDisabled",
+            "baseName": "emailsDisabled",
+            "type": "boolean"
+        },
+        {
             "name": "environment",
             "baseName": "environment",
             "type": "Environment"

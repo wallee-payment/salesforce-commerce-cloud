@@ -9,6 +9,11 @@ var WebhookUrl = /** @class */ (function () {
     WebhookUrl.discriminator = undefined;
     WebhookUrl.attributeTypeMap = [
         {
+            "name": "applicationManaged",
+            "baseName": "applicationManaged",
+            "type": "boolean"
+        },
+        {
             "name": "id",
             "baseName": "id",
             "type": "number"

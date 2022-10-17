@@ -29,6 +29,11 @@ var PaymentTerminalConfigurationVersion = /** @class */ (function () {
             "type": "Date"
         },
         {
+            "name": "defaultCurrency",
+            "baseName": "defaultCurrency",
+            "type": "string"
+        },
+        {
             "name": "id",
             "baseName": "id",
             "type": "number"

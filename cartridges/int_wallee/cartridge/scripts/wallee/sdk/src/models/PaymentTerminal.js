@@ -14,6 +14,16 @@ var PaymentTerminal = /** @class */ (function () {
             "type": "PaymentTerminalConfigurationVersion"
         },
         {
+            "name": "defaultCurrency",
+            "baseName": "defaultCurrency",
+            "type": "string"
+        },
+        {
+            "name": "externalId",
+            "baseName": "externalId",
+            "type": "string"
+        },
+        {
             "name": "id",
             "baseName": "id",
             "type": "number"

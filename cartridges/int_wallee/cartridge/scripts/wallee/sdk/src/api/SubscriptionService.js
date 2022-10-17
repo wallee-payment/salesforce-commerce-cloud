@@ -19,6 +19,8 @@ var SubscriptionCharge = require("../models/SubscriptionCharge");
 // @ts-ignore
 var SubscriptionCreateRequest = require("../models/SubscriptionCreateRequest");
 // @ts-ignore
+var SubscriptionUpdateRequest = require("../models/SubscriptionUpdateRequest");
+// @ts-ignore
 var SubscriptionVersion = require("../models/SubscriptionVersion");
 // @ts-ignore
 var TransactionInvoice = require("../models/TransactionInvoice");
@@ -799,6 +801,97 @@ var SubscriptionService = /** @class */ (function () {
                 error.type = "ServerError";
             }
             throw new Error("wallee > SubscriptionService > terminate > " + error.type + " > " + JSON.stringify(error));
+        }
+    };
+    /**
+    * This operation allows to update the subscription.
+    * @summary update
+    * @param { number } spaceId spaceId
+    * @param { number } subscriptionId subscriptionId
+    * @param { SubscriptionUpdateRequest } request request
+    * @param {*} [options] Override http request options.
+    * @return {  Subscription  }
+    */
+    SubscriptionService.prototype.update = function (spaceId, subscriptionId, request, options) {
+        if (options === void 0) { options = {}; }
+        var localVarQueryParameters = {};
+        var localVarHeaderParams = {};
+        var localVarFormParams = {};
+        // verify required parameter 'spaceId' is not null or undefined
+        if (spaceId === null || spaceId === undefined) {
+            throw new Error("Required parameter spaceId was null or undefined when calling update.");
+        }
+        // verify required parameter 'subscriptionId' is not null or undefined
+        if (subscriptionId === null || subscriptionId === undefined) {
+            throw new Error("Required parameter subscriptionId was null or undefined when calling update.");
+        }
+        // verify required parameter 'request' is not null or undefined
+        if (request === null || request === undefined) {
+            throw new Error("Required parameter request was null or undefined when calling update.");
+        }
+        if (spaceId !== undefined) {
+            localVarQueryParameters["spaceId"] = ObjectSerializer.serialize(spaceId, "number");
+        }
+        if (subscriptionId !== undefined) {
+            localVarQueryParameters["subscriptionId"] = ObjectSerializer.serialize(subscriptionId, "number");
+        }
+        for (var optionsHeadersKey in options.headers) {
+            if (options.headers.hasOwnProperty(optionsHeadersKey)) {
+                localVarHeaderParams[optionsHeadersKey] = options.headers[optionsHeadersKey];
+            }
+        }
+        var localVarUseFormData = false;
+        var localVarRequestOptions = {
+            method: "POST",
+            queryString: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            useQuerystring: this._useQuerystring,
+            url: this.basePath,
+            path: "/subscription/update",
+            contentType: "application/json",
+            body: JSON.stringify(ObjectSerializer.serialize(request, "SubscriptionUpdateRequest")),
+            form: {},
+            formData: {}
+        };
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                localVarRequestOptions.formData = localVarFormParams;
+            }
+            else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+        // dw.net.HTTPClient
+        var response = this.httpService.callApi(localVarRequestOptions);
+        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+            var body = response.text;
+            if (ObjectSerializer.primitives.indexOf("Subscription".toLowerCase()) !== -1) {
+                return body;
+            }
+            try {
+                body = JSON.parse(body);
+                body = ObjectSerializer.deserialize(body, "Subscription");
+            }
+            catch (e) {
+                dw.system.Logger.error("wallee > SubscriptionService > update > unable to parse JSON > " + JSON.stringify({ message: e.message, fileName: e.fileName, lineNumber: e.lineNumber }));
+            }
+            return body;
+        }
+        else {
+            var error = {
+                type: "Unknown",
+                date: (new Date()).toUTCString(),
+                statusCode: response.statusCode,
+                statusMessage: response.statusMessage,
+                errorText: response.errorText
+            };
+            if (response.statusCode && response.statusCode >= 400 && response.statusCode <= 499) {
+                error.type = "ClientError";
+            }
+            else if (response.statusCode && response.statusCode >= 500 && response.statusCode <= 599) {
+                error.type = "ServerError";
+            }
+            throw new Error("wallee > SubscriptionService > update > " + error.type + " > " + JSON.stringify(error));
         }
     };
     /**

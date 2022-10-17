@@ -1,5 +1,7 @@
-<li class="nav-item WALLEE-nav-item-${transactionPossiblePaymentMethod.id}" data-method-id="WALLEE">
-    <a class="nav-link wallee-tab" data-toggle="tab" href="${'#'}wallee-content-${transactionPossiblePaymentMethod.id}" role="tab" data-id="${transactionPossiblePaymentMethod.id}" title="${transactionPossiblePaymentMethod.name}">
-        <img alt="${transactionPossiblePaymentMethod.name}" class="credit-card-option" height="32" src="${transactionPossiblePaymentMethod.resolvedImageUrl}" title="${transactionPossiblePaymentMethod.name}">
-    </a>
-</li>
+<isif condition="${transactionPossiblePaymentMethod.state === 'ACTIVE'}">
+    <li class="nav-item WALLEE-nav-item-${transactionPossiblePaymentMethod.id}" data-method-id="WALLEE">
+        <a class="nav-link wallee-tab" data-toggle="tab" href="${'#'}wallee-content-${transactionPossiblePaymentMethod.id}" role="tab" data-id="${transactionPossiblePaymentMethod.id}" title="${transactionPossiblePaymentMethod.name}">
+            <img alt="${transactionPossiblePaymentMethod.name}" class="credit-card-option" height="32" src="${transactionPossiblePaymentMethod.resolvedImageUrl}" title="${transactionPossiblePaymentMethod.name}">
+        </a>
+    </li>
+</isif>

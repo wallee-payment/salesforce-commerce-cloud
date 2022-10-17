@@ -39,6 +39,11 @@ var SubscriptionProduct = /** @class */ (function () {
             "type": "Date"
         },
         {
+            "name": "productLocked",
+            "baseName": "productLocked",
+            "type": "boolean"
+        },
+        {
             "name": "reference",
             "baseName": "reference",
             "type": "string"

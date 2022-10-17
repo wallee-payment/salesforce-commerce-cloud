@@ -9,6 +9,7 @@ var AbstractDebtCollectionCaseUpdate = require("../models/AbstractDebtCollection
 var AbstractHumanUserUpdate = require("../models/AbstractHumanUserUpdate");
 var AbstractPaymentLinkUpdate = require("../models/AbstractPaymentLinkUpdate");
 var AbstractRefundCommentActive = require("../models/AbstractRefundCommentActive");
+var AbstractShopifySubscriptionProductUpdate = require("../models/AbstractShopifySubscriptionProductUpdate");
 var AbstractSpaceUpdate = require("../models/AbstractSpaceUpdate");
 var AbstractSubscriberUpdate = require("../models/AbstractSubscriberUpdate");
 var AbstractSubscriptionAffiliateUpdate = require("../models/AbstractSubscriptionAffiliateUpdate");
@@ -25,6 +26,29 @@ var AccountState = require("../models/AccountState");
 var AccountType = require("../models/AccountType");
 var Address = require("../models/Address");
 var AddressCreate = require("../models/AddressCreate");
+var AnalyticsQuery = require("../models/AnalyticsQuery");
+var AnalyticsQueryExecution = require("../models/AnalyticsQueryExecution");
+var AnalyticsQueryExecutionState = require("../models/AnalyticsQueryExecutionState");
+var AnalyticsQueryResultBatch = require("../models/AnalyticsQueryResultBatch");
+var AnalyticsSchemaColumn = require("../models/AnalyticsSchemaColumn");
+var AnalyticsSchemaTable = require("../models/AnalyticsSchemaTable");
+var AuthenticatedCardDataCreate = require("../models/AuthenticatedCardDataCreate");
+var BankAccount = require("../models/BankAccount");
+var BankAccountEnvironment = require("../models/BankAccountEnvironment");
+var BankAccountState = require("../models/BankAccountState");
+var BankAccountType = require("../models/BankAccountType");
+var BankTransaction = require("../models/BankTransaction");
+var BankTransactionFlowDirection = require("../models/BankTransactionFlowDirection");
+var BankTransactionSource = require("../models/BankTransactionSource");
+var BankTransactionState = require("../models/BankTransactionState");
+var BankTransactionType = require("../models/BankTransactionType");
+var CardAuthenticationResponse = require("../models/CardAuthenticationResponse");
+var CardAuthenticationVersion = require("../models/CardAuthenticationVersion");
+var CardCryptogram = require("../models/CardCryptogram");
+var CardCryptogramCreate = require("../models/CardCryptogramCreate");
+var CardCryptogramType = require("../models/CardCryptogramType");
+var CardholderAuthentication = require("../models/CardholderAuthentication");
+var CardholderAuthenticationCreate = require("../models/CardholderAuthenticationCreate");
 var ChargeAttemptEnvironment = require("../models/ChargeAttemptEnvironment");
 var ChargeAttemptState = require("../models/ChargeAttemptState");
 var ChargeFlow = require("../models/ChargeFlow");
@@ -42,6 +66,7 @@ var ConditionType = require("../models/ConditionType");
 var ConnectorInvocationStage = require("../models/ConnectorInvocationStage");
 var CreationEntityState = require("../models/CreationEntityState");
 var CriteriaOperator = require("../models/CriteriaOperator");
+var CurrencyBankAccount = require("../models/CurrencyBankAccount");
 var Customer = require("../models/Customer");
 var CustomerAddress = require("../models/CustomerAddress");
 var CustomerAddressType = require("../models/CustomerAddressType");
@@ -77,9 +102,11 @@ var EntityQueryFilterType = require("../models/EntityQueryFilterType");
 var EntityQueryOrderBy = require("../models/EntityQueryOrderBy");
 var EntityQueryOrderByType = require("../models/EntityQueryOrderByType");
 var Environment = require("../models/Environment");
+var ExternalTransferBankTransaction = require("../models/ExternalTransferBankTransaction");
 var FailureCategory = require("../models/FailureCategory");
 var FailureReason = require("../models/FailureReason");
 var Feature = require("../models/Feature");
+var FeatureCategory = require("../models/FeatureCategory");
 var Gender = require("../models/Gender");
 var HumanUser = require("../models/HumanUser");
 var InstallmentCalculatedPlan = require("../models/InstallmentCalculatedPlan");
@@ -89,6 +116,13 @@ var InstallmentPaymentSliceState = require("../models/InstallmentPaymentSliceSta
 var InstallmentPaymentState = require("../models/InstallmentPaymentState");
 var InstallmentPlanConfiguration = require("../models/InstallmentPlanConfiguration");
 var InstallmentPlanSliceConfiguration = require("../models/InstallmentPlanSliceConfiguration");
+var InternalTransferBankTransaction = require("../models/InternalTransferBankTransaction");
+var InvoiceReconciliationRecordInvoiceLink = require("../models/InvoiceReconciliationRecordInvoiceLink");
+var InvoiceReconciliationRecordRejectionStatus = require("../models/InvoiceReconciliationRecordRejectionStatus");
+var InvoiceReconciliationRecordState = require("../models/InvoiceReconciliationRecordState");
+var InvoiceReconciliationRecordType = require("../models/InvoiceReconciliationRecordType");
+var InvoiceReimbursement = require("../models/InvoiceReimbursement");
+var InvoiceReimbursementState = require("../models/InvoiceReimbursementState");
 var Label = require("../models/Label");
 var LabelDescriptor = require("../models/LabelDescriptor");
 var LabelDescriptorCategory = require("../models/LabelDescriptorCategory");
@@ -110,13 +144,38 @@ var ManualTaskState = require("../models/ManualTaskState");
 var ManualTaskType = require("../models/ManualTaskType");
 var MetricUsage = require("../models/MetricUsage");
 var OneClickPaymentMode = require("../models/OneClickPaymentMode");
+var PaymentAdjustment = require("../models/PaymentAdjustment");
+var PaymentAdjustmentType = require("../models/PaymentAdjustmentType");
+var PaymentAppChargeAttemptTargetState = require("../models/PaymentAppChargeAttemptTargetState");
+var PaymentAppChargeAttemptUpdateRequest = require("../models/PaymentAppChargeAttemptUpdateRequest");
+var PaymentAppCompletionConfiguration = require("../models/PaymentAppCompletionConfiguration");
+var PaymentAppCompletionConfigurationCreate = require("../models/PaymentAppCompletionConfigurationCreate");
+var PaymentAppCompletionTargetState = require("../models/PaymentAppCompletionTargetState");
+var PaymentAppCompletionUpdateRequest = require("../models/PaymentAppCompletionUpdateRequest");
+var PaymentAppConnector = require("../models/PaymentAppConnector");
+var PaymentAppConnectorCreationRequest = require("../models/PaymentAppConnectorCreationRequest");
+var PaymentAppConnectorState = require("../models/PaymentAppConnectorState");
+var PaymentAppProcessor = require("../models/PaymentAppProcessor");
+var PaymentAppProcessorCreationRequest = require("../models/PaymentAppProcessorCreationRequest");
+var PaymentAppProcessorState = require("../models/PaymentAppProcessorState");
+var PaymentAppRefundConfiguration = require("../models/PaymentAppRefundConfiguration");
+var PaymentAppRefundConfigurationCreate = require("../models/PaymentAppRefundConfigurationCreate");
+var PaymentAppRefundTargetState = require("../models/PaymentAppRefundTargetState");
+var PaymentAppRefundUpdateRequest = require("../models/PaymentAppRefundUpdateRequest");
+var PaymentAppVoidTargetState = require("../models/PaymentAppVoidTargetState");
+var PaymentAppVoidUpdateRequest = require("../models/PaymentAppVoidUpdateRequest");
 var PaymentConnector = require("../models/PaymentConnector");
 var PaymentConnectorConfiguration = require("../models/PaymentConnectorConfiguration");
 var PaymentConnectorFeature = require("../models/PaymentConnectorFeature");
 var PaymentContract = require("../models/PaymentContract");
 var PaymentContractState = require("../models/PaymentContractState");
 var PaymentContractType = require("../models/PaymentContractType");
+var PaymentInformationHash = require("../models/PaymentInformationHash");
+var PaymentInformationHashType = require("../models/PaymentInformationHashType");
+var PaymentInitiationAdviceFile = require("../models/PaymentInitiationAdviceFile");
+var PaymentInitiationAdviceFileState = require("../models/PaymentInitiationAdviceFileState");
 var PaymentLink = require("../models/PaymentLink");
+var PaymentLinkAddressHandlingMode = require("../models/PaymentLinkAddressHandlingMode");
 var PaymentLinkProtectionMode = require("../models/PaymentLinkProtectionMode");
 var PaymentLinkUpdate = require("../models/PaymentLinkUpdate");
 var PaymentMethod = require("../models/PaymentMethod");
@@ -131,11 +190,16 @@ var PaymentTerminalConfiguration = require("../models/PaymentTerminalConfigurati
 var PaymentTerminalConfigurationState = require("../models/PaymentTerminalConfigurationState");
 var PaymentTerminalConfigurationVersion = require("../models/PaymentTerminalConfigurationVersion");
 var PaymentTerminalConfigurationVersionState = require("../models/PaymentTerminalConfigurationVersionState");
+var PaymentTerminalDccTransactionSum = require("../models/PaymentTerminalDccTransactionSum");
 var PaymentTerminalLocation = require("../models/PaymentTerminalLocation");
 var PaymentTerminalLocationState = require("../models/PaymentTerminalLocationState");
 var PaymentTerminalLocationVersion = require("../models/PaymentTerminalLocationVersion");
 var PaymentTerminalLocationVersionState = require("../models/PaymentTerminalLocationVersionState");
+var PaymentTerminalReceiptType = require("../models/PaymentTerminalReceiptType");
 var PaymentTerminalState = require("../models/PaymentTerminalState");
+var PaymentTerminalTransactionSum = require("../models/PaymentTerminalTransactionSum");
+var PaymentTerminalTransactionSummary = require("../models/PaymentTerminalTransactionSummary");
+var PaymentTerminalTransactionSummaryFetchRequest = require("../models/PaymentTerminalTransactionSummaryFetchRequest");
 var PaymentTerminalType = require("../models/PaymentTerminalType");
 var Permission = require("../models/Permission");
 var PersistableCurrencyAmount = require("../models/PersistableCurrencyAmount");
@@ -150,6 +214,7 @@ var ProductPeriodFee = require("../models/ProductPeriodFee");
 var ProductPeriodFeeUpdate = require("../models/ProductPeriodFeeUpdate");
 var ProductSetupFee = require("../models/ProductSetupFee");
 var ProductSetupFeeUpdate = require("../models/ProductSetupFeeUpdate");
+var RecurringIndicator = require("../models/RecurringIndicator");
 var Refund = require("../models/Refund");
 var RefundComment = require("../models/RefundComment");
 var RefundCreate = require("../models/RefundCreate");
@@ -157,6 +222,7 @@ var RefundState = require("../models/RefundState");
 var RefundType = require("../models/RefundType");
 var RenderedDocument = require("../models/RenderedDocument");
 var RenderedTerminalReceipt = require("../models/RenderedTerminalReceipt");
+var RenderedTerminalTransactionSummary = require("../models/RenderedTerminalTransactionSummary");
 var ResourcePath = require("../models/ResourcePath");
 var ResourceState = require("../models/ResourceState");
 var RestAddressFormat = require("../models/RestAddressFormat");
@@ -166,8 +232,45 @@ var RestCountryState = require("../models/RestCountryState");
 var RestCurrency = require("../models/RestCurrency");
 var RestLanguage = require("../models/RestLanguage");
 var Role = require("../models/Role");
+var RoleState = require("../models/RoleState");
+var SalesChannel = require("../models/SalesChannel");
 var Scope = require("../models/Scope");
 var ServerError = require("../models/ServerError");
+var ShopifyAdditionalLineItemData = require("../models/ShopifyAdditionalLineItemData");
+var ShopifyIntegration = require("../models/ShopifyIntegration");
+var ShopifyIntegrationPaymentAppVersion = require("../models/ShopifyIntegrationPaymentAppVersion");
+var ShopifyIntegrationSubscriptionAppVersion = require("../models/ShopifyIntegrationSubscriptionAppVersion");
+var ShopifyRecurringOrderState = require("../models/ShopifyRecurringOrderState");
+var ShopifyRecurringOrderUpdateRequest = require("../models/ShopifyRecurringOrderUpdateRequest");
+var ShopifySubscriber = require("../models/ShopifySubscriber");
+var ShopifySubscriberActive = require("../models/ShopifySubscriberActive");
+var ShopifySubscriberCreation = require("../models/ShopifySubscriberCreation");
+var ShopifySubscriberState = require("../models/ShopifySubscriberState");
+var ShopifySubscription = require("../models/ShopifySubscription");
+var ShopifySubscriptionAddressCreate = require("../models/ShopifySubscriptionAddressCreate");
+var ShopifySubscriptionBillingIntervalUnit = require("../models/ShopifySubscriptionBillingIntervalUnit");
+var ShopifySubscriptionCreationRequest = require("../models/ShopifySubscriptionCreationRequest");
+var ShopifySubscriptionModelBillingConfiguration = require("../models/ShopifySubscriptionModelBillingConfiguration");
+var ShopifySubscriptionModelItem = require("../models/ShopifySubscriptionModelItem");
+var ShopifySubscriptionModelTaxLine = require("../models/ShopifySubscriptionModelTaxLine");
+var ShopifySubscriptionProduct = require("../models/ShopifySubscriptionProduct");
+var ShopifySubscriptionProductPricingOption = require("../models/ShopifySubscriptionProductPricingOption");
+var ShopifySubscriptionProductState = require("../models/ShopifySubscriptionProductState");
+var ShopifySubscriptionState = require("../models/ShopifySubscriptionState");
+var ShopifySubscriptionSuspension = require("../models/ShopifySubscriptionSuspension");
+var ShopifySubscriptionSuspensionCreate = require("../models/ShopifySubscriptionSuspensionCreate");
+var ShopifySubscriptionSuspensionInitiator = require("../models/ShopifySubscriptionSuspensionInitiator");
+var ShopifySubscriptionSuspensionState = require("../models/ShopifySubscriptionSuspensionState");
+var ShopifySubscriptionSuspensionType = require("../models/ShopifySubscriptionSuspensionType");
+var ShopifySubscriptionUpdateAddressesRequest = require("../models/ShopifySubscriptionUpdateAddressesRequest");
+var ShopifySubscriptionUpdateRequest = require("../models/ShopifySubscriptionUpdateRequest");
+var ShopifySubscriptionVersion = require("../models/ShopifySubscriptionVersion");
+var ShopifySubscriptionVersionItem = require("../models/ShopifySubscriptionVersionItem");
+var ShopifySubscriptionVersionItemPriceStrategy = require("../models/ShopifySubscriptionVersionItemPriceStrategy");
+var ShopifySubscriptionVersionState = require("../models/ShopifySubscriptionVersionState");
+var ShopifySubscriptionWeekday = require("../models/ShopifySubscriptionWeekday");
+var ShopifyTaxLine = require("../models/ShopifyTaxLine");
+var ShopifyTransactionState = require("../models/ShopifyTransactionState");
 var Space = require("../models/Space");
 var SpaceAddress = require("../models/SpaceAddress");
 var SpaceAddressCreate = require("../models/SpaceAddressCreate");
@@ -221,20 +324,27 @@ var SubscriptionSuspensionCreate = require("../models/SubscriptionSuspensionCrea
 var SubscriptionSuspensionReason = require("../models/SubscriptionSuspensionReason");
 var SubscriptionSuspensionState = require("../models/SubscriptionSuspensionState");
 var SubscriptionUpdate = require("../models/SubscriptionUpdate");
+var SubscriptionUpdateRequest = require("../models/SubscriptionUpdateRequest");
 var SubscriptionVersion = require("../models/SubscriptionVersion");
 var SubscriptionVersionState = require("../models/SubscriptionVersionState");
 var Tax = require("../models/Tax");
+var TaxCalculation = require("../models/TaxCalculation");
 var TaxClass = require("../models/TaxClass");
 var TaxCreate = require("../models/TaxCreate");
 var TenantDatabase = require("../models/TenantDatabase");
+var TerminalReceiptFetchRequest = require("../models/TerminalReceiptFetchRequest");
+var TerminalReceiptFormat = require("../models/TerminalReceiptFormat");
 var Token = require("../models/Token");
 var TokenVersion = require("../models/TokenVersion");
 var TokenVersionState = require("../models/TokenVersionState");
 var TokenVersionType = require("../models/TokenVersionType");
 var TokenizationMode = require("../models/TokenizationMode");
+var TokenizedCardData = require("../models/TokenizedCardData");
+var TokenizedCardDataCreate = require("../models/TokenizedCardDataCreate");
 var Transaction = require("../models/Transaction");
 var TransactionAwareEntity = require("../models/TransactionAwareEntity");
 var TransactionComment = require("../models/TransactionComment");
+var TransactionCompletionBehavior = require("../models/TransactionCompletionBehavior");
 var TransactionCompletionMode = require("../models/TransactionCompletionMode");
 var TransactionCompletionRequest = require("../models/TransactionCompletionRequest");
 var TransactionCompletionState = require("../models/TransactionCompletionState");
@@ -244,18 +354,19 @@ var TransactionGroupState = require("../models/TransactionGroupState");
 var TransactionInvoiceComment = require("../models/TransactionInvoiceComment");
 var TransactionInvoiceReplacement = require("../models/TransactionInvoiceReplacement");
 var TransactionInvoiceState = require("../models/TransactionInvoiceState");
-var TransactionLineItemUpdateRequest = require("../models/TransactionLineItemUpdateRequest");
+var TransactionLineItemVersionCreate = require("../models/TransactionLineItemVersionCreate");
+var TransactionLineItemVersionState = require("../models/TransactionLineItemVersionState");
 var TransactionState = require("../models/TransactionState");
 var TransactionUserInterfaceType = require("../models/TransactionUserInterfaceType");
 var TransactionVoidMode = require("../models/TransactionVoidMode");
 var TransactionVoidState = require("../models/TransactionVoidState");
 var TwoFactorAuthenticationType = require("../models/TwoFactorAuthenticationType");
-var UnencryptedCardData = require("../models/UnencryptedCardData");
-var UnencryptedCardDataCreate = require("../models/UnencryptedCardDataCreate");
 var User = require("../models/User");
 var UserAccountRole = require("../models/UserAccountRole");
 var UserSpaceRole = require("../models/UserSpaceRole");
 var UserType = require("../models/UserType");
+var WebAppConfirmationRequest = require("../models/WebAppConfirmationRequest");
+var WebAppConfirmationResponse = require("../models/WebAppConfirmationResponse");
 var WebhookIdentity = require("../models/WebhookIdentity");
 var WebhookListener = require("../models/WebhookListener");
 var WebhookListenerEntity = require("../models/WebhookListenerEntity");
@@ -265,9 +376,12 @@ var AccountUpdate = require("../models/AccountUpdate");
 var ApplicationUser = require("../models/ApplicationUser");
 var ApplicationUserCreate = require("../models/ApplicationUserCreate");
 var ApplicationUserUpdate = require("../models/ApplicationUserUpdate");
+var AuthenticatedCardData = require("../models/AuthenticatedCardData");
 var Charge = require("../models/Charge");
 var ChargeAttempt = require("../models/ChargeAttempt");
+var ChargeBankTransaction = require("../models/ChargeBankTransaction");
 var ChargeFlowLevel = require("../models/ChargeFlowLevel");
+var ChargeFlowLevelPaymentLink = require("../models/ChargeFlowLevelPaymentLink");
 var ConnectorInvocation = require("../models/ConnectorInvocation");
 var CustomerActive = require("../models/CustomerActive");
 var CustomerAddressActive = require("../models/CustomerAddressActive");
@@ -281,10 +395,19 @@ var DeliveryIndication = require("../models/DeliveryIndication");
 var HumanUserCreate = require("../models/HumanUserCreate");
 var HumanUserUpdate = require("../models/HumanUserUpdate");
 var InstallmentPaymentSlice = require("../models/InstallmentPaymentSlice");
+var InvoiceReconciliationRecord = require("../models/InvoiceReconciliationRecord");
+var InvoiceReimbursementWithRefundReference = require("../models/InvoiceReimbursementWithRefundReference");
 var PaymentLinkActive = require("../models/PaymentLinkActive");
 var PaymentLinkCreate = require("../models/PaymentLinkCreate");
+var RefundBankTransaction = require("../models/RefundBankTransaction");
 var RefundCommentActive = require("../models/RefundCommentActive");
 var RefundCommentCreate = require("../models/RefundCommentCreate");
+var RefundRecoveryBankTransaction = require("../models/RefundRecoveryBankTransaction");
+var ShopifyRecurringOrder = require("../models/ShopifyRecurringOrder");
+var ShopifySubscriptionAddress = require("../models/ShopifySubscriptionAddress");
+var ShopifySubscriptionProductCreate = require("../models/ShopifySubscriptionProductCreate");
+var ShopifySubscriptionProductUpdate = require("../models/ShopifySubscriptionProductUpdate");
+var ShopifyTransaction = require("../models/ShopifyTransaction");
 var SpaceCreate = require("../models/SpaceCreate");
 var SpaceUpdate = require("../models/SpaceUpdate");
 var SubscriberActive = require("../models/SubscriberActive");
@@ -440,6 +563,14 @@ var ObjectSerializer = /** @class */ (function () {
     ObjectSerializer.enumsMap = {
         "AccountState": AccountState,
         "AccountType": AccountType,
+        "AnalyticsQueryExecutionState": AnalyticsQueryExecutionState,
+        "BankAccountEnvironment": BankAccountEnvironment,
+        "BankAccountState": BankAccountState,
+        "BankTransactionFlowDirection": BankTransactionFlowDirection,
+        "BankTransactionState": BankTransactionState,
+        "CardAuthenticationResponse": CardAuthenticationResponse,
+        "CardAuthenticationVersion": CardAuthenticationVersion,
+        "CardCryptogramType": CardCryptogramType,
         "ChargeAttemptEnvironment": ChargeAttemptEnvironment,
         "ChargeAttemptState": ChargeAttemptState,
         "ChargeFlowLevelState": ChargeFlowLevelState,
@@ -462,12 +593,23 @@ var ObjectSerializer = /** @class */ (function () {
         "Gender": Gender,
         "InstallmentPaymentSliceState": InstallmentPaymentSliceState,
         "InstallmentPaymentState": InstallmentPaymentState,
+        "InvoiceReconciliationRecordRejectionStatus": InvoiceReconciliationRecordRejectionStatus,
+        "InvoiceReconciliationRecordState": InvoiceReconciliationRecordState,
+        "InvoiceReimbursementState": InvoiceReimbursementState,
         "LabelDescriptorCategory": LabelDescriptorCategory,
         "LineItemType": LineItemType,
         "ManualTaskActionStyle": ManualTaskActionStyle,
         "ManualTaskState": ManualTaskState,
         "OneClickPaymentMode": OneClickPaymentMode,
+        "PaymentAppChargeAttemptTargetState": PaymentAppChargeAttemptTargetState,
+        "PaymentAppCompletionTargetState": PaymentAppCompletionTargetState,
+        "PaymentAppConnectorState": PaymentAppConnectorState,
+        "PaymentAppProcessorState": PaymentAppProcessorState,
+        "PaymentAppRefundTargetState": PaymentAppRefundTargetState,
+        "PaymentAppVoidTargetState": PaymentAppVoidTargetState,
         "PaymentContractState": PaymentContractState,
+        "PaymentInitiationAdviceFileState": PaymentInitiationAdviceFileState,
+        "PaymentLinkAddressHandlingMode": PaymentLinkAddressHandlingMode,
         "PaymentLinkProtectionMode": PaymentLinkProtectionMode,
         "PaymentPrimaryRiskTaker": PaymentPrimaryRiskTaker,
         "PaymentTerminalConfigurationState": PaymentTerminalConfigurationState,
@@ -477,10 +619,28 @@ var ObjectSerializer = /** @class */ (function () {
         "PaymentTerminalState": PaymentTerminalState,
         "ProductFeeType": ProductFeeType,
         "ProductMeteredTierPricing": ProductMeteredTierPricing,
+        "RecurringIndicator": RecurringIndicator,
         "RefundState": RefundState,
         "RefundType": RefundType,
         "ResourceState": ResourceState,
         "RestAddressFormatField": RestAddressFormatField,
+        "RoleState": RoleState,
+        "ShopifyAdditionalLineItemData": ShopifyAdditionalLineItemData,
+        "ShopifyIntegrationPaymentAppVersion": ShopifyIntegrationPaymentAppVersion,
+        "ShopifyIntegrationSubscriptionAppVersion": ShopifyIntegrationSubscriptionAppVersion,
+        "ShopifyRecurringOrderState": ShopifyRecurringOrderState,
+        "ShopifySubscriberState": ShopifySubscriberState,
+        "ShopifySubscriptionBillingIntervalUnit": ShopifySubscriptionBillingIntervalUnit,
+        "ShopifySubscriptionProductPricingOption": ShopifySubscriptionProductPricingOption,
+        "ShopifySubscriptionProductState": ShopifySubscriptionProductState,
+        "ShopifySubscriptionState": ShopifySubscriptionState,
+        "ShopifySubscriptionSuspensionInitiator": ShopifySubscriptionSuspensionInitiator,
+        "ShopifySubscriptionSuspensionState": ShopifySubscriptionSuspensionState,
+        "ShopifySubscriptionSuspensionType": ShopifySubscriptionSuspensionType,
+        "ShopifySubscriptionVersionItemPriceStrategy": ShopifySubscriptionVersionItemPriceStrategy,
+        "ShopifySubscriptionVersionState": ShopifySubscriptionVersionState,
+        "ShopifySubscriptionWeekday": ShopifySubscriptionWeekday,
+        "ShopifyTransactionState": ShopifyTransactionState,
         "SpaceReferenceState": SpaceReferenceState,
         "SubscriptionChargeProcessingType": SubscriptionChargeProcessingType,
         "SubscriptionChargeState": SubscriptionChargeState,
@@ -495,13 +655,17 @@ var ObjectSerializer = /** @class */ (function () {
         "SubscriptionSuspensionReason": SubscriptionSuspensionReason,
         "SubscriptionSuspensionState": SubscriptionSuspensionState,
         "SubscriptionVersionState": SubscriptionVersionState,
+        "TaxCalculation": TaxCalculation,
+        "TerminalReceiptFormat": TerminalReceiptFormat,
         "TokenVersionState": TokenVersionState,
         "TokenizationMode": TokenizationMode,
+        "TransactionCompletionBehavior": TransactionCompletionBehavior,
         "TransactionCompletionMode": TransactionCompletionMode,
         "TransactionCompletionState": TransactionCompletionState,
         "TransactionEnvironmentSelectionStrategy": TransactionEnvironmentSelectionStrategy,
         "TransactionGroupState": TransactionGroupState,
         "TransactionInvoiceState": TransactionInvoiceState,
+        "TransactionLineItemVersionState": TransactionLineItemVersionState,
         "TransactionState": TransactionState,
         "TransactionUserInterfaceType": TransactionUserInterfaceType,
         "TransactionVoidMode": TransactionVoidMode,
@@ -518,6 +682,7 @@ var ObjectSerializer = /** @class */ (function () {
         "AbstractHumanUserUpdate": AbstractHumanUserUpdate,
         "AbstractPaymentLinkUpdate": AbstractPaymentLinkUpdate,
         "AbstractRefundCommentActive": AbstractRefundCommentActive,
+        "AbstractShopifySubscriptionProductUpdate": AbstractShopifySubscriptionProductUpdate,
         "AbstractSpaceUpdate": AbstractSpaceUpdate,
         "AbstractSubscriberUpdate": AbstractSubscriberUpdate,
         "AbstractSubscriptionAffiliateUpdate": AbstractSubscriptionAffiliateUpdate,
@@ -532,6 +697,21 @@ var ObjectSerializer = /** @class */ (function () {
         "Account": Account,
         "Address": Address,
         "AddressCreate": AddressCreate,
+        "AnalyticsQuery": AnalyticsQuery,
+        "AnalyticsQueryExecution": AnalyticsQueryExecution,
+        "AnalyticsQueryResultBatch": AnalyticsQueryResultBatch,
+        "AnalyticsSchemaColumn": AnalyticsSchemaColumn,
+        "AnalyticsSchemaTable": AnalyticsSchemaTable,
+        "AuthenticatedCardDataCreate": AuthenticatedCardDataCreate,
+        "BankAccount": BankAccount,
+        "BankAccountType": BankAccountType,
+        "BankTransaction": BankTransaction,
+        "BankTransactionSource": BankTransactionSource,
+        "BankTransactionType": BankTransactionType,
+        "CardCryptogram": CardCryptogram,
+        "CardCryptogramCreate": CardCryptogramCreate,
+        "CardholderAuthentication": CardholderAuthentication,
+        "CardholderAuthenticationCreate": CardholderAuthenticationCreate,
         "ChargeFlow": ChargeFlow,
         "ChargeFlowLevelConfiguration": ChargeFlowLevelConfiguration,
         "ChargeFlowLevelConfigurationType": ChargeFlowLevelConfigurationType,
@@ -540,6 +720,7 @@ var ObjectSerializer = /** @class */ (function () {
         "CompletionLineItemCreate": CompletionLineItemCreate,
         "Condition": Condition,
         "ConditionType": ConditionType,
+        "CurrencyBankAccount": CurrencyBankAccount,
         "Customer": Customer,
         "CustomerAddress": CustomerAddress,
         "CustomerComment": CustomerComment,
@@ -566,14 +747,20 @@ var ObjectSerializer = /** @class */ (function () {
         "EntityQuery": EntityQuery,
         "EntityQueryFilter": EntityQueryFilter,
         "EntityQueryOrderBy": EntityQueryOrderBy,
+        "ExternalTransferBankTransaction": ExternalTransferBankTransaction,
         "FailureReason": FailureReason,
         "Feature": Feature,
+        "FeatureCategory": FeatureCategory,
         "HumanUser": HumanUser,
         "InstallmentCalculatedPlan": InstallmentCalculatedPlan,
         "InstallmentCalculatedSlice": InstallmentCalculatedSlice,
         "InstallmentPayment": InstallmentPayment,
         "InstallmentPlanConfiguration": InstallmentPlanConfiguration,
         "InstallmentPlanSliceConfiguration": InstallmentPlanSliceConfiguration,
+        "InternalTransferBankTransaction": InternalTransferBankTransaction,
+        "InvoiceReconciliationRecordInvoiceLink": InvoiceReconciliationRecordInvoiceLink,
+        "InvoiceReconciliationRecordType": InvoiceReconciliationRecordType,
+        "InvoiceReimbursement": InvoiceReimbursement,
         "Label": Label,
         "LabelDescriptor": LabelDescriptor,
         "LabelDescriptorGroup": LabelDescriptorGroup,
@@ -590,11 +777,28 @@ var ObjectSerializer = /** @class */ (function () {
         "ManualTaskAction": ManualTaskAction,
         "ManualTaskType": ManualTaskType,
         "MetricUsage": MetricUsage,
+        "PaymentAdjustment": PaymentAdjustment,
+        "PaymentAdjustmentType": PaymentAdjustmentType,
+        "PaymentAppChargeAttemptUpdateRequest": PaymentAppChargeAttemptUpdateRequest,
+        "PaymentAppCompletionConfiguration": PaymentAppCompletionConfiguration,
+        "PaymentAppCompletionConfigurationCreate": PaymentAppCompletionConfigurationCreate,
+        "PaymentAppCompletionUpdateRequest": PaymentAppCompletionUpdateRequest,
+        "PaymentAppConnector": PaymentAppConnector,
+        "PaymentAppConnectorCreationRequest": PaymentAppConnectorCreationRequest,
+        "PaymentAppProcessor": PaymentAppProcessor,
+        "PaymentAppProcessorCreationRequest": PaymentAppProcessorCreationRequest,
+        "PaymentAppRefundConfiguration": PaymentAppRefundConfiguration,
+        "PaymentAppRefundConfigurationCreate": PaymentAppRefundConfigurationCreate,
+        "PaymentAppRefundUpdateRequest": PaymentAppRefundUpdateRequest,
+        "PaymentAppVoidUpdateRequest": PaymentAppVoidUpdateRequest,
         "PaymentConnector": PaymentConnector,
         "PaymentConnectorConfiguration": PaymentConnectorConfiguration,
         "PaymentConnectorFeature": PaymentConnectorFeature,
         "PaymentContract": PaymentContract,
         "PaymentContractType": PaymentContractType,
+        "PaymentInformationHash": PaymentInformationHash,
+        "PaymentInformationHashType": PaymentInformationHashType,
+        "PaymentInitiationAdviceFile": PaymentInitiationAdviceFile,
         "PaymentLink": PaymentLink,
         "PaymentLinkUpdate": PaymentLinkUpdate,
         "PaymentMethod": PaymentMethod,
@@ -606,8 +810,13 @@ var ObjectSerializer = /** @class */ (function () {
         "PaymentTerminalAddress": PaymentTerminalAddress,
         "PaymentTerminalConfiguration": PaymentTerminalConfiguration,
         "PaymentTerminalConfigurationVersion": PaymentTerminalConfigurationVersion,
+        "PaymentTerminalDccTransactionSum": PaymentTerminalDccTransactionSum,
         "PaymentTerminalLocation": PaymentTerminalLocation,
         "PaymentTerminalLocationVersion": PaymentTerminalLocationVersion,
+        "PaymentTerminalReceiptType": PaymentTerminalReceiptType,
+        "PaymentTerminalTransactionSum": PaymentTerminalTransactionSum,
+        "PaymentTerminalTransactionSummary": PaymentTerminalTransactionSummary,
+        "PaymentTerminalTransactionSummaryFetchRequest": PaymentTerminalTransactionSummaryFetchRequest,
         "PaymentTerminalType": PaymentTerminalType,
         "Permission": Permission,
         "PersistableCurrencyAmount": PersistableCurrencyAmount,
@@ -625,6 +834,7 @@ var ObjectSerializer = /** @class */ (function () {
         "RefundCreate": RefundCreate,
         "RenderedDocument": RenderedDocument,
         "RenderedTerminalReceipt": RenderedTerminalReceipt,
+        "RenderedTerminalTransactionSummary": RenderedTerminalTransactionSummary,
         "ResourcePath": ResourcePath,
         "RestAddressFormat": RestAddressFormat,
         "RestCountry": RestCountry,
@@ -632,8 +842,28 @@ var ObjectSerializer = /** @class */ (function () {
         "RestCurrency": RestCurrency,
         "RestLanguage": RestLanguage,
         "Role": Role,
+        "SalesChannel": SalesChannel,
         "Scope": Scope,
         "ServerError": ServerError,
+        "ShopifyIntegration": ShopifyIntegration,
+        "ShopifyRecurringOrderUpdateRequest": ShopifyRecurringOrderUpdateRequest,
+        "ShopifySubscriber": ShopifySubscriber,
+        "ShopifySubscriberActive": ShopifySubscriberActive,
+        "ShopifySubscriberCreation": ShopifySubscriberCreation,
+        "ShopifySubscription": ShopifySubscription,
+        "ShopifySubscriptionAddressCreate": ShopifySubscriptionAddressCreate,
+        "ShopifySubscriptionCreationRequest": ShopifySubscriptionCreationRequest,
+        "ShopifySubscriptionModelBillingConfiguration": ShopifySubscriptionModelBillingConfiguration,
+        "ShopifySubscriptionModelItem": ShopifySubscriptionModelItem,
+        "ShopifySubscriptionModelTaxLine": ShopifySubscriptionModelTaxLine,
+        "ShopifySubscriptionProduct": ShopifySubscriptionProduct,
+        "ShopifySubscriptionSuspension": ShopifySubscriptionSuspension,
+        "ShopifySubscriptionSuspensionCreate": ShopifySubscriptionSuspensionCreate,
+        "ShopifySubscriptionUpdateAddressesRequest": ShopifySubscriptionUpdateAddressesRequest,
+        "ShopifySubscriptionUpdateRequest": ShopifySubscriptionUpdateRequest,
+        "ShopifySubscriptionVersion": ShopifySubscriptionVersion,
+        "ShopifySubscriptionVersionItem": ShopifySubscriptionVersionItem,
+        "ShopifyTaxLine": ShopifyTaxLine,
         "Space": Space,
         "SpaceAddress": SpaceAddress,
         "SpaceAddressCreate": SpaceAddressCreate,
@@ -674,14 +904,18 @@ var ObjectSerializer = /** @class */ (function () {
         "SubscriptionSuspension": SubscriptionSuspension,
         "SubscriptionSuspensionCreate": SubscriptionSuspensionCreate,
         "SubscriptionUpdate": SubscriptionUpdate,
+        "SubscriptionUpdateRequest": SubscriptionUpdateRequest,
         "SubscriptionVersion": SubscriptionVersion,
         "Tax": Tax,
         "TaxClass": TaxClass,
         "TaxCreate": TaxCreate,
         "TenantDatabase": TenantDatabase,
+        "TerminalReceiptFetchRequest": TerminalReceiptFetchRequest,
         "Token": Token,
         "TokenVersion": TokenVersion,
         "TokenVersionType": TokenVersionType,
+        "TokenizedCardData": TokenizedCardData,
+        "TokenizedCardDataCreate": TokenizedCardDataCreate,
         "Transaction": Transaction,
         "TransactionAwareEntity": TransactionAwareEntity,
         "TransactionComment": TransactionComment,
@@ -689,13 +923,13 @@ var ObjectSerializer = /** @class */ (function () {
         "TransactionGroup": TransactionGroup,
         "TransactionInvoiceComment": TransactionInvoiceComment,
         "TransactionInvoiceReplacement": TransactionInvoiceReplacement,
-        "TransactionLineItemUpdateRequest": TransactionLineItemUpdateRequest,
+        "TransactionLineItemVersionCreate": TransactionLineItemVersionCreate,
         "TwoFactorAuthenticationType": TwoFactorAuthenticationType,
-        "UnencryptedCardData": UnencryptedCardData,
-        "UnencryptedCardDataCreate": UnencryptedCardDataCreate,
         "User": User,
         "UserAccountRole": UserAccountRole,
         "UserSpaceRole": UserSpaceRole,
+        "WebAppConfirmationRequest": WebAppConfirmationRequest,
+        "WebAppConfirmationResponse": WebAppConfirmationResponse,
         "WebhookIdentity": WebhookIdentity,
         "WebhookListener": WebhookListener,
         "WebhookListenerEntity": WebhookListenerEntity,
@@ -705,9 +939,12 @@ var ObjectSerializer = /** @class */ (function () {
         "ApplicationUser": ApplicationUser,
         "ApplicationUserCreate": ApplicationUserCreate,
         "ApplicationUserUpdate": ApplicationUserUpdate,
+        "AuthenticatedCardData": AuthenticatedCardData,
         "Charge": Charge,
         "ChargeAttempt": ChargeAttempt,
+        "ChargeBankTransaction": ChargeBankTransaction,
         "ChargeFlowLevel": ChargeFlowLevel,
+        "ChargeFlowLevelPaymentLink": ChargeFlowLevelPaymentLink,
         "ConnectorInvocation": ConnectorInvocation,
         "CustomerActive": CustomerActive,
         "CustomerAddressActive": CustomerAddressActive,
@@ -721,10 +958,19 @@ var ObjectSerializer = /** @class */ (function () {
         "HumanUserCreate": HumanUserCreate,
         "HumanUserUpdate": HumanUserUpdate,
         "InstallmentPaymentSlice": InstallmentPaymentSlice,
+        "InvoiceReconciliationRecord": InvoiceReconciliationRecord,
+        "InvoiceReimbursementWithRefundReference": InvoiceReimbursementWithRefundReference,
         "PaymentLinkActive": PaymentLinkActive,
         "PaymentLinkCreate": PaymentLinkCreate,
+        "RefundBankTransaction": RefundBankTransaction,
         "RefundCommentActive": RefundCommentActive,
         "RefundCommentCreate": RefundCommentCreate,
+        "RefundRecoveryBankTransaction": RefundRecoveryBankTransaction,
+        "ShopifyRecurringOrder": ShopifyRecurringOrder,
+        "ShopifySubscriptionAddress": ShopifySubscriptionAddress,
+        "ShopifySubscriptionProductCreate": ShopifySubscriptionProductCreate,
+        "ShopifySubscriptionProductUpdate": ShopifySubscriptionProductUpdate,
+        "ShopifyTransaction": ShopifyTransaction,
         "SpaceCreate": SpaceCreate,
         "SpaceUpdate": SpaceUpdate,
         "SubscriberActive": SubscriberActive,

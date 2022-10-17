@@ -74,13 +74,13 @@ var CustomerPostalAddressCreate = /** @class */ (function () {
             "type": "string"
         },
         {
-            "name": "postCode",
-            "baseName": "postCode",
+            "name": "postalState",
+            "baseName": "postalState",
             "type": "string"
         },
         {
-            "name": "postalState",
-            "baseName": "postalState",
+            "name": "postcode",
+            "baseName": "postcode",
             "type": "string"
         },
         {

@@ -39,9 +39,9 @@ var PaymentLinkUpdate = /** @class */ (function () {
             "type": "Date"
         },
         {
-            "name": "billingAddressRequired",
-            "baseName": "billingAddressRequired",
-            "type": "boolean"
+            "name": "billingAddressHandlingMode",
+            "baseName": "billingAddressHandlingMode",
+            "type": "PaymentLinkAddressHandlingMode"
         },
         {
             "name": "currency",
@@ -69,9 +69,9 @@ var PaymentLinkUpdate = /** @class */ (function () {
             "type": "string"
         },
         {
-            "name": "shippingAddressRequired",
-            "baseName": "shippingAddressRequired",
-            "type": "boolean"
+            "name": "shippingAddressHandlingMode",
+            "baseName": "shippingAddressHandlingMode",
+            "type": "PaymentLinkAddressHandlingMode"
         }
     ];
     return PaymentLinkUpdate;

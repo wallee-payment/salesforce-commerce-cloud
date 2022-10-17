@@ -40,7 +40,7 @@ var Auth = /** @class */ (function () {
             "x-mac-userid": this.config.userId,
             "x-mac-version": this.config.macVersion,
             "x-mac-timestamp": timestamp,
-            "x-mac-value": this.getSignature(method, resourcePath, timestamp),
+            "x-mac-value": this.getSignature(method, resourcePath, timestamp)
         };
     };
     /**

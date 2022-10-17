@@ -1,5 +1,6 @@
 "use strict";
 
+var Locale = require("dw/util/Locale");
 var server = require("server");
 // @ts-ignore
 server.extend(module.superModule);
@@ -7,11 +8,12 @@ var TransactionHelperImport = require("~/cartridge/scripts/wallee/helpers/Transa
 server.append("Begin", function (req, res, next) {
     var currentBasket = dw.order.BasketMgr.getCurrentBasket();
     if (!currentBasket) {
-        next();
-        return;
+        return next();
     }
-    var viewData = res.getViewData();
     var transactionHelper = new TransactionHelperImport(currentBasket);
+    var viewData = res.getViewData();
+    var currentLocale = Locale.getLocale(req.locale.id);
+    session.custom.language = currentLocale.language;
     viewData.wallee = transactionHelper.handleTransaction();
     res.setViewData(viewData);
     return next();

@@ -34,6 +34,11 @@ var SubscriptionLedgerEntry = /** @class */ (function () {
             "type": "Date"
         },
         {
+            "name": "discountIncludingTax",
+            "baseName": "discountIncludingTax",
+            "type": "number"
+        },
+        {
             "name": "externalId",
             "baseName": "externalId",
             "type": "string"
