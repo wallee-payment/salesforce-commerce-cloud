@@ -367,6 +367,7 @@ var WalleeModule = {
         UserAccountRole: require("./src/models/UserAccountRole"),
         UserSpaceRole: require("./src/models/UserSpaceRole"),
         UserType: require("./src/models/UserType"),
+        WalletType: require("./src/models/WalletType"),
         WebAppConfirmationRequest: require("./src/models/WebAppConfirmationRequest"),
         WebAppConfirmationResponse: require("./src/models/WebAppConfirmationResponse"),
         WebhookIdentity: require("./src/models/WebhookIdentity"),

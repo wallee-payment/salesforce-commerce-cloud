@@ -148,6 +148,11 @@ var ChargeAttempt = /** @class */ (function (_super) {
             "name": "version",
             "baseName": "version",
             "type": "number"
+        },
+        {
+            "name": "walletType",
+            "baseName": "walletType",
+            "type": "WalletType"
         }
     ];
     return ChargeAttempt;

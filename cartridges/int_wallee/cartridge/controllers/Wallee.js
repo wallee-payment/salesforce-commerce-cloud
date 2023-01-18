@@ -20,11 +20,16 @@ server.post("TransactionUpdate", server.middleware.https, function (req, res, ne
     var shippingAddress = server.forms.getForm("shipping");
     var shippingFormErrors = COHelpers.validateShippingForm(shippingAddress.shippingAddress.addressFields);
     var billingFormErrors = COHelpers.validateBillingForm(billingAddress.addressFields);
+    var transaction = null;
     if ((Object.keys(shippingFormErrors).length < 1) && TransactionHelper.ajaxAddressValid(shippingAddress.shippingAddress.addressFields)) {
-        viewData.wallee = TransactionHelper.updateShippingAddress(shippingAddress.shippingAddress);
+        transaction = TransactionHelper.updateShippingAddress(shippingAddress.shippingAddress);
     }
     if ((Object.keys(billingFormErrors).length < 1) && TransactionHelper.ajaxAddressValid(billingAddress.addressFields)) {
-        viewData.wallee = TransactionHelper.updateBillingAddress(billingAddress);
+        transaction = TransactionHelper.updateBillingAddress(billingAddress);
+    }
+    if (transaction !== null) {
+        TransactionHelper.updateTransaction(transaction);
+        viewData.wallee = TransactionHelper.getPaymentVariableData(transaction);
     }
     res.json(viewData);
     // @ts-ignore

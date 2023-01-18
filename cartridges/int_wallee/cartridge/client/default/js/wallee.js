@@ -21,6 +21,10 @@ jQuery(function ($) {
                 $('#dwfrm_billing div.form-nav.billing-nav.payment-information > ul > li > a').first().trigger('click');
                 $(".tab-pane.wallee-content").removeAttr("style");
             });
+            $(window).on("load", function () {
+                $('#dwfrm_billing div.form-nav.billing-nav.payment-information > ul > li > a').first().trigger('click');
+                $(".tab-pane.wallee-content").removeAttr("style");
+            });
             window.WalleeCheckout = this;
         },
         /**

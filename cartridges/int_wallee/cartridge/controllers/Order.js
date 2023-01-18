@@ -65,6 +65,8 @@ server.get('WalleeFail', consentTracking.consent, server.middleware.https, csrfP
     res.render('/error', {
         message: Resource.msg('Payment failed. Please try another payment method', 'confirmation', null)
     });
+    req.session.raw.custom.orderID = null;
+    req.session.raw.custom.WalleeTransactionId = null;
     return next();
 });
 module.exports = server.exports();

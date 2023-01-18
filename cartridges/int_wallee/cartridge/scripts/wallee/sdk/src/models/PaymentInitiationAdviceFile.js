@@ -14,8 +14,18 @@ var PaymentInitiationAdviceFile = /** @class */ (function () {
             "type": "Date"
         },
         {
+            "name": "failureMessage",
+            "baseName": "failureMessage",
+            "type": "string"
+        },
+        {
             "name": "fileGeneratedOn",
             "baseName": "fileGeneratedOn",
+            "type": "Date"
+        },
+        {
+            "name": "forwardedOn",
+            "baseName": "forwardedOn",
             "type": "Date"
         },
         {
@@ -37,6 +47,11 @@ var PaymentInitiationAdviceFile = /** @class */ (function () {
             "name": "processedOn",
             "baseName": "processedOn",
             "type": "Date"
+        },
+        {
+            "name": "processor",
+            "baseName": "processor",
+            "type": "PaymentProcessor"
         },
         {
             "name": "state",

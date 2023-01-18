@@ -213,8 +213,7 @@ var Transaction = /** @class */ (function () {
         if (this.isOldSession()) {
             var transaction = this.getTransactionById(this.spaceId, session.custom.WalleeTransactionId);
             transaction.billingAddress = address;
-            var transactionUpdate = this.TransactionService.update(this.spaceId, transaction);
-            return this.getPaymentVariableData(transactionUpdate);
+            return transaction;
         }
         return {
             error: true,
@@ -244,8 +243,7 @@ var Transaction = /** @class */ (function () {
             var transaction = this.getTransactionById(this.spaceId, session.custom.WalleeTransactionId);
             transaction.shippingAddress = address;
             transaction.billingAddress = address;
-            var transactionUpdate = this.TransactionService.update(this.spaceId, transaction);
-            return this.getPaymentVariableData(transactionUpdate);
+            return transaction;
         }
         return {
             error: true,
@@ -312,14 +310,11 @@ var Transaction = /** @class */ (function () {
         };
     };
     /**
-     * Get WebHook Listener
-     * TODO This should be called only once in a shop
-     * @return { Wallee.model.WebhookListener }
+     *
+     * @param { Wallee.model.Transaction } transaction
      */
-    Transaction.prototype.getWebHook = function () {
-        var WebHookHelper = new (require("~/cartridge/scripts/wallee/helpers/WebHook"));
-        WebHookHelper.getTransactionListener();
-        WebHookHelper.getRefundListener();
+    Transaction.prototype.updateTransaction = function (transaction) {
+        this.TransactionService.update(this.spaceId, transaction);
     };
     /**
      * Get Wallee.model.Transaction by id

@@ -365,6 +365,7 @@ var User = require("../models/User");
 var UserAccountRole = require("../models/UserAccountRole");
 var UserSpaceRole = require("../models/UserSpaceRole");
 var UserType = require("../models/UserType");
+var WalletType = require("../models/WalletType");
 var WebAppConfirmationRequest = require("../models/WebAppConfirmationRequest");
 var WebAppConfirmationResponse = require("../models/WebAppConfirmationResponse");
 var WebhookIdentity = require("../models/WebhookIdentity");
@@ -670,7 +671,8 @@ var ObjectSerializer = /** @class */ (function () {
         "TransactionUserInterfaceType": TransactionUserInterfaceType,
         "TransactionVoidMode": TransactionVoidMode,
         "TransactionVoidState": TransactionVoidState,
-        "UserType": UserType
+        "UserType": UserType,
+        "WalletType": WalletType
     };
     ObjectSerializer.typeMap = {
         "AbstractAccountUpdate": AbstractAccountUpdate,
