@@ -61,12 +61,4 @@ server.get('WalleeConfirm', consentTracking.consent, server.middleware.https, cs
     req.session.raw.custom.orderID = req.querystring.ID;
     return next();
 });
-server.get('WalleeFail', consentTracking.consent, server.middleware.https, csrfProtection.generateToken, function (req, res, next) {
-    res.render('/error', {
-        message: Resource.msg('Payment failed. Please try another payment method', 'confirmation', null)
-    });
-    req.session.raw.custom.orderID = null;
-    req.session.raw.custom.WalleeTransactionId = null;
-    return next();
-});
 module.exports = server.exports();

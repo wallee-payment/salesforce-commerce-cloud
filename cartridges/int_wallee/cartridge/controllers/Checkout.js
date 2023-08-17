@@ -1,6 +1,5 @@
 "use strict";
 
-var Locale = require("dw/util/Locale");
 var server = require("server");
 // @ts-ignore
 server.extend(module.superModule);
@@ -12,8 +11,6 @@ server.append("Begin", function (req, res, next) {
     }
     var transactionHelper = new TransactionHelperImport(currentBasket);
     var viewData = res.getViewData();
-    var currentLocale = Locale.getLocale(req.locale.id);
-    session.custom.language = currentLocale.language;
     viewData.wallee = transactionHelper.handleTransaction();
     res.setViewData(viewData);
     return next();

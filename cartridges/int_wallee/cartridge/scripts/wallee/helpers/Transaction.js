@@ -32,47 +32,27 @@ var Transaction = /** @class */ (function () {
         shippingLineItem.sku = Wallee.model.LineItemType.SHIPPING;
         shippingLineItem.quantity = 1;
         shippingLineItem.taxes = this.getShippingTax();
-        shippingLineItem.amountIncludingTax = (this.currentBasket.shippingTotalPrice.getValue()).toFixed(2);
+        shippingLineItem.amountIncludingTax = (this.currentBasket.shippingTotalPrice.getValue() + this.currentBasket.shippingTotalTax.getValue()).toFixed(2);
         shippingLineItem.type = Wallee.model.LineItemType.SHIPPING;
         data.push(shippingLineItem);
-        var allItemsList = this.currentBasket.getAllLineItems().iterator();
-        while (allItemsList.hasNext()) {
-            // @ts-ignore
-            var couponLineItem = allItemsList.next();
-            // @ts-ignore
-            if (!couponLineItem instanceof dw.order.PriceAdjustment) {
-                continue;
-            }
-            if (couponLineItem.getPriceValue() < 0) {
-                var lineItem = new Wallee.model.LineItemCreate();
-                lineItem.name = couponLineItem.getLineItemText();
-                lineItem.uniqueId = "COUPON-" + couponLineItem.getLineItemText() + dw.util.UUIDUtils.createUUID();
-                lineItem.quantity = 1;
-                lineItem.taxes = 0;
-                lineItem.amountIncludingTax = couponLineItem.getPriceValue();
-                lineItem.type = Wallee.model.LineItemType.DISCOUNT;
-                data.push(lineItem);
-            }
-        }
         var productLineItems = this.currentBasket.getAllProductLineItems().iterator();
         while (productLineItems.hasNext()) {
-            var lineItem_1 = new Wallee.model.LineItemCreate();
+            var lineItem = new Wallee.model.LineItemCreate();
             var productLineItem = productLineItems.next();
-            var productPrice = productLineItem.getPriceValue();
-            lineItem_1.name = productLineItem.productName;
-            lineItem_1.uniqueId = productLineItem.productID + "-" + dw.util.UUIDUtils.createUUID();
-            lineItem_1.sku = productLineItem.manufacturerSKU;
-            lineItem_1.quantity = productLineItem.quantityValue;
-            lineItem_1.taxes = this.getLineItemTax(productLineItem);
-            lineItem_1.amountIncludingTax = productPrice.toFixed(2);
-            lineItem_1.type = Wallee.model.LineItemType.PRODUCT;
-            data.push(lineItem_1);
+            lineItem.name = productLineItem.productName;
+            lineItem.uniqueId = productLineItem.productID + "-" + dw.util.UUIDUtils.createUUID();
+            lineItem.sku = productLineItem.manufacturerSKU;
+            lineItem.quantity = productLineItem.quantityValue;
+            lineItem.taxes = this.getLineItemTax(productLineItem);
+            lineItem.amountIncludingTax = (productLineItem.getPriceValue() + productLineItem.adjustedTax.getValue()).toFixed(2);
+            lineItem.type = Wallee.model.LineItemType.PRODUCT;
+            data.push(lineItem);
         }
         return data;
     };
     Transaction.prototype.getShippingTax = function () {
         var taxArray = [];
-        var totalPrice = this.currentBasket.shippingTotalPrice.getValue();
+        var totalPrice = this.currentBasket.shippingTotalPrice.getValue() + this.currentBasket.shippingTotalTax.getValue();
         var taxRate = (this.currentBasket.shippingTotalTax.getValue() / totalPrice).toFixed(2);
         var tax = new Wallee.model.TaxCreate();
         tax.rate = parseFloat(taxRate) * 100;
@@ -156,7 +136,6 @@ var Transaction = /** @class */ (function () {
             var transaction = new Wallee.model.TransactionCreate();
             transaction.lineItems = transactionLineItems;
             transaction.currency = this.currentBasket.getCurrencyCode();
-            transaction.language = session.custom.language;
             transaction.billingAddress = empty(billingAddress) ? shippingAddress : billingAddress;
             transaction.shippingAddress = shippingAddress;
             transaction.autoConfirmationEnabled = true;
@@ -213,7 +192,8 @@ var Transaction = /** @class */ (function () {
         if (this.isOldSession()) {
             var transaction = this.getTransactionById(this.spaceId, session.custom.WalleeTransactionId);
             transaction.billingAddress = address;
-            return transaction;
+            var transactionUpdate = this.TransactionService.update(this.spaceId, transaction);
+            return this.getPaymentVariableData(transactionUpdate);
         }
         return {
             error: true,
@@ -243,7 +223,8 @@ var Transaction = /** @class */ (function () {
             var transaction = this.getTransactionById(this.spaceId, session.custom.WalleeTransactionId);
             transaction.shippingAddress = address;
             transaction.billingAddress = address;
-            return transaction;
+            var transactionUpdate = this.TransactionService.update(this.spaceId, transaction);
+            return this.getPaymentVariableData(transactionUpdate);
         }
         return {
             error: true,
@@ -273,7 +254,7 @@ var Transaction = /** @class */ (function () {
         var transaction = this.getTransactionById(this.spaceId, session.custom.WalleeTransactionId);
         transaction.metaData = data;
         transaction.successUrl = dw.web.URLUtils.abs("Order-WalleeConfirm", "ID", data.orderID, "token", data.orderToken).toString();
-        transaction.failedUrl = dw.web.URLUtils.abs("Order-WalleeFail").toString();
+        transaction.failedUrl = transaction.successUrl;
         transaction.merchantReference = data.orderID;
         this.TransactionService.update(this.spaceId, transaction);
     };
@@ -310,11 +291,14 @@ var Transaction = /** @class */ (function () {
         };
     };
     /**
-     *
-     * @param { Wallee.model.Transaction } transaction
+     * Get WebHook Listener
+     * TODO This should be called only once in a shop
+     * @return { Wallee.model.WebhookListener }
      */
-    Transaction.prototype.updateTransaction = function (transaction) {
-        this.TransactionService.update(this.spaceId, transaction);
+    Transaction.prototype.getWebHook = function () {
+        var WebHookHelper = new (require("~/cartridge/scripts/wallee/helpers/WebHook"));
+        WebHookHelper.getTransactionListener();
+        WebHookHelper.getRefundListener();
     };
     /**
      * Get Wallee.model.Transaction by id

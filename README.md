@@ -11,7 +11,7 @@ Our cartridges integrate the checkout process with Wallee. Each of the steps bel
 
 ### 1. Upload cartridge
 
-_To import the cartridges please use Commerce Cloud UX-studio._
+_To import the cartridges please use [Salesforce Commerce Cloud CLI](https://github.com/SalesforceCommerceCloud/sfcc-ci). Check the [`sfcc-ci code:deploy`](https://github.com/SalesforceCommerceCloud/sfcc-ci#pushing-code) command._
 
 1. Upload these cartridges to your site 
 

@@ -21,7 +21,7 @@ var ApiClient = /** @class */ (function () {
                 }
             });
         };
-        var service = httpService('int_wallee.http.rest.payment.wallee');
+        var service = httpService('int_wallee.http.nvp.payment.wallee.SiteGenesis');
         service.call();
         return service.client;
     };
