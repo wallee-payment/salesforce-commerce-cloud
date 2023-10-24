@@ -20,11 +20,16 @@ server.post("TransactionUpdate", server.middleware.https, function (req, res, ne
     var shippingAddress = server.forms.getForm("shipping");
     var shippingFormErrors = COHelpers.validateShippingForm(shippingAddress.shippingAddress.addressFields);
     var billingFormErrors = COHelpers.validateBillingForm(billingAddress.addressFields);
+    var transaction = null;
     if ((Object.keys(shippingFormErrors).length < 1) && TransactionHelper.ajaxAddressValid(shippingAddress.shippingAddress.addressFields)) {
-        viewData.wallee = TransactionHelper.updateShippingAddress(shippingAddress.shippingAddress);
+        transaction = TransactionHelper.updateShippingAddress(shippingAddress.shippingAddress);
     }
     if ((Object.keys(billingFormErrors).length < 1) && TransactionHelper.ajaxAddressValid(billingAddress.addressFields)) {
-        viewData.wallee = TransactionHelper.updateBillingAddress(billingAddress);
+        transaction = TransactionHelper.updateBillingAddress(billingAddress);
+    }
+    if (transaction !== null) {
+        TransactionHelper.updateTransaction(transaction);
+        viewData.wallee = TransactionHelper.getPaymentVariableData(transaction);
     }
     res.json(viewData);
     // @ts-ignore
@@ -56,6 +61,7 @@ server.post("WebHookTransaction", server.middleware.https, function (req, res, n
                                 dw.system.Transaction.wrap(function () {
                                     order_1.setExternalOrderStatus(transaction_1.state);
                                     order_1.setPaymentStatus(dw.order.Order.PAYMENT_STATUS_PAID);
+                                    order_1.trackOrderChange('Order was paid');
                                 });
                                 break;
                             case Wallee.model.TransactionState.DECLINE:
@@ -100,32 +106,35 @@ server.post("WebHookRefund", server.middleware.https, function (req, res, next) 
     var TransactionHelper = new TransactionHelperImport(null);
     var RefundHelper = new RefundHelperImport(null);
     if ("Refund" === callBack.listenerEntityTechnicalName) {
-        var refund = RefundHelper.getRefundById(callBack.spaceId, callBack.entityId);
-        if (empty(refund)) {
+        var refund_1 = RefundHelper.getRefundById(callBack.spaceId, callBack.entityId);
+        if (empty(refund_1)) {
             throw new Error("Refunds error: Refund not found");
         }
-        if (empty(refund.transaction)) {
+        if (empty(refund_1.transaction)) {
             throw new Error("Refunds error: Refund transaction not found");
         }
-        var transactionId = refund.transaction.id;
-        var transaction = TransactionHelper.getTransactionById(callBack.spaceId, transactionId);
+        var transactionId = refund_1.transaction.id;
+        var transaction_2 = TransactionHelper.getTransactionById(callBack.spaceId, transactionId);
         // @ts-ignore
-        var orderID = transaction.metaData.orderID;
+        var orderID = transaction_2.metaData.orderID;
         if (!empty(orderID)) {
-            var order = dw.order.OrderMgr.getOrder(orderID);
-            var orderStatus = order.getPaymentStatus().getValue();
+            var order_2 = dw.order.OrderMgr.getOrder(orderID);
+            var orderStatus = order_2.getPaymentStatus().getValue();
             statusCode = 200;
-            if (order) {
+            if (order_2) {
                 // @ts-ignore
                 if ([dw.order.Order.PAYMENT_STATUS_PAID].indexOf(orderStatus) !== -1) {
-                    if (transaction.state === Wallee.model.TransactionState.FULFILL) {
-                        if (order.getInvoices().size() && order.getPaymentInstruments().size() === 1) {
-                            var invoice = order.getInvoice(order.getInvoiceNo());
-                            var orderPaymentInstruments = order.getPaymentInstruments().toArray();
-                            if (orderPaymentInstruments[0].getPaymentMethod() === 'WALLEE') {
-                                invoice.addRefundTransaction(orderPaymentInstruments[0], new dw.value.Money(transaction.authorizationAmount, transaction.currency));
-                            }
-                        }
+                    if (transaction_2.state === Wallee.model.TransactionState.FULFILL) {
+                        dw.system.Transaction.wrap(function () {
+                            order_2.setExternalOrderStatus(transaction_2.state);
+                            order_2.setExternalOrderText('Refunded');
+                            order_2.setPaymentStatus(dw.order.Order.PAYMENT_STATUS_NOTPAID);
+                            order_2.setStatus(dw.order.Order.ORDER_STATUS_CANCELLED);
+                            order_2.trackOrderChange('Order was refunded for ' + refund_1.amount);
+                            order_2.setConfirmationStatus(dw.order.Order.CONFIRMATION_STATUS_NOTCONFIRMED);
+                            order_2.setCancelCode('Refund');
+                            order_2.setCancelDescription('Order was refunded');
+                        });
                     }
                 }
             }

@@ -36,7 +36,12 @@ var Auth = /** @class */ (function () {
         }
         resourcePath = "/api" + resourcePath;
         var timestamp = Math.floor(+new Date / 1000);
+        var versionString = dw.system.System.getCompatibilityMode().toString();
+        var version = versionString.substr(0, 2) + "." + versionString.substr(2, 2);
         return {
+            "x-meta-shop-system": "salesforce",
+            "x-meta-shop-system-version": version,
+            "x-meta-shop-system-and-version": "salesforce-" + version,
             "x-mac-userid": this.config.userId,
             "x-mac-version": this.config.macVersion,
             "x-mac-timestamp": timestamp,

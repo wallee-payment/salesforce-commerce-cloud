@@ -5,7 +5,7 @@ function getPreferences() {
         var customPreferences = dw.object.CustomObjectMgr.getCustomObject("Wallee_Common", "wallee_common");
         return {
             spaceId: customPreferences.custom.spaceId,
-            serviceName: "int_wallee.http.nvp.payment.wallee.SiteGenesis",
+            serviceName: "int_wallee.http.rest.payment.wallee",
             macVersion: 1,
             userId: customPreferences.custom.userId,
             apiSecret: customPreferences.custom.apiSecret
