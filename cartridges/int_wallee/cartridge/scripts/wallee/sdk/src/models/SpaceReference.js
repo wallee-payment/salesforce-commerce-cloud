@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SpaceReference = void 0;
 var SpaceReference = /** @class */ (function () {
     function SpaceReference() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SpaceView = void 0;
 var SpaceView = /** @class */ (function () {
     function SpaceView() {
     }

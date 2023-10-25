@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Account = void 0;
 var Account = /** @class */ (function () {
     function Account() {
     }

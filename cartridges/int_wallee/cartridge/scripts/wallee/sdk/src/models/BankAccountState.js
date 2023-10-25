@@ -1,5 +1,6 @@
 "use strict";
 
+exports.BankAccountState = void 0;
 var BankAccountState;
 (function (BankAccountState) {
     BankAccountState["CREATE"] = "CREATE";

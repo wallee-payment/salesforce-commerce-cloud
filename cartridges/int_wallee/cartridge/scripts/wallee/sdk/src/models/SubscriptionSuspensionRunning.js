@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.SubscriptionSuspensionRunning = void 0;
 var SubscriptionSuspension = require("./SubscriptionSuspension");
 var SubscriptionSuspensionRunning = /** @class */ (function (_super) {
     __extends(SubscriptionSuspensionRunning, _super);

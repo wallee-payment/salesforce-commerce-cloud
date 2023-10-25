@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CustomerAddress = void 0;
 var CustomerAddress = /** @class */ (function () {
     function CustomerAddress() {
     }

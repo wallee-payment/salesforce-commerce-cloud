@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentTerminalLocationState = void 0;
 var PaymentTerminalLocationState;
 (function (PaymentTerminalLocationState) {
     PaymentTerminalLocationState["CREATE"] = "CREATE";

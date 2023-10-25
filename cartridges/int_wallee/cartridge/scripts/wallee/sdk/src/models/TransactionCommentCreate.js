@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.TransactionCommentCreate = void 0;
 var AbstractTransactionCommentActive = require("./AbstractTransactionCommentActive");
 var TransactionCommentCreate = /** @class */ (function (_super) {
     __extends(TransactionCommentCreate, _super);

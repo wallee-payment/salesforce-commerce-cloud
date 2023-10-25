@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifyIntegration = void 0;
 var ShopifyIntegration = /** @class */ (function () {
     function ShopifyIntegration() {
     }

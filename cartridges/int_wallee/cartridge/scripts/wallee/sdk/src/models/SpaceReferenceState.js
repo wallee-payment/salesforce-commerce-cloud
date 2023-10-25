@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SpaceReferenceState = void 0;
 var SpaceReferenceState;
 (function (SpaceReferenceState) {
     SpaceReferenceState["RESTRICTED_ACTIVE"] = "RESTRICTED_ACTIVE";

@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.WebhookListenerUpdate = void 0;
 var AbstractWebhookListenerUpdate = require("./AbstractWebhookListenerUpdate");
 var WebhookListenerUpdate = /** @class */ (function (_super) {
     __extends(WebhookListenerUpdate, _super);

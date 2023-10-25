@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionAffiliateUpdate = void 0;
 var SubscriptionAffiliateUpdate = /** @class */ (function () {
     function SubscriptionAffiliateUpdate() {
     }

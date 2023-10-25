@@ -1,5 +1,6 @@
 "use strict";
 
+exports.User = void 0;
 var User = /** @class */ (function () {
     function User() {
     }

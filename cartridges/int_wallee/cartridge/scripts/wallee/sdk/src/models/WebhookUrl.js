@@ -1,5 +1,6 @@
 "use strict";
 
+exports.WebhookUrl = void 0;
 var WebhookUrl = /** @class */ (function () {
     function WebhookUrl() {
     }

@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ChargeAttempt = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var ChargeAttempt = /** @class */ (function (_super) {
     __extends(ChargeAttempt, _super);

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ObjectSerializer = void 0;
 var AbstractAccountUpdate = require("../models/AbstractAccountUpdate");
 var AbstractApplicationUserUpdate = require("../models/AbstractApplicationUserUpdate");
 var AbstractCustomerActive = require("../models/AbstractCustomerActive");

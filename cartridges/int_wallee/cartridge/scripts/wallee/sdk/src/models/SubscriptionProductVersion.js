@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionProductVersion = void 0;
 var SubscriptionProductVersion = /** @class */ (function () {
     function SubscriptionProductVersion() {
     }

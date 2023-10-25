@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RenderedDocument = void 0;
 var RenderedDocument = /** @class */ (function () {
     function RenderedDocument() {
     }

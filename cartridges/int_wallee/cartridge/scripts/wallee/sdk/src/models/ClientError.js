@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ClientError = void 0;
 var ClientError = /** @class */ (function () {
     function ClientError() {
     }

@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.PaymentLinkCreate = void 0;
 var AbstractPaymentLinkUpdate = require("./AbstractPaymentLinkUpdate");
 var PaymentLinkCreate = /** @class */ (function (_super) {
     __extends(PaymentLinkCreate, _super);

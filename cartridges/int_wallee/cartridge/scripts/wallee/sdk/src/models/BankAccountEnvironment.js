@@ -1,5 +1,6 @@
 "use strict";
 
+exports.BankAccountEnvironment = void 0;
 var BankAccountEnvironment;
 (function (BankAccountEnvironment) {
     BankAccountEnvironment["PRODUCTION"] = "PRODUCTION";

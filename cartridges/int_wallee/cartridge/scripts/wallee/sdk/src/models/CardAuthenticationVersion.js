@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CardAuthenticationVersion = void 0;
 var CardAuthenticationVersion;
 (function (CardAuthenticationVersion) {
     CardAuthenticationVersion["V1"] = "V1";

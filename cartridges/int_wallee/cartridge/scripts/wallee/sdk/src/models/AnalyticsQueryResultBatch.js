@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AnalyticsQueryResultBatch = void 0;
 var AnalyticsQueryResultBatch = /** @class */ (function () {
     function AnalyticsQueryResultBatch() {
     }

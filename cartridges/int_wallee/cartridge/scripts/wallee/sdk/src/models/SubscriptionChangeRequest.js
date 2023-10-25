@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionChangeRequest = void 0;
 var SubscriptionChangeRequest = /** @class */ (function () {
     function SubscriptionChangeRequest() {
     }

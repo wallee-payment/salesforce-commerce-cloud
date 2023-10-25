@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Role = void 0;
 var Role = /** @class */ (function () {
     function Role() {
     }

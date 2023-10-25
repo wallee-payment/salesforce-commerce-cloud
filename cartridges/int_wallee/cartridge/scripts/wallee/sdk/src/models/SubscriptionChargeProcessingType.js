@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionChargeProcessingType = void 0;
 var SubscriptionChargeProcessingType;
 (function (SubscriptionChargeProcessingType) {
     SubscriptionChargeProcessingType["SYNCHRONOUS"] = "SYNCHRONOUS";

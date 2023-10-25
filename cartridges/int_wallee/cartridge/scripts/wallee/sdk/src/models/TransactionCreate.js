@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.TransactionCreate = void 0;
 var AbstractTransactionPending = require("./AbstractTransactionPending");
 var TransactionCreate = /** @class */ (function (_super) {
     __extends(TransactionCreate, _super);

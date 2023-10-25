@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentLinkAddressHandlingMode = void 0;
 var PaymentLinkAddressHandlingMode;
 (function (PaymentLinkAddressHandlingMode) {
     PaymentLinkAddressHandlingMode["NOT_REQUIRED"] = "NOT_REQUIRED";

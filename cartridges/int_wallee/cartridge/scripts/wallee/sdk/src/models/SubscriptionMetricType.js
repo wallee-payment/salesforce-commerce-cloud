@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionMetricType = void 0;
 var SubscriptionMetricType = /** @class */ (function () {
     function SubscriptionMetricType() {
     }

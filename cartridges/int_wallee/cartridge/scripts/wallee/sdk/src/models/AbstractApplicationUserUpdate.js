@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractApplicationUserUpdate = void 0;
 var AbstractApplicationUserUpdate = /** @class */ (function () {
     function AbstractApplicationUserUpdate() {
     }

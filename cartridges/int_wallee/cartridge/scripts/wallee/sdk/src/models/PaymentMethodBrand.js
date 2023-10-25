@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentMethodBrand = void 0;
 var PaymentMethodBrand = /** @class */ (function () {
     function PaymentMethodBrand() {
     }

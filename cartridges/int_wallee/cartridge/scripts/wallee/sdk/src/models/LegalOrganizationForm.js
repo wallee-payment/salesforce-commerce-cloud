@@ -1,5 +1,6 @@
 "use strict";
 
+exports.LegalOrganizationForm = void 0;
 var LegalOrganizationForm = /** @class */ (function () {
     function LegalOrganizationForm() {
     }

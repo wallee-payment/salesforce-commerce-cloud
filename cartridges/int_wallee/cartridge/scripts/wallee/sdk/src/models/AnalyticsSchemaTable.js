@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AnalyticsSchemaTable = void 0;
 var AnalyticsSchemaTable = /** @class */ (function () {
     function AnalyticsSchemaTable() {
     }

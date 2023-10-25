@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.AccountUpdate = void 0;
 var AbstractAccountUpdate = require("./AbstractAccountUpdate");
 var AccountUpdate = /** @class */ (function (_super) {
     __extends(AccountUpdate, _super);

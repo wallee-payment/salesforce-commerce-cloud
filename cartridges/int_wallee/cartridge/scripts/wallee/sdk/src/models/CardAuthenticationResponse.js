@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CardAuthenticationResponse = void 0;
 var CardAuthenticationResponse;
 (function (CardAuthenticationResponse) {
     CardAuthenticationResponse["FULLY_AUTHENTICATED"] = "FULLY_AUTHENTICATED";

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CustomersPresence = void 0;
 var CustomersPresence;
 (function (CustomersPresence) {
     CustomersPresence["NOT_PRESENT"] = "NOT_PRESENT";

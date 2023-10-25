@@ -1,5 +1,6 @@
 "use strict";
 
+exports.FeatureCategory = void 0;
 var FeatureCategory = /** @class */ (function () {
     function FeatureCategory() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionState = void 0;
 var ShopifySubscriptionState;
 (function (ShopifySubscriptionState) {
     ShopifySubscriptionState["INITIATING"] = "INITIATING";

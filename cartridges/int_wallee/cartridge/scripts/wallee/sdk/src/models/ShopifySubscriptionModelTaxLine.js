@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionModelTaxLine = void 0;
 var ShopifySubscriptionModelTaxLine = /** @class */ (function () {
     function ShopifySubscriptionModelTaxLine() {
     }

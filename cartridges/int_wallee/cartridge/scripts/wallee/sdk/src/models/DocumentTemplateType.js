@@ -1,5 +1,6 @@
 "use strict";
 
+exports.DocumentTemplateType = void 0;
 var DocumentTemplateType = /** @class */ (function () {
     function DocumentTemplateType() {
     }

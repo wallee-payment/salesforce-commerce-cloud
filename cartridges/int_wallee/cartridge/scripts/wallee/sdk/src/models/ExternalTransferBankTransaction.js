@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ExternalTransferBankTransaction = void 0;
 var ExternalTransferBankTransaction = /** @class */ (function () {
     function ExternalTransferBankTransaction() {
     }

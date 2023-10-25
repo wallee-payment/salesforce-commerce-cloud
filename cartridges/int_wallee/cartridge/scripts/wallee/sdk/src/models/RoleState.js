@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RoleState = void 0;
 var RoleState;
 (function (RoleState) {
     RoleState["CREATE"] = "CREATE";

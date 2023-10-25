@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.AuthenticatedCardData = void 0;
 var TokenizedCardData = require("./TokenizedCardData");
 var AuthenticatedCardData = /** @class */ (function (_super) {
     __extends(AuthenticatedCardData, _super);

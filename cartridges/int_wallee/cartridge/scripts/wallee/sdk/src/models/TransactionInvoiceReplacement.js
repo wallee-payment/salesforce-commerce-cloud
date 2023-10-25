@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionInvoiceReplacement = void 0;
 var TransactionInvoiceReplacement = /** @class */ (function () {
     function TransactionInvoiceReplacement() {
     }

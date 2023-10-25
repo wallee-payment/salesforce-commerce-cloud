@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ProductSetupFeeUpdate = void 0;
 var ProductSetupFeeUpdate = /** @class */ (function () {
     function ProductSetupFeeUpdate() {
     }

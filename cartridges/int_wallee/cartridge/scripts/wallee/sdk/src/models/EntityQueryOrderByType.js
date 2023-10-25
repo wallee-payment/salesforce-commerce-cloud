@@ -1,5 +1,6 @@
 "use strict";
 
+exports.EntityQueryOrderByType = void 0;
 var EntityQueryOrderByType;
 (function (EntityQueryOrderByType) {
     EntityQueryOrderByType["DESC"] = "DESC";

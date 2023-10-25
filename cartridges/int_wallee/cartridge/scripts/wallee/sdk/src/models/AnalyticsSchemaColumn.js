@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AnalyticsSchemaColumn = void 0;
 var AnalyticsSchemaColumn = /** @class */ (function () {
     function AnalyticsSchemaColumn() {
     }

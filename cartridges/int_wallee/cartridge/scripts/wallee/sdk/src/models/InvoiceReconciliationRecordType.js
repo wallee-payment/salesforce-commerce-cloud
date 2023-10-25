@@ -1,5 +1,6 @@
 "use strict";
 
+exports.InvoiceReconciliationRecordType = void 0;
 var InvoiceReconciliationRecordType = /** @class */ (function () {
     function InvoiceReconciliationRecordType() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AccountState = void 0;
 var AccountState;
 (function (AccountState) {
     AccountState["CREATE"] = "CREATE";

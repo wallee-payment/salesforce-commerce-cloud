@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.RefundBankTransaction = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var RefundBankTransaction = /** @class */ (function (_super) {
     __extends(RefundBankTransaction, _super);

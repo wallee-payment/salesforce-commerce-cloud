@@ -1,5 +1,6 @@
 "use strict";
 
+exports.InvoiceReconciliationRecordInvoiceLink = void 0;
 var InvoiceReconciliationRecordInvoiceLink = /** @class */ (function () {
     function InvoiceReconciliationRecordInvoiceLink() {
     }

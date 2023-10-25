@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TenantDatabase = void 0;
 var TenantDatabase = /** @class */ (function () {
     function TenantDatabase() {
     }

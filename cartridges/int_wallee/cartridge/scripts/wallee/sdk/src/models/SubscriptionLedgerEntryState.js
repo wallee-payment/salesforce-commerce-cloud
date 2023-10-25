@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionLedgerEntryState = void 0;
 var SubscriptionLedgerEntryState;
 (function (SubscriptionLedgerEntryState) {
     SubscriptionLedgerEntryState["OPEN"] = "OPEN";

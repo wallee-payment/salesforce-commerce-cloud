@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractWebhookListenerUpdate = void 0;
 var AbstractWebhookListenerUpdate = /** @class */ (function () {
     function AbstractWebhookListenerUpdate() {
     }

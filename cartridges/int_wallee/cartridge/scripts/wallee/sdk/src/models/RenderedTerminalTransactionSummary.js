@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RenderedTerminalTransactionSummary = void 0;
 var RenderedTerminalTransactionSummary = /** @class */ (function () {
     function RenderedTerminalTransactionSummary() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionUpdate = void 0;
 var SubscriptionUpdate = /** @class */ (function () {
     function SubscriptionUpdate() {
     }

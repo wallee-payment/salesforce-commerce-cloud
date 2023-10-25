@@ -1,5 +1,6 @@
 "use strict";
 
+exports.HumanUser = void 0;
 var HumanUser = /** @class */ (function () {
     function HumanUser() {
     }

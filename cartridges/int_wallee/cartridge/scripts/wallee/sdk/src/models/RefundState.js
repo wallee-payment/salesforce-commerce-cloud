@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RefundState = void 0;
 var RefundState;
 (function (RefundState) {
     RefundState["CREATE"] = "CREATE";

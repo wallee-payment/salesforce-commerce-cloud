@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ApplicationUserCreateWithMacKey = void 0;
 var ApplicationUser = require("./ApplicationUser");
 var ApplicationUserCreateWithMacKey = /** @class */ (function (_super) {
     __extends(ApplicationUserCreateWithMacKey, _super);

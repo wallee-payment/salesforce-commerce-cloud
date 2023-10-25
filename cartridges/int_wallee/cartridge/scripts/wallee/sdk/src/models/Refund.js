@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Refund = void 0;
 var Refund = /** @class */ (function () {
     function Refund() {
     }

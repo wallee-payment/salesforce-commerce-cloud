@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TerminalReceiptFetchRequest = void 0;
 var TerminalReceiptFetchRequest = /** @class */ (function () {
     function TerminalReceiptFetchRequest() {
     }

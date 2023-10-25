@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ProductPeriodFeeUpdate = void 0;
 var ProductPeriodFeeUpdate = /** @class */ (function () {
     function ProductPeriodFeeUpdate() {
     }

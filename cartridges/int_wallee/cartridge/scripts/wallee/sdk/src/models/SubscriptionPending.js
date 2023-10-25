@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.SubscriptionPending = void 0;
 var SubscriptionUpdate = require("./SubscriptionUpdate");
 var SubscriptionPending = /** @class */ (function (_super) {
     __extends(SubscriptionPending, _super);

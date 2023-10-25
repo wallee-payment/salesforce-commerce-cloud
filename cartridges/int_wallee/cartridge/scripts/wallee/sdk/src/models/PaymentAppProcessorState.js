@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppProcessorState = void 0;
 var PaymentAppProcessorState;
 (function (PaymentAppProcessorState) {
     PaymentAppProcessorState["ACTIVE"] = "ACTIVE";

@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.CustomerCommentCreate = void 0;
 var AbstractCustomerCommentActive = require("./AbstractCustomerCommentActive");
 var CustomerCommentCreate = /** @class */ (function (_super) {
     __extends(CustomerCommentCreate, _super);

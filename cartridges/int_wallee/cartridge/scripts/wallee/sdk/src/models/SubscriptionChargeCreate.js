@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionChargeCreate = void 0;
 var SubscriptionChargeCreate = /** @class */ (function () {
     function SubscriptionChargeCreate() {
     }

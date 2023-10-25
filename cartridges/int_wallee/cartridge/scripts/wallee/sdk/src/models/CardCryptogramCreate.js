@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CardCryptogramCreate = void 0;
 var CardCryptogramCreate = /** @class */ (function () {
     function CardCryptogramCreate() {
     }

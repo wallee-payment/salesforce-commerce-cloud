@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionProductComponentGroup = void 0;
 var SubscriptionProductComponentGroup = /** @class */ (function () {
     function SubscriptionProductComponentGroup() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TokenizedCardDataCreate = void 0;
 var TokenizedCardDataCreate = /** @class */ (function () {
     function TokenizedCardDataCreate() {
     }

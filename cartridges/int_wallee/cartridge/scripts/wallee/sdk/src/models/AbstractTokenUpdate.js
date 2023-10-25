@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractTokenUpdate = void 0;
 var AbstractTokenUpdate = /** @class */ (function () {
     function AbstractTokenUpdate() {
     }

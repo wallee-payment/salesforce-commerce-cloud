@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ProductFeeType = void 0;
 var ProductFeeType;
 (function (ProductFeeType) {
     ProductFeeType["METERED_FEE"] = "METERED_FEE";

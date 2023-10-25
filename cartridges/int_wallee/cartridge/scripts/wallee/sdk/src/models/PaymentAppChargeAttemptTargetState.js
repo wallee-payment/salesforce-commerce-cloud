@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppChargeAttemptTargetState = void 0;
 var PaymentAppChargeAttemptTargetState;
 (function (PaymentAppChargeAttemptTargetState) {
     PaymentAppChargeAttemptTargetState["SUCCESSFUL"] = "SUCCESSFUL";

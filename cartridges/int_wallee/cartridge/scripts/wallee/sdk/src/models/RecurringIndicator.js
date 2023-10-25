@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RecurringIndicator = void 0;
 var RecurringIndicator;
 (function (RecurringIndicator) {
     RecurringIndicator["REGULAR_TRANSACTION"] = "REGULAR_TRANSACTION";

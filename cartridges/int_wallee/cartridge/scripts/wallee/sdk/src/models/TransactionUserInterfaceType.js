@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionUserInterfaceType = void 0;
 var TransactionUserInterfaceType;
 (function (TransactionUserInterfaceType) {
     TransactionUserInterfaceType["IFRAME"] = "IFRAME";

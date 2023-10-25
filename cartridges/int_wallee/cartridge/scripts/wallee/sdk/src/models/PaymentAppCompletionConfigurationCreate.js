@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppCompletionConfigurationCreate = void 0;
 var PaymentAppCompletionConfigurationCreate = /** @class */ (function () {
     function PaymentAppCompletionConfigurationCreate() {
     }

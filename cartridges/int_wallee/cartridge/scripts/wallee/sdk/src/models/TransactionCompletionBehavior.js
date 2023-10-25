@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionCompletionBehavior = void 0;
 var TransactionCompletionBehavior;
 (function (TransactionCompletionBehavior) {
     TransactionCompletionBehavior["COMPLETE_IMMEDIATELY"] = "COMPLETE_IMMEDIATELY";

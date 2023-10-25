@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.SubscriptionAffiliateInactive = void 0;
 var SubscriptionAffiliateUpdate = require("./SubscriptionAffiliateUpdate");
 var SubscriptionAffiliateInactive = /** @class */ (function (_super) {
     __extends(SubscriptionAffiliateInactive, _super);

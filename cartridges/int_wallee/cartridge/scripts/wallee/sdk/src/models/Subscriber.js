@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Subscriber = void 0;
 var Subscriber = /** @class */ (function () {
     function Subscriber() {
     }

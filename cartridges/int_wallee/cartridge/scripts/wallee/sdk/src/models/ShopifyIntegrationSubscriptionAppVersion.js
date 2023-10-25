@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifyIntegrationSubscriptionAppVersion = void 0;
 var ShopifyIntegrationSubscriptionAppVersion;
 (function (ShopifyIntegrationSubscriptionAppVersion) {
     ShopifyIntegrationSubscriptionAppVersion["BASIC"] = "BASIC";

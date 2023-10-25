@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.SubscriptionMetricActive = void 0;
 var SubscriptionMetricUpdate = require("./SubscriptionMetricUpdate");
 var SubscriptionMetricActive = /** @class */ (function (_super) {
     __extends(SubscriptionMetricActive, _super);

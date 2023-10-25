@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ResourceState = void 0;
 var ResourceState;
 (function (ResourceState) {
     ResourceState["ACTIVE"] = "ACTIVE";

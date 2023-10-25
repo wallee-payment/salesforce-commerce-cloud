@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ChargeAttemptEnvironment = void 0;
 var ChargeAttemptEnvironment;
 (function (ChargeAttemptEnvironment) {
     ChargeAttemptEnvironment["PRODUCTION"] = "PRODUCTION";

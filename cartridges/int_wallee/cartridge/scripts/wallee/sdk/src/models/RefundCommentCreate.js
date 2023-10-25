@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.RefundCommentCreate = void 0;
 var AbstractRefundCommentActive = require("./AbstractRefundCommentActive");
 var RefundCommentCreate = /** @class */ (function (_super) {
     __extends(RefundCommentCreate, _super);

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ClientErrorType = void 0;
 var ClientErrorType;
 (function (ClientErrorType) {
     ClientErrorType["END_USER_ERROR"] = "END_USER_ERROR";

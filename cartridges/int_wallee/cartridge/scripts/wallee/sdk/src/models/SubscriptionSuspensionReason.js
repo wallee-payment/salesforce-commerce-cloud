@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionSuspensionReason = void 0;
 var SubscriptionSuspensionReason;
 (function (SubscriptionSuspensionReason) {
     SubscriptionSuspensionReason["FAILED_CHARGE"] = "FAILED_CHARGE";

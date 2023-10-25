@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionModelBillingConfiguration = void 0;
 var ShopifySubscriptionModelBillingConfiguration = /** @class */ (function () {
     function ShopifySubscriptionModelBillingConfiguration() {
     }

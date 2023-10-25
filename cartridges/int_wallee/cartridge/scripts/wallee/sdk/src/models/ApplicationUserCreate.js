@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ApplicationUserCreate = void 0;
 var AbstractApplicationUserUpdate = require("./AbstractApplicationUserUpdate");
 var ApplicationUserCreate = /** @class */ (function (_super) {
     __extends(ApplicationUserCreate, _super);

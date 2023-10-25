@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentTerminalReceiptType = void 0;
 var PaymentTerminalReceiptType = /** @class */ (function () {
     function PaymentTerminalReceiptType() {
     }

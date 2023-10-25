@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ProductMeteredFee = void 0;
 var ProductMeteredFee = /** @class */ (function () {
     function ProductMeteredFee() {
     }

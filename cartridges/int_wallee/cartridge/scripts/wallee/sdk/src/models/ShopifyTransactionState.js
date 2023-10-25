@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifyTransactionState = void 0;
 var ShopifyTransactionState;
 (function (ShopifyTransactionState) {
     ShopifyTransactionState["PENDING"] = "PENDING";

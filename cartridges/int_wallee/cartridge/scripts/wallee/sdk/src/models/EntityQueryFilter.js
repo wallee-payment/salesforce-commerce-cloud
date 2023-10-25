@@ -1,5 +1,6 @@
 "use strict";
 
+exports.EntityQueryFilter = void 0;
 var EntityQueryFilter = /** @class */ (function () {
     function EntityQueryFilter() {
     }

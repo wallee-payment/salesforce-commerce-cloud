@@ -1,5 +1,6 @@
 "use strict";
 
+exports.InstallmentPaymentState = void 0;
 var InstallmentPaymentState;
 (function (InstallmentPaymentState) {
     InstallmentPaymentState["CREATE"] = "CREATE";

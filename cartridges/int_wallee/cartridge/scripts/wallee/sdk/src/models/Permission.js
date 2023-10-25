@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Permission = void 0;
 var Permission = /** @class */ (function () {
     function Permission() {
     }

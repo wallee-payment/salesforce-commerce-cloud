@@ -1,5 +1,6 @@
 "use strict";
 
+exports.InternalTransferBankTransaction = void 0;
 var InternalTransferBankTransaction = /** @class */ (function () {
     function InternalTransferBankTransaction() {
     }

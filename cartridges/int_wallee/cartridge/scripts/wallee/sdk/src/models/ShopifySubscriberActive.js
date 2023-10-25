@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriberActive = void 0;
 var ShopifySubscriberActive = /** @class */ (function () {
     function ShopifySubscriberActive() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionSuspensionCreate = void 0;
 var SubscriptionSuspensionCreate = /** @class */ (function () {
     function SubscriptionSuspensionCreate() {
     }

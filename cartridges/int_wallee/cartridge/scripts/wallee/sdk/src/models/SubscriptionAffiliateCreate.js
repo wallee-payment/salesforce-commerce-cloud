@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.SubscriptionAffiliateCreate = void 0;
 var AbstractSubscriptionAffiliateUpdate = require("./AbstractSubscriptionAffiliateUpdate");
 var SubscriptionAffiliateCreate = /** @class */ (function (_super) {
     __extends(SubscriptionAffiliateCreate, _super);

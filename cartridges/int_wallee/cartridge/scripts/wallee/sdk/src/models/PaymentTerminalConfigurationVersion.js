@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentTerminalConfigurationVersion = void 0;
 var PaymentTerminalConfigurationVersion = /** @class */ (function () {
     function PaymentTerminalConfigurationVersion() {
     }

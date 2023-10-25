@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SpaceAddressCreate = void 0;
 var SpaceAddressCreate = /** @class */ (function () {
     function SpaceAddressCreate() {
     }

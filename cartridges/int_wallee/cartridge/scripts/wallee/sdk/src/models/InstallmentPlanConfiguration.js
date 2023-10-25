@@ -1,5 +1,6 @@
 "use strict";
 
+exports.InstallmentPlanConfiguration = void 0;
 var InstallmentPlanConfiguration = /** @class */ (function () {
     function InstallmentPlanConfiguration() {
     }

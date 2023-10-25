@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionUpdateAddressesRequest = void 0;
 var ShopifySubscriptionUpdateAddressesRequest = /** @class */ (function () {
     function ShopifySubscriptionUpdateAddressesRequest() {
     }

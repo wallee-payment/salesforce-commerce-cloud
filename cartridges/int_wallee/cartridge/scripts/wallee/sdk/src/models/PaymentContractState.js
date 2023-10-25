@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentContractState = void 0;
 var PaymentContractState;
 (function (PaymentContractState) {
     PaymentContractState["PENDING"] = "PENDING";

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.DocumentTemplateTypeGroup = void 0;
 var DocumentTemplateTypeGroup = /** @class */ (function () {
     function DocumentTemplateTypeGroup() {
     }

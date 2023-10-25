@@ -1,5 +1,6 @@
 "use strict";
 
+exports.DebtCollectionReceiptSource = void 0;
 var DebtCollectionReceiptSource = /** @class */ (function () {
     function DebtCollectionReceiptSource() {
     }

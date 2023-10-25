@@ -1,5 +1,6 @@
 "use strict";
 
+exports.BankAccountType = void 0;
 var BankAccountType = /** @class */ (function () {
     function BankAccountType() {
     }

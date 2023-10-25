@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionMetricUsageReportCreate = void 0;
 var SubscriptionMetricUsageReportCreate = /** @class */ (function () {
     function SubscriptionMetricUsageReportCreate() {
     }

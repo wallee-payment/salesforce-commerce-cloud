@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ServerError = void 0;
 var ServerError = /** @class */ (function () {
     function ServerError() {
     }

@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.TransactionCompletion = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var TransactionCompletion = /** @class */ (function (_super) {
     __extends(TransactionCompletion, _super);

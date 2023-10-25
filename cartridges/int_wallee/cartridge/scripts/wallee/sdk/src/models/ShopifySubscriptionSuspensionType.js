@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionSuspensionType = void 0;
 var ShopifySubscriptionSuspensionType;
 (function (ShopifySubscriptionSuspensionType) {
     ShopifySubscriptionSuspensionType["REACTIVATE"] = "REACTIVATE";

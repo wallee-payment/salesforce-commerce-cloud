@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppRefundConfiguration = void 0;
 var PaymentAppRefundConfiguration = /** @class */ (function () {
     function PaymentAppRefundConfiguration() {
     }

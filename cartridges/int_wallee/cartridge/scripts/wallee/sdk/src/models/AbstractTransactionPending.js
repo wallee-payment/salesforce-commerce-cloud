@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractTransactionPending = void 0;
 var AbstractTransactionPending = /** @class */ (function () {
     function AbstractTransactionPending() {
     }

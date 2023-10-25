@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Scope = void 0;
 var Scope = /** @class */ (function () {
     function Scope() {
     }

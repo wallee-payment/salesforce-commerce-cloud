@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SalesChannel = void 0;
 var SalesChannel = /** @class */ (function () {
     function SalesChannel() {
     }

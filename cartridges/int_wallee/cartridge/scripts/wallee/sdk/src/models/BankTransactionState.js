@@ -1,5 +1,6 @@
 "use strict";
 
+exports.BankTransactionState = void 0;
 var BankTransactionState;
 (function (BankTransactionState) {
     BankTransactionState["UPCOMING"] = "UPCOMING";

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.DebtCollectionCaseState = void 0;
 var DebtCollectionCaseState;
 (function (DebtCollectionCaseState) {
     DebtCollectionCaseState["CREATE"] = "CREATE";

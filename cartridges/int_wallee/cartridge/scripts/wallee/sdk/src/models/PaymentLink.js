@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentLink = void 0;
 var PaymentLink = /** @class */ (function () {
     function PaymentLink() {
     }

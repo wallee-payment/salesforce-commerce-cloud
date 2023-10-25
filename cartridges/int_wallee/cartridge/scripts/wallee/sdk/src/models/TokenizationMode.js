@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TokenizationMode = void 0;
 var TokenizationMode;
 (function (TokenizationMode) {
     TokenizationMode["FORCE_UPDATE"] = "FORCE_UPDATE";

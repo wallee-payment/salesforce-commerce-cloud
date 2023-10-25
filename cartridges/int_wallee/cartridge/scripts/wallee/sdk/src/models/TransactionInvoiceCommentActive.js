@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.TransactionInvoiceCommentActive = void 0;
 var AbstractTransactionInvoiceCommentActive = require("./AbstractTransactionInvoiceCommentActive");
 var TransactionInvoiceCommentActive = /** @class */ (function (_super) {
     __extends(TransactionInvoiceCommentActive, _super);

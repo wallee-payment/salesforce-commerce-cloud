@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionSuspensionAction = void 0;
 var SubscriptionSuspensionAction;
 (function (SubscriptionSuspensionAction) {
     SubscriptionSuspensionAction["TERMINATE"] = "TERMINATE";

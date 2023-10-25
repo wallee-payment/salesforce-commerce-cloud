@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.WebhookUrlUpdate = void 0;
 var AbstractWebhookUrlUpdate = require("./AbstractWebhookUrlUpdate");
 var WebhookUrlUpdate = /** @class */ (function (_super) {
     __extends(WebhookUrlUpdate, _super);

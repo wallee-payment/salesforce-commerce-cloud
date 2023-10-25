@@ -1,6 +1,7 @@
 "use strict";
 /* global dw empty session */
 
+exports.Refund = void 0;
 var Wallee = require("~/cartridge/scripts/wallee/sdk/index");
 /**
  * Transaction Helper

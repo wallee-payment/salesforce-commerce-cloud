@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionProductComponentReference = void 0;
 var SubscriptionProductComponentReference = /** @class */ (function () {
     function SubscriptionProductComponentReference() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ChargeAttemptState = void 0;
 var ChargeAttemptState;
 (function (ChargeAttemptState) {
     ChargeAttemptState["PROCESSING"] = "PROCESSING";

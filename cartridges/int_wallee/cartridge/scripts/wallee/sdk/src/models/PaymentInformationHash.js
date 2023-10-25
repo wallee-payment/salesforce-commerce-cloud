@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentInformationHash = void 0;
 var PaymentInformationHash = /** @class */ (function () {
     function PaymentInformationHash() {
     }

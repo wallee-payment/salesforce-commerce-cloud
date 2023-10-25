@@ -1,5 +1,6 @@
 "use strict";
 
+exports.WalletType = void 0;
 var WalletType;
 (function (WalletType) {
     WalletType["APPLE_PAY"] = "APPLE_PAY";

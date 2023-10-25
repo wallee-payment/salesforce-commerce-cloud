@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ApplicationUser = void 0;
 var User = require("./User");
 var ApplicationUser = /** @class */ (function (_super) {
     __extends(ApplicationUser, _super);

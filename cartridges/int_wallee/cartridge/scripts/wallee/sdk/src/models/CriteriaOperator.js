@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CriteriaOperator = void 0;
 var CriteriaOperator;
 (function (CriteriaOperator) {
     CriteriaOperator["CONTAINS"] = "CONTAINS";

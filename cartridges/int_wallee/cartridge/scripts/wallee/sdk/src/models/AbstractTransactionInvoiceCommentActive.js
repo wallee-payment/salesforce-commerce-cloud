@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractTransactionInvoiceCommentActive = void 0;
 var AbstractTransactionInvoiceCommentActive = /** @class */ (function () {
     function AbstractTransactionInvoiceCommentActive() {
     }

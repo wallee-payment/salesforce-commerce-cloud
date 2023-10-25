@@ -1,5 +1,6 @@
 "use strict";
 
+exports.OneClickPaymentMode = void 0;
 var OneClickPaymentMode;
 (function (OneClickPaymentMode) {
     OneClickPaymentMode["DISABLED"] = "DISABLED";

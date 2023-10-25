@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionGroup = void 0;
 var TransactionGroup = /** @class */ (function () {
     function TransactionGroup() {
     }

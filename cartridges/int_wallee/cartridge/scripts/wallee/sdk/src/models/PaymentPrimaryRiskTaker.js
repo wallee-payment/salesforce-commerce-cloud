@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentPrimaryRiskTaker = void 0;
 var PaymentPrimaryRiskTaker;
 (function (PaymentPrimaryRiskTaker) {
     PaymentPrimaryRiskTaker["CUSTOMER"] = "CUSTOMER";

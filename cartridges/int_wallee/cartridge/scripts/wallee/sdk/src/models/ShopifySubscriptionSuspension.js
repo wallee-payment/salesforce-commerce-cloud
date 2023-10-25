@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionSuspension = void 0;
 var ShopifySubscriptionSuspension = /** @class */ (function () {
     function ShopifySubscriptionSuspension() {
     }

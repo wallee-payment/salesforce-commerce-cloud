@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionVersionState = void 0;
 var SubscriptionVersionState;
 (function (SubscriptionVersionState) {
     SubscriptionVersionState["PENDING"] = "PENDING";

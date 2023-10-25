@@ -1,5 +1,6 @@
 "use strict";
 
+exports.BankTransactionSource = void 0;
 var BankTransactionSource = /** @class */ (function () {
     function BankTransactionSource() {
     }

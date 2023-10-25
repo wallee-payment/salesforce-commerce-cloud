@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentTerminalDccTransactionSum = void 0;
 var PaymentTerminalDccTransactionSum = /** @class */ (function () {
     function PaymentTerminalDccTransactionSum() {
     }

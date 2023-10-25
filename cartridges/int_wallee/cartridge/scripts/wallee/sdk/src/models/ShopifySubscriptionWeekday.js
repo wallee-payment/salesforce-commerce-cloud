@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionWeekday = void 0;
 var ShopifySubscriptionWeekday;
 (function (ShopifySubscriptionWeekday) {
     ShopifySubscriptionWeekday["MONDAY"] = "MONDAY";

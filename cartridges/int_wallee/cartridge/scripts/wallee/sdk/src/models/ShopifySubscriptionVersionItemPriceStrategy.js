@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionVersionItemPriceStrategy = void 0;
 var ShopifySubscriptionVersionItemPriceStrategy;
 (function (ShopifySubscriptionVersionItemPriceStrategy) {
     ShopifySubscriptionVersionItemPriceStrategy["INITIALLY_CALCULATED"] = "INITIALLY_CALCULATED";

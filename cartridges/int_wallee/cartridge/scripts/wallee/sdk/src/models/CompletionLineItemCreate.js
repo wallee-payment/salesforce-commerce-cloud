@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CompletionLineItemCreate = void 0;
 var CompletionLineItemCreate = /** @class */ (function () {
     function CompletionLineItemCreate() {
     }

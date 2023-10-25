@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ShopifySubscriptionProductUpdate = void 0;
 var AbstractShopifySubscriptionProductUpdate = require("./AbstractShopifySubscriptionProductUpdate");
 var ShopifySubscriptionProductUpdate = /** @class */ (function (_super) {
     __extends(ShopifySubscriptionProductUpdate, _super);

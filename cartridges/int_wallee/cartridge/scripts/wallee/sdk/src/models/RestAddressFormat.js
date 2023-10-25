@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RestAddressFormat = void 0;
 var RestAddressFormat = /** @class */ (function () {
     function RestAddressFormat() {
     }

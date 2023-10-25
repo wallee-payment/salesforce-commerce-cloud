@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionCompletionRequest = void 0;
 var TransactionCompletionRequest = /** @class */ (function () {
     function TransactionCompletionRequest() {
     }

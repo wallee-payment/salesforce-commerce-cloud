@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.DeliveryIndication = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var DeliveryIndication = /** @class */ (function (_super) {
     __extends(DeliveryIndication, _super);

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionSuspensionInitiator = void 0;
 var ShopifySubscriptionSuspensionInitiator;
 (function (ShopifySubscriptionSuspensionInitiator) {
     ShopifySubscriptionSuspensionInitiator["MERCHANT"] = "MERCHANT";

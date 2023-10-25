@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractWebhookUrlUpdate = void 0;
 var AbstractWebhookUrlUpdate = /** @class */ (function () {
     function AbstractWebhookUrlUpdate() {
     }

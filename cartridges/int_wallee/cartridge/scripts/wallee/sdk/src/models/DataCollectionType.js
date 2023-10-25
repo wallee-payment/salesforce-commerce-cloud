@@ -1,5 +1,6 @@
 "use strict";
 
+exports.DataCollectionType = void 0;
 var DataCollectionType;
 (function (DataCollectionType) {
     DataCollectionType["ONSITE"] = "ONSITE";

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppConnectorState = void 0;
 var PaymentAppConnectorState;
 (function (PaymentAppConnectorState) {
     PaymentAppConnectorState["ACTIVE"] = "ACTIVE";

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AnalyticsQuery = void 0;
 var AnalyticsQuery = /** @class */ (function () {
     function AnalyticsQuery() {
     }

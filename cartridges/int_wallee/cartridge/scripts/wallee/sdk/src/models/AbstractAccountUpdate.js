@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractAccountUpdate = void 0;
 var AbstractAccountUpdate = /** @class */ (function () {
     function AbstractAccountUpdate() {
     }

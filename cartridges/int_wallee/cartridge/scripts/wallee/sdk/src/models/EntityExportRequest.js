@@ -1,5 +1,6 @@
 "use strict";
 
+exports.EntityExportRequest = void 0;
 var EntityExportRequest = /** @class */ (function () {
     function EntityExportRequest() {
     }

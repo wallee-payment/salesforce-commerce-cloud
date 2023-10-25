@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ResourcePath = void 0;
 var ResourcePath = /** @class */ (function () {
     function ResourcePath() {
     }

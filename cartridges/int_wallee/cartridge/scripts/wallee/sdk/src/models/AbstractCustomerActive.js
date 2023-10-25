@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractCustomerActive = void 0;
 var AbstractCustomerActive = /** @class */ (function () {
     function AbstractCustomerActive() {
     }

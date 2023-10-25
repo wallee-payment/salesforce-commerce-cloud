@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionPeriodBill = void 0;
 var SubscriptionPeriodBill = /** @class */ (function () {
     function SubscriptionPeriodBill() {
     }

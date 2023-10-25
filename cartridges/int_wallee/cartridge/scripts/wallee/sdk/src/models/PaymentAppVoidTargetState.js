@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppVoidTargetState = void 0;
 var PaymentAppVoidTargetState;
 (function (PaymentAppVoidTargetState) {
     PaymentAppVoidTargetState["SUCCESSFUL"] = "SUCCESSFUL";

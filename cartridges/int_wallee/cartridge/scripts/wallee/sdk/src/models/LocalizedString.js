@@ -1,5 +1,6 @@
 "use strict";
 
+exports.LocalizedString = void 0;
 var LocalizedString = /** @class */ (function () {
     function LocalizedString() {
     }

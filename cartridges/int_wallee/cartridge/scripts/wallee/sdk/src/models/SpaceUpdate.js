@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.SpaceUpdate = void 0;
 var AbstractSpaceUpdate = require("./AbstractSpaceUpdate");
 var SpaceUpdate = /** @class */ (function (_super) {
     __extends(SpaceUpdate, _super);

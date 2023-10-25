@@ -437,7 +437,7 @@ var WalleeModule = {
         WebhookUrlCreate: require("./src/models/WebhookUrlCreate"),
         WebhookUrlUpdate: require("./src/models/WebhookUrlUpdate"),
         ApplicationUserCreateWithMacKey: require("./src/models/ApplicationUserCreateWithMacKey"),
-        SubscriptionAffiliateDeleting: require("./src/models/SubscriptionAffiliateDeleting"),
+        SubscriptionAffiliateDeleting: require("./src/models/SubscriptionAffiliateDeleting")
     },
     api: {
         AccountService: require("./src/api/AccountService"),
@@ -546,7 +546,7 @@ var WalleeModule = {
         UserSpaceRoleService: require("./src/api/UserSpaceRoleService"),
         WebAppService: require("./src/api/WebAppService"),
         WebhookListenerService: require("./src/api/WebhookListenerService"),
-        WebhookUrlService: require("./src/api/WebhookUrlService"),
+        WebhookUrlService: require("./src/api/WebhookUrlService")
     }
 };
 module.exports = WalleeModule;

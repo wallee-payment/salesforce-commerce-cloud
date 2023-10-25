@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionSuspensionState = void 0;
 var ShopifySubscriptionSuspensionState;
 (function (ShopifySubscriptionSuspensionState) {
     ShopifySubscriptionSuspensionState["ACTIVE"] = "ACTIVE";

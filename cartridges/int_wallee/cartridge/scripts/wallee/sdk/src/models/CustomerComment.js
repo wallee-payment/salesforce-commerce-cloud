@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CustomerComment = void 0;
 var CustomerComment = /** @class */ (function () {
     function CustomerComment() {
     }

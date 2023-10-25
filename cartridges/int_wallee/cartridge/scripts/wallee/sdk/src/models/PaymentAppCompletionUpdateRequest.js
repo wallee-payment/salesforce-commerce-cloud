@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppCompletionUpdateRequest = void 0;
 var PaymentAppCompletionUpdateRequest = /** @class */ (function () {
     function PaymentAppCompletionUpdateRequest() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionProductPricingOption = void 0;
 var ShopifySubscriptionProductPricingOption;
 (function (ShopifySubscriptionProductPricingOption) {
     ShopifySubscriptionProductPricingOption["CURRENT_PRICE"] = "CURRENT_PRICE";

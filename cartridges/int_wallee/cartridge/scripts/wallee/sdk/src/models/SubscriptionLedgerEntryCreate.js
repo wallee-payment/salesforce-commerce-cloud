@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionLedgerEntryCreate = void 0;
 var SubscriptionLedgerEntryCreate = /** @class */ (function () {
     function SubscriptionLedgerEntryCreate() {
     }

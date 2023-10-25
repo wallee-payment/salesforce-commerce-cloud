@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ShopifySubscriptionAddress = void 0;
 var Address = require("./Address");
 var ShopifySubscriptionAddress = /** @class */ (function (_super) {
     __extends(ShopifySubscriptionAddress, _super);

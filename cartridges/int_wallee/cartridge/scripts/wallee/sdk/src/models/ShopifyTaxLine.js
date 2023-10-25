@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifyTaxLine = void 0;
 var ShopifyTaxLine = /** @class */ (function () {
     function ShopifyTaxLine() {
     }

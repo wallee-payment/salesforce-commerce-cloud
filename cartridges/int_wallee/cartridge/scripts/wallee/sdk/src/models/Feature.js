@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Feature = void 0;
 var Feature = /** @class */ (function () {
     function Feature() {
     }

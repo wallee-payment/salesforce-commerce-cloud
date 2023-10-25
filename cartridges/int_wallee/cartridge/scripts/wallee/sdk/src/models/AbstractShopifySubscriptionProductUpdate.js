@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractShopifySubscriptionProductUpdate = void 0;
 var AbstractShopifySubscriptionProductUpdate = /** @class */ (function () {
     function AbstractShopifySubscriptionProductUpdate() {
     }

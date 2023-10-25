@@ -1,5 +1,6 @@
 "use strict";
 
+exports.StaticValue = void 0;
 var StaticValue = /** @class */ (function () {
     function StaticValue() {
     }

@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ShopifyRecurringOrder = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var ShopifyRecurringOrder = /** @class */ (function (_super) {
     __extends(ShopifyRecurringOrder, _super);

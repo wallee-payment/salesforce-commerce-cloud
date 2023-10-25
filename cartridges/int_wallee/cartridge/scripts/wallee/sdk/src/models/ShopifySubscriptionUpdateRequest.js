@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionUpdateRequest = void 0;
 var ShopifySubscriptionUpdateRequest = /** @class */ (function () {
     function ShopifySubscriptionUpdateRequest() {
     }

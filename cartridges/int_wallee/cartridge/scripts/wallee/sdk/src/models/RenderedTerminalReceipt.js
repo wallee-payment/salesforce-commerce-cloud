@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RenderedTerminalReceipt = void 0;
 var RenderedTerminalReceipt = /** @class */ (function () {
     function RenderedTerminalReceipt() {
     }

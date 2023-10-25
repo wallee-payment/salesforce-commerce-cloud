@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ManualTaskActionStyle = void 0;
 var ManualTaskActionStyle;
 (function (ManualTaskActionStyle) {
     ManualTaskActionStyle["DEFAULT"] = "DEFAULT";

@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.TokenUpdate = void 0;
 var AbstractTokenUpdate = require("./AbstractTokenUpdate");
 var TokenUpdate = /** @class */ (function (_super) {
     __extends(TokenUpdate, _super);

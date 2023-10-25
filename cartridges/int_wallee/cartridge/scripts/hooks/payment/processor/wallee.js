@@ -1,6 +1,7 @@
 "use strict";
 /* global dw */
 
+exports.Authorize = exports.Handle = exports.processForm = void 0;
 function processForm(req, paymentForm, viewFormData) {
     var viewData = viewFormData;
     viewData.paymentMethod = {

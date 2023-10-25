@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.InvoiceReconciliationRecord = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var InvoiceReconciliationRecord = /** @class */ (function (_super) {
     __extends(InvoiceReconciliationRecord, _super);

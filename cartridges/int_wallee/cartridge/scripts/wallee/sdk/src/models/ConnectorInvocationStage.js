@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ConnectorInvocationStage = void 0;
 var ConnectorInvocationStage;
 (function (ConnectorInvocationStage) {
     ConnectorInvocationStage["PAYMENT_METHOD_LIST"] = "PAYMENT_METHOD_LIST";

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentTerminalTransactionSummaryFetchRequest = void 0;
 var PaymentTerminalTransactionSummaryFetchRequest = /** @class */ (function () {
     function PaymentTerminalTransactionSummaryFetchRequest() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AuthenticatedCardDataCreate = void 0;
 var AuthenticatedCardDataCreate = /** @class */ (function () {
     function AuthenticatedCardDataCreate() {
     }

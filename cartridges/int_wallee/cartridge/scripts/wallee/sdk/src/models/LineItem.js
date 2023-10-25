@@ -1,5 +1,6 @@
 "use strict";
 
+exports.LineItem = void 0;
 var LineItem = /** @class */ (function () {
     function LineItem() {
     }

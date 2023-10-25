@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentMethodConfiguration = void 0;
 var PaymentMethodConfiguration = /** @class */ (function () {
     function PaymentMethodConfiguration() {
     }

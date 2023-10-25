@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppRefundUpdateRequest = void 0;
 var PaymentAppRefundUpdateRequest = /** @class */ (function () {
     function PaymentAppRefundUpdateRequest() {
     }

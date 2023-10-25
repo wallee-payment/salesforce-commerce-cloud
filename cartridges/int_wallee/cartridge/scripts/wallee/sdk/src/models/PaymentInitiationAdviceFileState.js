@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentInitiationAdviceFileState = void 0;
 var PaymentInitiationAdviceFileState;
 (function (PaymentInitiationAdviceFileState) {
     PaymentInitiationAdviceFileState["CREATING"] = "CREATING";

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionPeriodBillState = void 0;
 var SubscriptionPeriodBillState;
 (function (SubscriptionPeriodBillState) {
     SubscriptionPeriodBillState["PENDING"] = "PENDING";

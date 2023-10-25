@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RestCountry = void 0;
 var RestCountry = /** @class */ (function () {
     function RestCountry() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentInitiationAdviceFile = void 0;
 var PaymentInitiationAdviceFile = /** @class */ (function () {
     function PaymentInitiationAdviceFile() {
     }

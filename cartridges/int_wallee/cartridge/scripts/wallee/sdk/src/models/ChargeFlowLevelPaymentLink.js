@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ChargeFlowLevelPaymentLink = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var ChargeFlowLevelPaymentLink = /** @class */ (function (_super) {
     __extends(ChargeFlowLevelPaymentLink, _super);

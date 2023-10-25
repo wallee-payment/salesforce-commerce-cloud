@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscription = void 0;
 var ShopifySubscription = /** @class */ (function () {
     function ShopifySubscription() {
     }

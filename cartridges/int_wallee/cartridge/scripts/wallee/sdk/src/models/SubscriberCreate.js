@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.SubscriberCreate = void 0;
 var AbstractSubscriberUpdate = require("./AbstractSubscriberUpdate");
 var SubscriberCreate = /** @class */ (function (_super) {
     __extends(SubscriberCreate, _super);

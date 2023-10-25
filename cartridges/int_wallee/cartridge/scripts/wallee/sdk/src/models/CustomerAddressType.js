@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CustomerAddressType = void 0;
 var CustomerAddressType;
 (function (CustomerAddressType) {
     CustomerAddressType["BILLING"] = "BILLING";

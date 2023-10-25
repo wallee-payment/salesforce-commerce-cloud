@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionProductComponentReferenceState = void 0;
 var SubscriptionProductComponentReferenceState;
 (function (SubscriptionProductComponentReferenceState) {
     SubscriptionProductComponentReferenceState["CREATE"] = "CREATE";

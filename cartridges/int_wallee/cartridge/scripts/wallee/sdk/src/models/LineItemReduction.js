@@ -1,5 +1,6 @@
 "use strict";
 
+exports.LineItemReduction = void 0;
 var LineItemReduction = /** @class */ (function () {
     function LineItemReduction() {
     }

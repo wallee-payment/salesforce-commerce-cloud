@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RestLanguage = void 0;
 var RestLanguage = /** @class */ (function () {
     function RestLanguage() {
     }

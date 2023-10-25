@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppChargeAttemptUpdateRequest = void 0;
 var PaymentAppChargeAttemptUpdateRequest = /** @class */ (function () {
     function PaymentAppChargeAttemptUpdateRequest() {
     }

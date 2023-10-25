@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ApplicationUserUpdate = void 0;
 var AbstractApplicationUserUpdate = require("./AbstractApplicationUserUpdate");
 var ApplicationUserUpdate = /** @class */ (function (_super) {
     __extends(ApplicationUserUpdate, _super);

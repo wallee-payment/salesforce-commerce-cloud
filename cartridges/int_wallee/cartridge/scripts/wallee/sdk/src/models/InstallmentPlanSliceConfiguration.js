@@ -1,5 +1,6 @@
 "use strict";
 
+exports.InstallmentPlanSliceConfiguration = void 0;
 var InstallmentPlanSliceConfiguration = /** @class */ (function () {
     function InstallmentPlanSliceConfiguration() {
     }

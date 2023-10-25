@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RestAddressFormatField = void 0;
 var RestAddressFormatField;
 (function (RestAddressFormatField) {
     RestAddressFormatField["GIVEN_NAME"] = "GIVEN_NAME";

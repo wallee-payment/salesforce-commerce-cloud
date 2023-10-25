@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionCreationRequest = void 0;
 var ShopifySubscriptionCreationRequest = /** @class */ (function () {
     function ShopifySubscriptionCreationRequest() {
     }

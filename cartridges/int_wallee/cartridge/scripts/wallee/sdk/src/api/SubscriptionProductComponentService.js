@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionProductComponentService = void 0;
 /* global dw empty */
 var ObjectSerializer = require("../serializers/ObjectSerializer");
 // @ts-ignore

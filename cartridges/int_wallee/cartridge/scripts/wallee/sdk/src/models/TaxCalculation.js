@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TaxCalculation = void 0;
 var TaxCalculation;
 (function (TaxCalculation) {
     TaxCalculation["INCLUDED"] = "TAX_INCLUDED";

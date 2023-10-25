@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AccountType = void 0;
 var AccountType;
 (function (AccountType) {
     AccountType["MASTER"] = "MASTER";

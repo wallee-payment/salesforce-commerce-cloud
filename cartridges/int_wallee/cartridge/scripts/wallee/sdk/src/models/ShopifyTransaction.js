@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ShopifyTransaction = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var ShopifyTransaction = /** @class */ (function (_super) {
     __extends(ShopifyTransaction, _super);

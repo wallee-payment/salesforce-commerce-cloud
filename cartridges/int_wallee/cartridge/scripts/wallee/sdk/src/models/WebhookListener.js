@@ -1,5 +1,6 @@
 "use strict";
 
+exports.WebhookListener = void 0;
 var WebhookListener = /** @class */ (function () {
     function WebhookListener() {
     }

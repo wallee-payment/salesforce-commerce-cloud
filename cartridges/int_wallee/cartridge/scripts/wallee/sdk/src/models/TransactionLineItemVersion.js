@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.TransactionLineItemVersion = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var TransactionLineItemVersion = /** @class */ (function (_super) {
     __extends(TransactionLineItemVersion, _super);

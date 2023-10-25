@@ -1,5 +1,6 @@
 "use strict";
 
+exports.BankTransactionFlowDirection = void 0;
 var BankTransactionFlowDirection;
 (function (BankTransactionFlowDirection) {
     BankTransactionFlowDirection["INFLOW"] = "INFLOW";

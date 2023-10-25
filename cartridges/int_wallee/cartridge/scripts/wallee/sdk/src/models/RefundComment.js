@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RefundComment = void 0;
 var RefundComment = /** @class */ (function () {
     function RefundComment() {
     }

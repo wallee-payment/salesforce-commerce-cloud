@@ -1,5 +1,6 @@
 "use strict";
 
+exports.DebtCollectionCaseSource = void 0;
 var DebtCollectionCaseSource = /** @class */ (function () {
     function DebtCollectionCaseSource() {
     }

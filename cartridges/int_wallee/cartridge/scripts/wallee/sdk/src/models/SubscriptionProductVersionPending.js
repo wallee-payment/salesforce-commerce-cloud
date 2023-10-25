@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionProductVersionPending = void 0;
 var SubscriptionProductVersionPending = /** @class */ (function () {
     function SubscriptionProductVersionPending() {
     }

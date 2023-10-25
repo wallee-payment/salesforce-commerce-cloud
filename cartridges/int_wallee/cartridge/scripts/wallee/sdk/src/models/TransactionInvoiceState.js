@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionInvoiceState = void 0;
 var TransactionInvoiceState;
 (function (TransactionInvoiceState) {
     TransactionInvoiceState["CREATE"] = "CREATE";

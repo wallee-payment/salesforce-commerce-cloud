@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Label = void 0;
 var Label = /** @class */ (function () {
     function Label() {
     }

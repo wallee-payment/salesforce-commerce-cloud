@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CardholderAuthenticationCreate = void 0;
 var CardholderAuthenticationCreate = /** @class */ (function () {
     function CardholderAuthenticationCreate() {
     }

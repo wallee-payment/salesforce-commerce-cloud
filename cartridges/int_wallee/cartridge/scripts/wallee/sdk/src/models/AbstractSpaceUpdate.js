@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractSpaceUpdate = void 0;
 var AbstractSpaceUpdate = /** @class */ (function () {
     function AbstractSpaceUpdate() {
     }

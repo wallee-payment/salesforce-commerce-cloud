@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionProductState = void 0;
 var SubscriptionProductState;
 (function (SubscriptionProductState) {
     SubscriptionProductState["CREATE"] = "CREATE";

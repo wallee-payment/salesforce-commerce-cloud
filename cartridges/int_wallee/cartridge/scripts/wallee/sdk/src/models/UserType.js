@@ -1,5 +1,6 @@
 "use strict";
 
+exports.UserType = void 0;
 var UserType;
 (function (UserType) {
     UserType["HUMAN_USER"] = "HUMAN_USER";

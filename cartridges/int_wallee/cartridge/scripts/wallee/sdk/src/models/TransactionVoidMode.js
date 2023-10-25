@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionVoidMode = void 0;
 var TransactionVoidMode;
 (function (TransactionVoidMode) {
     TransactionVoidMode["ONLINE"] = "ONLINE";

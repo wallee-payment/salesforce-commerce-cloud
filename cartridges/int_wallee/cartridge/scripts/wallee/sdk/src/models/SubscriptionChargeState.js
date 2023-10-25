@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionChargeState = void 0;
 var SubscriptionChargeState;
 (function (SubscriptionChargeState) {
     SubscriptionChargeState["SCHEDULED"] = "SCHEDULED";

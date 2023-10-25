@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ManualTaskType = void 0;
 var ManualTaskType = /** @class */ (function () {
     function ManualTaskType() {
     }

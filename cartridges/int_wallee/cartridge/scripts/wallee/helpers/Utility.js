@@ -1,6 +1,7 @@
 "use strict";
 /* global dw empty */
 
+exports.Utility = void 0;
 /**
  * Class Utility
  */

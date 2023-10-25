@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionAwareEntity = void 0;
 var TransactionAwareEntity = /** @class */ (function () {
     function TransactionAwareEntity() {
     }

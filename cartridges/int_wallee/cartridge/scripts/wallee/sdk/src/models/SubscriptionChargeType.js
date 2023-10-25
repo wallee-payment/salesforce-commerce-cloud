@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionChargeType = void 0;
 var SubscriptionChargeType;
 (function (SubscriptionChargeType) {
     SubscriptionChargeType["MANUAL"] = "MANUAL";

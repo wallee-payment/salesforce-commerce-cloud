@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PersistableCurrencyAmountUpdate = void 0;
 var PersistableCurrencyAmountUpdate = /** @class */ (function () {
     function PersistableCurrencyAmountUpdate() {
     }

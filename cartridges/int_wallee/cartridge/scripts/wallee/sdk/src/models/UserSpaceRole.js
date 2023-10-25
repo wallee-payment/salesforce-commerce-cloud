@@ -1,5 +1,6 @@
 "use strict";
 
+exports.UserSpaceRole = void 0;
 var UserSpaceRole = /** @class */ (function () {
     function UserSpaceRole() {
     }

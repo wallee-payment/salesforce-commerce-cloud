@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RefundType = void 0;
 var RefundType;
 (function (RefundType) {
     RefundType["MERCHANT_INITIATED_ONLINE"] = "MERCHANT_INITIATED_ONLINE";

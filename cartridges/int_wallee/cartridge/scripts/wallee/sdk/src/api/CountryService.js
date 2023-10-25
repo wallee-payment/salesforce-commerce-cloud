@@ -1,5 +1,6 @@
 "use strict";
 
+exports.CountryService = void 0;
 /* global dw empty */
 var ObjectSerializer = require("../serializers/ObjectSerializer");
 // @ts-ignore
@@ -42,7 +43,7 @@ var CountryService = /** @class */ (function () {
             path: "/country/all",
             contentType: "application/json",
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {

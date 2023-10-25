@@ -1,5 +1,6 @@
 "use strict";
 
+exports.SubscriptionProductVersionRetirementCreate = void 0;
 var SubscriptionProductVersionRetirementCreate = /** @class */ (function () {
     function SubscriptionProductVersionRetirementCreate() {
     }

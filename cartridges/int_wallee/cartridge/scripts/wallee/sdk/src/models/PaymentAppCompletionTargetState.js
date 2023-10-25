@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppCompletionTargetState = void 0;
 var PaymentAppCompletionTargetState;
 (function (PaymentAppCompletionTargetState) {
     PaymentAppCompletionTargetState["SUCCESSFUL"] = "SUCCESSFUL";

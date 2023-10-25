@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.HumanUserCreate = void 0;
 var AbstractHumanUserUpdate = require("./AbstractHumanUserUpdate");
 var HumanUserCreate = /** @class */ (function (_super) {
     __extends(HumanUserCreate, _super);

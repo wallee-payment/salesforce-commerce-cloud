@@ -1,5 +1,6 @@
 "use strict";
 
+exports.MetricUsage = void 0;
 var MetricUsage = /** @class */ (function () {
     function MetricUsage() {
     }

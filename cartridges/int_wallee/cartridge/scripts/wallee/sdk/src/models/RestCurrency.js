@@ -1,5 +1,6 @@
 "use strict";
 
+exports.RestCurrency = void 0;
 var RestCurrency = /** @class */ (function () {
     function RestCurrency() {
     }

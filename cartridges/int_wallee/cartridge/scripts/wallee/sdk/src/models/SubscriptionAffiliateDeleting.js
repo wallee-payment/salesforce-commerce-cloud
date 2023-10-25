@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.SubscriptionAffiliateDeleting = void 0;
 var SubscriptionAffiliateDeleted = require("./SubscriptionAffiliateDeleted");
 var SubscriptionAffiliateDeleting = /** @class */ (function (_super) {
     __extends(SubscriptionAffiliateDeleting, _super);

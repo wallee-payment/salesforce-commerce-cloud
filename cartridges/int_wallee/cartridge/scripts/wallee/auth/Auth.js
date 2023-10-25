@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Auth = void 0;
 /**
  * Mac Auth class
  */

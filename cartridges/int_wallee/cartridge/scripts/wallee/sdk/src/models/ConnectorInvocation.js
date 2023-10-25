@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.ConnectorInvocation = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var ConnectorInvocation = /** @class */ (function (_super) {
     __extends(ConnectorInvocation, _super);

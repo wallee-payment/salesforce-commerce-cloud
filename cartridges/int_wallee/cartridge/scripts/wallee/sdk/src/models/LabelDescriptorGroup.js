@@ -1,5 +1,6 @@
 "use strict";
 
+exports.LabelDescriptorGroup = void 0;
 var LabelDescriptorGroup = /** @class */ (function () {
     function LabelDescriptorGroup() {
     }

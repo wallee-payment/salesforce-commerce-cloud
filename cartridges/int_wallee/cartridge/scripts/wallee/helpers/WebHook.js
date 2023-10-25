@@ -1,6 +1,7 @@
 "use strict";
 /* global dw empty session */
 
+exports.WebHook = void 0;
 var Wallee = require("~/cartridge/scripts/wallee/sdk/index");
 /**
  * WebHook class

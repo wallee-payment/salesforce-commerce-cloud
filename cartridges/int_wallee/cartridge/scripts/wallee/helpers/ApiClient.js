@@ -1,6 +1,7 @@
 "use strict";
 /* global dw empty */
 
+exports.ApiClient = void 0;
 /**
  * API Client that is passed on to the Wallee SDK service classes
  */

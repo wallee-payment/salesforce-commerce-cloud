@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppConnectorCreationRequest = void 0;
 var PaymentAppConnectorCreationRequest = /** @class */ (function () {
     function PaymentAppConnectorCreationRequest() {
     }

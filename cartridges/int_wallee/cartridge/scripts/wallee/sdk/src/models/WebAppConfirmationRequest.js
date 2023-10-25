@@ -1,5 +1,6 @@
 "use strict";
 
+exports.WebAppConfirmationRequest = void 0;
 var WebAppConfirmationRequest = /** @class */ (function () {
     function WebAppConfirmationRequest() {
     }

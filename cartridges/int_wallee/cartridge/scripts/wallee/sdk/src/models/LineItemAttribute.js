@@ -1,5 +1,6 @@
 "use strict";
 
+exports.LineItemAttribute = void 0;
 var LineItemAttribute = /** @class */ (function () {
     function LineItemAttribute() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifyAdditionalLineItemData = void 0;
 var ShopifyAdditionalLineItemData;
 (function (ShopifyAdditionalLineItemData) {
     ShopifyAdditionalLineItemData["VENDOR"] = "VENDOR";

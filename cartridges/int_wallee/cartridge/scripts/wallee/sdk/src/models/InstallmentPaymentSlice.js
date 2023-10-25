@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.InstallmentPaymentSlice = void 0;
 var TransactionAwareEntity = require("./TransactionAwareEntity");
 var InstallmentPaymentSlice = /** @class */ (function (_super) {
     __extends(InstallmentPaymentSlice, _super);

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TwoFactorAuthenticationType = void 0;
 var TwoFactorAuthenticationType = /** @class */ (function () {
     function TwoFactorAuthenticationType() {
     }

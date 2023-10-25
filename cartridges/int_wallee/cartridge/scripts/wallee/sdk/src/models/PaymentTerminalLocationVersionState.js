@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentTerminalLocationVersionState = void 0;
 var PaymentTerminalLocationVersionState;
 (function (PaymentTerminalLocationVersionState) {
     PaymentTerminalLocationVersionState["PENDING"] = "PENDING";

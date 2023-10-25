@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionAddressCreate = void 0;
 var ShopifySubscriptionAddressCreate = /** @class */ (function () {
     function ShopifySubscriptionAddressCreate() {
     }

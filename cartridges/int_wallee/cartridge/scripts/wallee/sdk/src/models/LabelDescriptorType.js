@@ -1,5 +1,6 @@
 "use strict";
 
+exports.LabelDescriptorType = void 0;
 var LabelDescriptorType = /** @class */ (function () {
     function LabelDescriptorType() {
     }

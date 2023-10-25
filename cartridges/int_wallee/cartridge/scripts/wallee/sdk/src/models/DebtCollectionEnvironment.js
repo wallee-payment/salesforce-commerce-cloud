@@ -1,5 +1,6 @@
 "use strict";
 
+exports.DebtCollectionEnvironment = void 0;
 var DebtCollectionEnvironment;
 (function (DebtCollectionEnvironment) {
     DebtCollectionEnvironment["PRODUCTION"] = "PRODUCTION";

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionGroupState = void 0;
 var TransactionGroupState;
 (function (TransactionGroupState) {
     TransactionGroupState["PENDING"] = "PENDING";

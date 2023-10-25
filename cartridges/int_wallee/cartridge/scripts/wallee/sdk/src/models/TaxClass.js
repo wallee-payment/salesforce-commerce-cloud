@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TaxClass = void 0;
 var TaxClass = /** @class */ (function () {
     function TaxClass() {
     }

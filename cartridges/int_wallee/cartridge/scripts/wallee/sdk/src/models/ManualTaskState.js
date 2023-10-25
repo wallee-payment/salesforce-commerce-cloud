@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ManualTaskState = void 0;
 var ManualTaskState;
 (function (ManualTaskState) {
     ManualTaskState["OPEN"] = "OPEN";

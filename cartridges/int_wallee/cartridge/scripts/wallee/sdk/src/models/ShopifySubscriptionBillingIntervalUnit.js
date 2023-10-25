@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifySubscriptionBillingIntervalUnit = void 0;
 var ShopifySubscriptionBillingIntervalUnit;
 (function (ShopifySubscriptionBillingIntervalUnit) {
     ShopifySubscriptionBillingIntervalUnit["MINUTES"] = "MINUTES";

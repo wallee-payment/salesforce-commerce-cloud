@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.SubscriptionProductActive = void 0;
 var AbstractSubscriptionProductActive = require("./AbstractSubscriptionProductActive");
 var SubscriptionProductActive = /** @class */ (function (_super) {
     __extends(SubscriptionProductActive, _super);

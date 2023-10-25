@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ChargeState = void 0;
 var ChargeState;
 (function (ChargeState) {
     ChargeState["PENDING"] = "PENDING";

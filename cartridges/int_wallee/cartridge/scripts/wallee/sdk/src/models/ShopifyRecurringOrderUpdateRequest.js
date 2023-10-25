@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifyRecurringOrderUpdateRequest = void 0;
 var ShopifyRecurringOrderUpdateRequest = /** @class */ (function () {
     function ShopifyRecurringOrderUpdateRequest() {
     }

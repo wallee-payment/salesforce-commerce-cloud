@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentAppVoidUpdateRequest = void 0;
 var PaymentAppVoidUpdateRequest = /** @class */ (function () {
     function PaymentAppVoidUpdateRequest() {
     }

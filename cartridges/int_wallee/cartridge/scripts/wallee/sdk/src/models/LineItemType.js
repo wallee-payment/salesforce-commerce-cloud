@@ -1,5 +1,6 @@
 "use strict";
 
+exports.LineItemType = void 0;
 var LineItemType;
 (function (LineItemType) {
     LineItemType["SHIPPING"] = "SHIPPING";

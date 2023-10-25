@@ -1,5 +1,6 @@
 "use strict";
 
+exports.EntityQueryOrderBy = void 0;
 var EntityQueryOrderBy = /** @class */ (function () {
     function EntityQueryOrderBy() {
     }

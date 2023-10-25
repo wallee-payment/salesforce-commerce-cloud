@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TokenVersion = void 0;
 var TokenVersion = /** @class */ (function () {
     function TokenVersion() {
     }

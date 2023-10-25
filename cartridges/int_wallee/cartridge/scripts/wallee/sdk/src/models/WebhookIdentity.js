@@ -1,5 +1,6 @@
 "use strict";
 
+exports.WebhookIdentity = void 0;
 var WebhookIdentity = /** @class */ (function () {
     function WebhookIdentity() {
     }

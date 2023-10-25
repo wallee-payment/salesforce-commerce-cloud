@@ -1,5 +1,6 @@
 "use strict";
 
+exports.FailureCategory = void 0;
 var FailureCategory;
 (function (FailureCategory) {
     FailureCategory["TEMPORARY_ISSUE"] = "TEMPORARY_ISSUE";

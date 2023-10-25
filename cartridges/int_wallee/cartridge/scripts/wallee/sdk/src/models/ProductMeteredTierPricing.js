@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ProductMeteredTierPricing = void 0;
 var ProductMeteredTierPricing;
 (function (ProductMeteredTierPricing) {
     ProductMeteredTierPricing["CHEAPEST_TIER_PRICING"] = "CHEAPEST_TIER_PRICING";

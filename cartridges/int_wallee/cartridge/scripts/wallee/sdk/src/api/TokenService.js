@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TokenService = void 0;
 /* global dw empty */
 var ObjectSerializer = require("../serializers/ObjectSerializer");
 // @ts-ignore
@@ -70,7 +71,7 @@ var TokenService = /** @class */ (function () {
             contentType: "application/json",
             body: JSON.stringify(ObjectSerializer.serialize(id, "number")),
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -151,7 +152,7 @@ var TokenService = /** @class */ (function () {
             path: "/token/check-token-creation-possible",
             contentType: "application/json",
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -230,7 +231,7 @@ var TokenService = /** @class */ (function () {
             contentType: "application/json",
             body: JSON.stringify(ObjectSerializer.serialize(filter, "EntityQueryFilter")),
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -313,7 +314,7 @@ var TokenService = /** @class */ (function () {
             contentType: "application/json",
             body: JSON.stringify(ObjectSerializer.serialize(entity, "TokenCreate")),
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -398,7 +399,7 @@ var TokenService = /** @class */ (function () {
             path: "/token/create-token",
             contentType: "application/json",
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -483,7 +484,7 @@ var TokenService = /** @class */ (function () {
             path: "/token/create-token-based-on-transaction",
             contentType: "application/json",
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -568,7 +569,7 @@ var TokenService = /** @class */ (function () {
             path: "/token/createTransactionForTokenUpdate",
             contentType: "application/json",
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -653,7 +654,7 @@ var TokenService = /** @class */ (function () {
             path: "/token/process-transaction",
             contentType: "application/json",
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -738,7 +739,7 @@ var TokenService = /** @class */ (function () {
             path: "/token/read",
             contentType: "application/json",
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -821,7 +822,7 @@ var TokenService = /** @class */ (function () {
             contentType: "application/json",
             body: JSON.stringify(ObjectSerializer.serialize(query, "EntityQuery")),
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -904,7 +905,7 @@ var TokenService = /** @class */ (function () {
             contentType: "application/json",
             body: JSON.stringify(ObjectSerializer.serialize(entity, "TokenUpdate")),
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {

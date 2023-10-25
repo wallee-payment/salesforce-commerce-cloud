@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ShopifyRecurringOrderState = void 0;
 var ShopifyRecurringOrderState;
 (function (ShopifyRecurringOrderState) {
     ShopifyRecurringOrderState["PENDING"] = "PENDING";

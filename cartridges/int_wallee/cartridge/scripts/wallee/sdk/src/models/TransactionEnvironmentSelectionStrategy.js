@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionEnvironmentSelectionStrategy = void 0;
 var TransactionEnvironmentSelectionStrategy;
 (function (TransactionEnvironmentSelectionStrategy) {
     TransactionEnvironmentSelectionStrategy["FORCE_TEST_ENVIRONMENT"] = "FORCE_TEST_ENVIRONMENT";

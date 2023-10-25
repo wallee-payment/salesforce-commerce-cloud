@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentLinkService = void 0;
 /* global dw empty */
 var ObjectSerializer = require("../serializers/ObjectSerializer");
 // @ts-ignore
@@ -64,7 +65,7 @@ var PaymentLinkService = /** @class */ (function () {
             contentType: "application/json",
             body: JSON.stringify(ObjectSerializer.serialize(id, "number")),
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -139,7 +140,7 @@ var PaymentLinkService = /** @class */ (function () {
             contentType: "application/json",
             body: JSON.stringify(ObjectSerializer.serialize(filter, "EntityQueryFilter")),
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -222,7 +223,7 @@ var PaymentLinkService = /** @class */ (function () {
             contentType: "application/json",
             body: JSON.stringify(ObjectSerializer.serialize(entity, "PaymentLinkCreate")),
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -307,7 +308,7 @@ var PaymentLinkService = /** @class */ (function () {
             path: "/payment-link/read",
             contentType: "application/json",
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -390,7 +391,7 @@ var PaymentLinkService = /** @class */ (function () {
             contentType: "application/json",
             body: JSON.stringify(ObjectSerializer.serialize(query, "EntityQuery")),
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {
@@ -473,7 +474,7 @@ var PaymentLinkService = /** @class */ (function () {
             contentType: "application/json",
             body: JSON.stringify(ObjectSerializer.serialize(entity, "PaymentLinkUpdate")),
             form: {},
-            formData: {},
+            formData: {}
         };
         if (Object.keys(localVarFormParams).length) {
             if (localVarUseFormData) {

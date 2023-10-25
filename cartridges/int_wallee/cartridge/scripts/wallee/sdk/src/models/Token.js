@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Token = void 0;
 var Token = /** @class */ (function () {
     function Token() {
     }

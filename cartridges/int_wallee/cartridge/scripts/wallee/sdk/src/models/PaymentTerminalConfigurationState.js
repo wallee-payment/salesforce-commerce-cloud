@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentTerminalConfigurationState = void 0;
 var PaymentTerminalConfigurationState;
 (function (PaymentTerminalConfigurationState) {
     PaymentTerminalConfigurationState["CREATE"] = "CREATE";

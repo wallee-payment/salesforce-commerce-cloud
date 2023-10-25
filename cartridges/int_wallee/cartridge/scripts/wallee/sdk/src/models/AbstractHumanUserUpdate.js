@@ -1,5 +1,6 @@
 "use strict";
 
+exports.AbstractHumanUserUpdate = void 0;
 var AbstractHumanUserUpdate = /** @class */ (function () {
     function AbstractHumanUserUpdate() {
     }

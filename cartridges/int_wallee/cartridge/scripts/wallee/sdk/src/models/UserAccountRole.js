@@ -1,5 +1,6 @@
 "use strict";
 
+exports.UserAccountRole = void 0;
 var UserAccountRole = /** @class */ (function () {
     function UserAccountRole() {
     }

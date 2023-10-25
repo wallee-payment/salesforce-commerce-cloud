@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionCompletionMode = void 0;
 var TransactionCompletionMode;
 (function (TransactionCompletionMode) {
     TransactionCompletionMode["DIRECT"] = "DIRECT";

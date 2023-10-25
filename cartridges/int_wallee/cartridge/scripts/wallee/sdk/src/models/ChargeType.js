@@ -1,5 +1,6 @@
 "use strict";
 
+exports.ChargeType = void 0;
 var ChargeType;
 (function (ChargeType) {
     ChargeType["ASYNCHRONOUS"] = "ASYNCHRONOUS";

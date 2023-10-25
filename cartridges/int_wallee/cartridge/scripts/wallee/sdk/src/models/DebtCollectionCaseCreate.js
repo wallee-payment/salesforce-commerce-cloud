@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.DebtCollectionCaseCreate = void 0;
 var AbstractDebtCollectionCaseUpdate = require("./AbstractDebtCollectionCaseUpdate");
 var DebtCollectionCaseCreate = /** @class */ (function (_super) {
     __extends(DebtCollectionCaseCreate, _super);

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Address = void 0;
 var Address = /** @class */ (function () {
     function Address() {
     }

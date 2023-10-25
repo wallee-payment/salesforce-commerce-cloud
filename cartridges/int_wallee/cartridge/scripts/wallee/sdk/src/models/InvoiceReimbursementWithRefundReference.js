@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 
+exports.InvoiceReimbursementWithRefundReference = void 0;
 var InvoiceReimbursement = require("./InvoiceReimbursement");
 var InvoiceReimbursementWithRefundReference = /** @class */ (function (_super) {
     __extends(InvoiceReimbursementWithRefundReference, _super);

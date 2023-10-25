@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionLineItemVersionCreate = void 0;
 var TransactionLineItemVersionCreate = /** @class */ (function () {
     function TransactionLineItemVersionCreate() {
     }

@@ -1,5 +1,6 @@
 "use strict";
 
+exports.DebtCollectorConditionType = void 0;
 var DebtCollectorConditionType = /** @class */ (function () {
     function DebtCollectorConditionType() {
     }

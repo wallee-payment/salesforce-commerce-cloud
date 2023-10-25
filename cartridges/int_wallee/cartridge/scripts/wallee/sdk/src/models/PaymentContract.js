@@ -1,5 +1,6 @@
 "use strict";
 
+exports.PaymentContract = void 0;
 var PaymentContract = /** @class */ (function () {
     function PaymentContract() {
     }

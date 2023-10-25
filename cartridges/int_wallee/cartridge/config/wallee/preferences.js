@@ -1,5 +1,6 @@
 "use strict";
 
+exports.getPreferences = void 0;
 function getPreferences() {
     try {
         var customPreferences = dw.object.CustomObjectMgr.getCustomObject("Wallee_Common", "wallee_common");

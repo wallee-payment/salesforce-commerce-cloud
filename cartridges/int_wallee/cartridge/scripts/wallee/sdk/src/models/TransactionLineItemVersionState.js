@@ -1,5 +1,6 @@
 "use strict";
 
+exports.TransactionLineItemVersionState = void 0;
 var TransactionLineItemVersionState;
 (function (TransactionLineItemVersionState) {
     TransactionLineItemVersionState["CREATE"] = "CREATE";

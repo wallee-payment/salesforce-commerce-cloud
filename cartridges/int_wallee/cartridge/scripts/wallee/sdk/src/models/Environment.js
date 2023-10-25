@@ -1,5 +1,6 @@
 "use strict";
 
+exports.Environment = void 0;
 var Environment;
 (function (Environment) {
     Environment["LIVE"] = "LIVE";
