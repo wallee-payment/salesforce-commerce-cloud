@@ -1,0 +1,6 @@
+export enum {{classname}}{
+{{#allowableValues}}{{#enumVars}}
+    {{name}} = {{{value}}},{{/enumVars}}{{/allowableValues}}
+}
+
+module.exports = {{classname}};

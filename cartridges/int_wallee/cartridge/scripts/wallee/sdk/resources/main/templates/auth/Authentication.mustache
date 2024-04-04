@@ -1,0 +1,9 @@
+export {};
+interface Authentication {
+    /**
+    * Apply authentication settings to header and query params.
+    */
+    getAuthHeaders(method: string, resourcePath: string, queryParams: any) : any;
+}
+
+export { Authentication }

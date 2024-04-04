@@ -1,0 +1,99 @@
+# {{infoName}} TypeScript Library
+
+The {{infoName}} TypeScript library wraps around the {{infoName}} API. This library facilitates your interaction with various services such as transactions, accounts, and subscriptions.
+
+
+## Documentation
+
+[{{infoName}} Web Service API]({{endpointBaseUrl}}doc/api/web-service)
+
+## Requirements
+
+- npm 6+
+
+## Installation
+
+## NPM install (recommended)
+```sh
+npm install {{npmName}}
+```
+
+## Usage
+The library needs to be configured with your account's space id, user id, and secret key which are available in your [{{infoName}}
+account dashboard]({{endpointBaseUrl}}account/select). Set `space_id`, `user_id`, and `api_secret` to their values.
+
+### Configuring a Service
+
+```typescript
+'use strict';
+import { {{packageName}} } from '{{npmName}}';
+
+let macVersion: number = 1;
+let spaceId: number = {{testSpaceId}};
+let userId: number = {{testUserId}};
+let apiSecret: string = '{{{testApiSecret}}}';
+
+let config = {
+    mac_version: macVersion,
+    space_id: spaceId,
+    user_id: userId,
+    api_secret: apiSecret
+}
+
+// Transaction Service
+let transactionService: {{packageName}}.api.TransactionService = new {{packageName}}.api.TransactionService(config);
+
+```
+
+To get started with sending transactions, please review the example below:
+
+```typescript
+'use strict';
+import { {{packageName}} } from '{{npmName}}';
+
+let macVersion: number = 1;
+let spaceId: number = {{testSpaceId}};
+let userId: number = {{testUserId}};
+let apiSecret: string = '{{{testApiSecret}}}';
+
+let config = {
+    mac_version: macVersion,
+    space_id: spaceId,
+    user_id: userId,
+    api_secret: apiSecret
+}
+
+// Transaction Service
+let transactionService: {{packageName}}.api.TransactionService = new {{packageName}}.api.TransactionService(config);
+
+// TransactionPaymentPage Service
+let transactionPaymentPageService: {{packageName}}.api.TransactionPaymentPageService = new {{packageName}}.api.TransactionPaymentPageService(config);
+
+// LineItem of type PRODUCT
+let lineItem: {{packageName}}.model.LineItemCreate = new {{packageName}}.model.LineItemCreate();
+lineItem.name='Red T-Shirt';
+lineItem.uniqueId='5412';
+lineItem.sku='red-t-shirt-123';
+lineItem.quantity=1;
+lineItem.amountIncludingTax=3.50;
+lineItem.type={{packageName}}.model.LineItemType.PRODUCT;
+
+// Transaction
+let transaction: {{packageName}}.model.TransactionCreate = new {{packageName}}.model.TransactionCreate();
+transaction.lineItems=[lineItem];
+transaction.autoConfirmationEnabled=true;
+transaction.currency='EUR';
+
+transactionService.create(spaceId, transaction).then(function (response) {
+    let transactionCreate: {{packageName}}.model.Transaction = response.body;
+    transactionPaymentPageService.paymentPageUrl(spaceId, <number> transactionCreate.id).then(function (response) {
+        let pageUrl: string = response.body;
+        // window.location.href = pageUrl;
+    });
+});
+
+```
+
+## License
+
+Please see the [license file](https://github.com/{{gitUserId}}/{{gitRepoId}}/blob/master/LICENSE) for more information.

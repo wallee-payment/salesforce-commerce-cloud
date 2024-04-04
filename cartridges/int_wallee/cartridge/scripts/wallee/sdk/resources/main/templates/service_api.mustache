@@ -1,0 +1,145 @@
+{{#operations}}
+declare let dw: any;
+/* global dw empty */
+let ObjectSerializer  = require("../serializers/ObjectSerializer");
+
+{{#imports}}
+// @ts-ignore
+let {{importModelName}} = require("../{{import}}");
+// @ts-ignore
+import { {{importModelName}} } from "../{{import}}";
+{{/imports}}
+
+export class {{classname}} {
+    protected basePath: string = "{{{basePath}}}";
+    protected defaultHeaders: any = {};
+    protected _useQuerystring: boolean = false;
+    protected httpService: any = {};
+
+    constructor(httpService: any) {
+        this.httpService =  httpService;
+    }
+
+    {{#operation}}
+    /**
+    * {{&notes}}
+    {{#summary}}
+    * @summary {{&summary}}
+    {{/summary}}
+    {{#allParams}}
+    * @param { {{dataType}} } {{paramName}} {{paramName}} {{description}}
+    {{/allParams}}
+    * @param {*} [options] Override http request options.
+    * @return { {{#returnType}} {{{returnType}}} {{/returnType}}{{^returnType}} any {{/returnType}} }
+    */
+    public {{nickname}} ({{#allParams}}{{paramName}}{{^required}}?{{/required}}: {{{dataType}}}, {{/allParams}}options: any = {}): {{#returnType}} {{{returnType}}} {{/returnType}}{{^returnType}} any {{/returnType}} {
+        let localVarQueryParameters: any = {};
+        let localVarHeaderParams: any = {};
+        let localVarFormParams: any = {};
+
+    {{#allParams}}
+        {{#required}}
+            // verify required parameter '{{paramName}}' is not null or undefined
+            if ({{paramName}} === null || {{paramName}} === undefined) {
+                throw new Error("Required parameter {{paramName}} was null or undefined when calling {{nickname}}.");
+            }
+
+        {{/required}}
+    {{/allParams}}
+    {{#queryParams}}
+        if ({{paramName}} !== undefined) {
+            localVarQueryParameters["{{baseName}}"] = ObjectSerializer.serialize({{paramName}}, "{{{dataType}}}");
+        }
+
+    {{/queryParams}}
+    {{#headerParams}}
+        localVarHeaderParams["{{baseName}}"] = ObjectSerializer.serialize({{paramName}}, "{{{dataType}}}");
+    {{/headerParams}}
+
+        for (let optionsHeadersKey in options.headers) {
+            if (options.headers.hasOwnProperty(optionsHeadersKey)) {
+                localVarHeaderParams[optionsHeadersKey] = options.headers[optionsHeadersKey];
+            }
+        }
+
+        let localVarUseFormData = false;
+
+    {{#formParams}}
+        if ({{paramName}} !== undefined) {
+        {{#isFile}}
+            localVarFormParams["{{baseName}}"] = {{paramName}};
+        {{/isFile}}
+        {{^isFile}}
+            localVarFormParams["{{baseName}}"] = ObjectSerializer.serialize({{paramName}}, "{{{dataType}}}");
+        {{/isFile}}
+        }
+        {{#isFile}}
+            localVarUseFormData = true;
+        {{/isFile}}
+
+    {{/formParams}}
+        let localVarRequestOptions: any = {
+            method: "{{httpMethod}}",
+            queryString: localVarQueryParameters,
+            headers: localVarHeaderParams,
+            useQuerystring: this._useQuerystring,
+            url: this.basePath,
+            path: "{{{path}}}",
+    {{^isResponseFile}}
+            contentType: "application/json",
+    {{/isResponseFile}}
+    {{#isResponseFile}}
+            encoding: null,
+    {{/isResponseFile}}
+    {{#bodyParam}}
+            body: JSON.stringify(ObjectSerializer.serialize({{paramName}}, "{{{dataType}}}")),
+    {{/bodyParam}}
+            form: {},
+            formData: {},
+        };
+
+        if (Object.keys(localVarFormParams).length) {
+            if (localVarUseFormData) {
+                (<any>localVarRequestOptions).formData = localVarFormParams;
+            } else {
+                localVarRequestOptions.form = localVarFormParams;
+            }
+        }
+
+        // dw.net.HTTPClient
+        let response = this.httpService.callApi(localVarRequestOptions);
+        if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
+            let body = response.text;
+            {{#returnType}}
+            if (ObjectSerializer.primitives.indexOf("{{{returnType}}}".toLowerCase()) !== -1) {
+                return body;
+            }
+            {{/returnType}}
+
+            try {
+                body = JSON.parse(body);{{#returnType}} body = ObjectSerializer.deserialize(body, "{{{returnType}}}");{{/returnType}}
+            } catch (e) {
+                dw.system.Logger.error("whitelabel_machinename > {{classname}} > {{nickname}} > unable to parse JSON > " + JSON.stringify({ message: e.message,  fileName: e.fileName, lineNumber: e.lineNumber}));
+            }
+            return body;
+        } else {
+            let error = {
+                type: "Unknown",
+                date: (new Date()).toUTCString(),
+                statusCode: response.statusCode,
+                statusMessage: response.statusMessage,
+                errorText: response.errorText
+            };
+            if (response.statusCode && response.statusCode >= 400 && response.statusCode <= 499) {
+                error.type = "ClientError";
+            } else if (response.statusCode && response.statusCode >= 500 && response.statusCode <= 599) {
+                error.type = "ServerError";
+            }
+            throw new Error("whitelabel_machinename > {{classname}} > {{nickname}} > " + error.type + " > " + JSON.stringify(error));
+        }
+    }
+    {{/operation}}
+}
+
+module.exports = {{classname}};
+{{/operations}}

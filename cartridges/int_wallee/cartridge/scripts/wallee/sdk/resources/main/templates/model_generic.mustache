@@ -1,0 +1,44 @@
+{{#imports}}import { {{.}} } from "./{{.}}";
+{{/imports}}
+{{#parent}}let {{{parent}}} = require("./{{{parent}}}");
+{{/parent}}
+
+export class {{classname}} {{#parent}}extends {{{parent}}} {{/parent}}{
+{{#vars}}{{^isInherited}}
+    {{#description}}
+    /**
+     * {{{description}}}
+     */
+    {{/description}}
+    "{{name}}"{{^required}}?{{/required}}: {{#isEnum}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{{datatype}}}{{/isEnum}};
+{{/isInherited}}{{/vars}}
+
+{{#discriminator}}
+    static discriminator: string | undefined = "{{discriminator}}";
+{{/discriminator}}
+{{^discriminator}}
+    static discriminator: string | undefined = undefined;
+{{/discriminator}}
+
+{{^isArrayModel}}
+    static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+{{#vars}}{{^isInherited}}       {
+            "name": "{{name}}",
+            "baseName": "{{baseName}}",
+            "type": "{{#isEnum}}{{{datatypeWithEnum}}}{{/isEnum}}{{^isEnum}}{{{datatype}}}{{/isEnum}}"
+        }{{#hasMore}},
+    {{/hasMore}}{{/isInherited}}{{/vars}}
+    ];
+
+    static getAttributeTypeMap() {
+    {{#parent}}
+        return super.getAttributeTypeMap().concat({{classname}}.attributeTypeMap);
+    {{/parent}}
+    {{^parent}}
+        return {{classname}}.attributeTypeMap;
+    {{/parent}}
+    }
+{{/isArrayModel}}
+}
+
+module.exports = {{classname}};
