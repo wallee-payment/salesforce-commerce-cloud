@@ -31,6 +31,14 @@
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>1</min-length>
             </attribute-definition>
+            <attribute-definition attribute-id="integrationType">
+                <display-name xml:lang="x-default">Integration Type</display-name>
+                <description xml:lang="x-default">Integration Type</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>1</min-length>
+            </attribute-definition>
             <attribute-definition attribute-id="webHookContent">
                 <display-name xml:lang="x-default">WebHook Response</display-name>
                 <type>string</type>
@@ -52,6 +60,7 @@
                 <attribute attribute-id="spaceId"/>
                 <attribute attribute-id="userId"/>
                 <attribute attribute-id="apiSecret"/>
+                <attribute attribute-id="integrationType"/>
                 <attribute attribute-id="webHookContent"/>
                 <attribute attribute-id="webHookIsEnabled"/>
             </attribute-group>

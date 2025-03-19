@@ -7,6 +7,7 @@
         </isscript>
         <!-- WALLEE Begin -->
         <input type="hidden" class="form-control" name="WALLEE_url" value="${dw.web.URLUtils.url('Wallee-TransactionUpdate').toString()}">
+        <input type="hidden" class="form-control" name="WALLEE_integrationType" value="${pdict.wallee.integrationType}">      
         <isloop items="${pdict.wallee.transactionPossiblePaymentMethods}" status="loopState" var="transactionPossiblePaymentMethod">
             <isinclude template="wallee/checkout/billing/paymentOptions/walleeTab"/>
         </isloop>

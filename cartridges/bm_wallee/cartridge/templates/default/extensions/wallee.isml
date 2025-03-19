@@ -70,6 +70,15 @@
                         </td>
                     </tr>
                     <tr>
+                        <td class="fielditem2 w" nowrap="nowrap">${Resource.msg('common.form.integrationType', 'bm_wallee', null)}: <span class="star">*</span></td>
+                        <td class="table_detail e" width="100%">
+                            <select name="integrationType" required class="inputfield_en perm_localized w100">
+                                <option value="payment_page" <isif condition="${pdict.customPreferences.integrationType == 'payment_page'}">selected</isif>>Payment Page</option>
+                                <option value="iframe" <isif condition="${pdict.customPreferences.integrationType == 'iframe'}">selected</isif>>IFrame</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
                         <td align="right" class="aldi" colspan="2">
                             <table border="0" cellspacing="4" cellpadding="0">
                                 <tbody>

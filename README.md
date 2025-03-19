@@ -47,7 +47,7 @@ Congratulations! You are now integrated with Wallee.
 
 ## Installation, Usage and Configuration
 
-Installation, Usage and Configuration is explained in Wallee's [online documentation](https://plugin-documentation.wallee.com/wallee-payment/salesforce-commerce-cloud/1.0.15/docs/en/documentation.html).
+Installation, Usage and Configuration is explained in Wallee's [online documentation](https://plugin-documentation.wallee.com/wallee-payment/salesforce-commerce-cloud/1.0.16/docs/en/documentation.html).
 
 ## Support
 
