@@ -1,13 +1,13 @@
-# Salesforce Commerce Cloud Wallee Cartridge
+# Salesforce Commerce Cloud wallee Cartridge
 
-Wallee provides LINK cartridges to integrate with Salesforce Commerce Cloud (SFCC). These cartridges enable a SFRA storefront to use the Wallee payment service. These cartridges support SFRA version 4.x.x.
+wallee provides LINK cartridges to integrate with Salesforce Commerce Cloud (SFCC). These cartridges enable a SFRA storefront to use the wallee payment service. These cartridges support SFRA version 4.x.x.
 
 ## Requirements
 
-It is required to have an Wallee account to use these cartridges. Please signup [here](https://app-wallee.com/user/signup).
+It is required to have an wallee account to use these cartridges. Please signup [here](https://app-wallee.com/user/signup).
 
 ## Integration
-Our cartridges integrate the checkout process with Wallee. Each of the steps below are required to get your Wallee integration working. You need admin rights to the instance you are uploading these cartridges to.
+Our cartridges integrate the checkout process with wallee. Each of the steps below are required to get your wallee integration working. You need admin rights to the instance you are uploading these cartridges to.
 
 ### 1. Upload cartridge
 
@@ -35,7 +35,7 @@ Please rename the folder `yourSiteId` to the name of your site, and please repli
 
 
 ### 5. Apply credentials
-Have your Wallee credentials handy.
+Have your wallee credentials handy.
 
 * Merchant Tools > Site Preferences > Wallee
 
@@ -43,15 +43,15 @@ If the path `Merchant Tools > Site Preferences > Wallee` does not exist, please 
 
 
 ### 6. Profit
-Congratulations! You are now integrated with Wallee.
+Congratulations! You are now integrated with wallee.
 
 ## Installation, Usage and Configuration
 
-Installation, Usage and Configuration is explained in Wallee's [online documentation](https://plugin-documentation.wallee.com/wallee-payment/salesforce-commerce-cloud/1.0.16/docs/en/documentation.html).
+Installation, Usage and Configuration is explained in wallee's [online documentation](https://plugin-documentation.wallee.com/wallee-payment/salesforce-commerce-cloud/1.0.17/docs/en/documentation.html).
 
 ## Support
 
-For further questions regarding the integration to Wallee, contact the [Wallee Support](https://app-wallee.com/space/select?target=/support).
+For further questions regarding the integration to wallee, contact the [wallee Support](https://app-wallee.com/space/select?target=/support).
 
 ## License
 

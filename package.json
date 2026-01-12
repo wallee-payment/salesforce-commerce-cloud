@@ -22,7 +22,7 @@
     "prettier": "1.19.1",
     "proxyquire": "1.7.4",
     "sass-loader": "^7.0.3",
-    "sgmf-scripts": "^3.0.0",
+    "sgmf-scripts": "^4.0.0",
     "sinon": "^1.17.4",
     "stylelint": "^14.9.1",
     "stylelint-config-standard": "^19.0.0",
