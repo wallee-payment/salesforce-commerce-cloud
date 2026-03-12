@@ -220,7 +220,7 @@ var Transaction = /** @class */ (function () {
         }
         return {
             error: true,
-            errorMessage: "Could not find existing transaction to edit"
+            errorMessage: "Could not find existing transaction to edit",
         };
     };
     /**
@@ -250,7 +250,7 @@ var Transaction = /** @class */ (function () {
         }
         return {
             error: true,
-            errorMessage: "Could not find existing transaction to edit"
+            errorMessage: "Could not find existing transaction to edit",
         };
     };
     /**
@@ -315,7 +315,7 @@ var Transaction = /** @class */ (function () {
         return {
             javascriptUrl: "",
             possiblePaymentMethodsArray: possiblePaymentMethodsArray,
-            transactionPossiblePaymentMethods: Array()
+            transactionPossiblePaymentMethods: Array(),
         };
     };
     /**

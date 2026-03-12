@@ -82,6 +82,7 @@ var WebHook = /** @class */ (function () {
             entity.name = this.WebHookEntity.Transaction.name;
             entity.entity = this.WebHookEntity.Transaction.id;
             entity.notifyEveryChange = false;
+            entity.enablePayloadSignatureAndState = true;
             entity.state = Wallee.model.CreationEntityState.CREATE;
             entity.entityStates = [
                 Wallee.model.TransactionState.CONFIRMED,
@@ -119,6 +120,7 @@ var WebHook = /** @class */ (function () {
             entity.name = this.WebHookEntity.Refund.name;
             entity.entity = this.WebHookEntity.Refund.id;
             entity.notifyEveryChange = false;
+            entity.enablePayloadSignatureAndState = true;
             entity.state = Wallee.model.CreationEntityState.CREATE;
             entity.entityStates = [
                 Wallee.model.RefundState.FAILED,
